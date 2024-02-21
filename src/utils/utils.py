@@ -530,3 +530,195 @@ def selvars_boruta(df,target):
     selvars=sorted(list(Feature_Selector.Subset().columns))
     
     return selvars
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix
+
+def plot_confusion_matrix(true_labels, predicted_labels):
+    """
+    Plot a confusion matrix using true labels and predicted labels.
+
+    Parameters:
+    true_labels (array-like): True labels.
+    predicted_labels (array-like): Predicted labels.
+    """
+    # Calculate the confusion matrix
+    conf_matrix = confusion_matrix(true_labels, predicted_labels)
+
+    # Create a heatmap using seaborn
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(conf_matrix, annot=True, cmap='Blues', fmt='g')
+
+    # Add labels and title
+    plt.xlabel('Predicted Labels')
+    plt.ylabel('True Labels')
+    plt.title('Confusion Matrix')
+
+    # Show the plot
+    plt.show()
+
+from sklearn.model_selection import cross_val_predict
+from sklearn.metrics import confusion_matrix, classification_report
+import numpy as np
+
+def cross_validation_with_confusion_matrix(estimator, X, y, nsplits=10):
+    cv = StratifiedKFold(n_splits=nsplits)
+    # Perform cross-validation
+    predicted = cross_val_predict(estimator, X, y, cv=cv)
+
+    # Calculate confusion matrix and classification report for each fold
+    for i, (train_idx, test_idx) in enumerate(cv.split(X, y)):
+        X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
+        y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
+
+        # Fit the estimator on training data
+        estimator.fit(X_train, y_train)
+
+        # Predict on test data
+        y_pred = estimator.predict(X_test)
+
+        # Calculate confusion matrix and classification report
+        conf_matrix = confusion_matrix(y_test, y_pred)
+        class_report = pd.DataFrame(classification_report(y_test, y_pred, output_dict=True))
+
+        # Print confusion matrix and classification report
+        print(f"Fold {i+1}:")
+        print("Confusion Matrix:")
+        print(conf_matrix)
+        # Plot confusion matrix
+        plt.figure(figsize=(8, 6))
+        sns.heatmap(conf_matrix, annot=True, cmap='Blues', fmt='g')
+        plt.xlabel('Predicted Labels')
+        plt.ylabel('True Labels')
+        plt.title(f'Confusion Matrix - Fold {i+1}')
+        plt.show()
+        print("\nClassification Report:")
+        return(class_report)
+from sklearn.metrics import roc_curve, roc_auc_score
+import matplotlib.pyplot as plt
+
+def plot_roc_curve(model, X_val, y_val):
+    # Predecir las probabilidades de las clases positivas
+    y_prob = model.predict_proba(X_val)[:, 1]
+    
+    # Calcular la tasa de verdaderos positivos (TPR) y la tasa de falsos positivos (FPR)
+    fpr, tpr, thresholds = roc_curve(y_val, y_prob)
+    
+    # Calcular el área bajo la curva ROC (AUC)
+    auc = roc_auc_score(y_val, y_prob)
+    
+    # Plotear la curva ROC
+    plt.figure(figsize=(8, 6))
+    plt.plot(fpr, tpr, label=f'AUC = {auc:.2f}')
+    plt.plot([0, 1], [0, 1], 'k--')  # Diagonal line
+    plt.xlabel('False Positive Rate (FPR)')
+    plt.ylabel('True Positive Rate (TPR)')
+    plt.title('ROC Curve')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+# Llama a la función con tu modelo y datos de validación
+#plot_roc_curve(model_tuned, X_val, y_val)
+
+from sklearn.multiclass import OneVsRestClassifier
+from sklearn.metrics import roc_curve, auc
+import matplotlib.pyplot as plt
+
+def generate_roc_auc(estimator, X_train, y_train, X_val, y_val):
+    """
+    Generate ROC curve and calculate AUC using one-vs-all technique.
+
+    Parameters:
+    estimator: scikit-learn estimator object
+        The classifier or regressor to use.
+    X_train: array-like, shape (n_samples, n_features)
+        The input samples for training.
+    y_train: array-like, shape (n_samples,)
+        The target values for training.
+    X_val: array-like, shape (n_samples, n_features)
+        The input samples for validation.
+    y_val: array-like, shape (n_samples,)
+        The target values for validation.
+
+    Returns:
+    None
+    """
+    # Convert the multiclass problem into binary using one-vs-all technique
+    clf = OneVsRestClassifier(estimator)
+
+    # Train the binary classifier using training data
+    clf.fit(X_train, y_train)
+
+    # Calculate prediction probabilities for each class in the binary classifier
+    y_score = clf.predict_proba(X_val)
+
+    # Convert y_val to a pandas Series and select only the first column
+    y_val_series = pd.Series(y_val.iloc[:, 0])
+
+    # Calculate ROC curve and AUC for each class
+    fpr = dict()
+    tpr = dict()
+    roc_auc = dict()
+    n_classes = len(clf.classes_)
+    for i in range(n_classes):
+        fpr[i], tpr[i], _ = roc_curve(y_val_series == i, y_score[:, i])
+        roc_auc[i] = auc(fpr[i], tpr[i])
+
+    # Plot ROC curve for each class
+    plt.figure(figsize=(10, 8))
+    for i in range(n_classes):
+        plt.plot(fpr[i], tpr[i], label='ROC curve (class {}) - AUC = {:.2f}'.format(i, roc_auc[i]))
+
+    plt.plot([0, 1], [0, 1], 'k--', linewidth=0.5)
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver Operating Characteristic (ROC) Curve')
+    plt.legend(loc='lower right')
+    plt.show()
+
+
+from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import uniform, randint
+def hyperparameter_tuning(models, X, y):
+    # Almacena los resultados en un DataFrame
+    results = []
+
+    # Loop sobre los modelos
+    for model_name, config in models.items():
+        print(f"Tuning hyperparameters for {model_name}")
+        model = RandomizedSearchCV(config["model"], config["params"], n_iter=50, cv=5, verbose=2, random_state=42)
+        model.fit(X, y)  # Ajusta el modelo con los datos de entrenamiento
+        best_params = model.best_params_
+        best_score = model.best_score_
+        results.append([model_name, best_params, best_score])
+
+    # Crear un DataFrame a partir de los resultados
+    results_df = pd.DataFrame(results, columns=["Model", "Best Parameters", "Best Score"])
+
+    return results_df
+
+from sklearn.model_selection import StratifiedKFold,cross_val_score
+
+def perform_cross_validation(models, x_train, y_train, n_splits=8, random_state=42,metric='accuracy'):
+    kfold = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=random_state)
+    
+    cv_results = []
+    for name, model in models.items():
+        cv_results.append(cross_val_score(model, x_train, y_train, scoring=metric, cv=kfold, n_jobs=-1))
+    
+    cv_means = [cv_result.mean() for cv_result in cv_results]
+    cv_std = [cv_result.std() for cv_result in cv_results]
+    
+    cv_df = pd.DataFrame({"CrossVal_Score_Means": cv_means, "CrossValerrors": cv_std, "Algorithm": list(models.keys())})
+    
+    plt.figure(figsize=(10, 7))
+    g = sns.barplot(x="CrossVal_Score_Means", y="Algorithm", data=cv_df, orient="h", palette='cool', 
+                    edgecolor="black", linewidth=1)
+    g.set_xlabel("Mean "+ metric, fontsize=18)
+    g.set_title("Cross validation scores", fontsize=24)
+    plt.show()
+    
+    return cv_df

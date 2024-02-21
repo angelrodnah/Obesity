@@ -68,12 +68,124 @@
         "documentation": {}
     },
     {
+        "label": "uniform",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "randint",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
         "label": "statsmodels.api",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "statsmodels.api",
         "description": "statsmodels.api",
         "detail": "statsmodels.api",
+        "documentation": {}
+    },
+    {
+        "label": "confusion_matrix",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "confusion_matrix",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "classification_report",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "roc_curve",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "roc_auc_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "roc_curve",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "auc",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "cross_val_predict",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "RandomizedSearchCV",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "StratifiedKFold",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "cross_val_score",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "OneVsRestClassifier",
+        "importPath": "sklearn.multiclass",
+        "description": "sklearn.multiclass",
+        "isExtraImport": true,
+        "detail": "sklearn.multiclass",
         "documentation": {}
     },
     {
@@ -234,7 +346,61 @@
         "kind": 2,
         "importPath": "src.utils.utils",
         "description": "src.utils.utils",
-        "peekOfCode": "def selvars_boruta(df,target):\n    Feature_Selector = BorutaShap(importance_measure='shap',\n                                classification=True)\n    Feature_Selector.fit(X=df, y=df[target], n_trials=100, random_state=0)\n    Feature_Selector.TentativeRoughFix()\n    Feature_Selector.plot(X_size=8, figsize=(20,8),\n                y_scale='log', which_features='all')\n    selvars=sorted(list(Feature_Selector.Subset().columns))\n    return selvars",
+        "peekOfCode": "def selvars_boruta(df,target):\n    Feature_Selector = BorutaShap(importance_measure='shap',\n                                classification=True)\n    Feature_Selector.fit(X=df, y=df[target], n_trials=100, random_state=0)\n    Feature_Selector.TentativeRoughFix()\n    Feature_Selector.plot(X_size=8, figsize=(20,8),\n                y_scale='log', which_features='all')\n    selvars=sorted(list(Feature_Selector.Subset().columns))\n    return selvars\nimport seaborn as sns",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "plot_confusion_matrix",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def plot_confusion_matrix(true_labels, predicted_labels):\n    \"\"\"\n    Plot a confusion matrix using true labels and predicted labels.\n    Parameters:\n    true_labels (array-like): True labels.\n    predicted_labels (array-like): Predicted labels.\n    \"\"\"\n    # Calculate the confusion matrix\n    conf_matrix = confusion_matrix(true_labels, predicted_labels)\n    # Create a heatmap using seaborn",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "cross_validation_with_confusion_matrix",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def cross_validation_with_confusion_matrix(estimator, X, y, nsplits=10):\n    cv = StratifiedKFold(n_splits=nsplits)\n    # Perform cross-validation\n    predicted = cross_val_predict(estimator, X, y, cv=cv)\n    # Calculate confusion matrix and classification report for each fold\n    for i, (train_idx, test_idx) in enumerate(cv.split(X, y)):\n        X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]\n        y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]\n        # Fit the estimator on training data\n        estimator.fit(X_train, y_train)",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "plot_roc_curve",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def plot_roc_curve(model, X_val, y_val):\n    # Predecir las probabilidades de las clases positivas\n    y_prob = model.predict_proba(X_val)[:, 1]\n    # Calcular la tasa de verdaderos positivos (TPR) y la tasa de falsos positivos (FPR)\n    fpr, tpr, thresholds = roc_curve(y_val, y_prob)\n    # Calcular el área bajo la curva ROC (AUC)\n    auc = roc_auc_score(y_val, y_prob)\n    # Plotear la curva ROC\n    plt.figure(figsize=(8, 6))\n    plt.plot(fpr, tpr, label=f'AUC = {auc:.2f}')",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "generate_roc_auc",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def generate_roc_auc(estimator, X_train, y_train, X_val, y_val):\n    \"\"\"\n    Generate ROC curve and calculate AUC using one-vs-all technique.\n    Parameters:\n    estimator: scikit-learn estimator object\n        The classifier or regressor to use.\n    X_train: array-like, shape (n_samples, n_features)\n        The input samples for training.\n    y_train: array-like, shape (n_samples,)\n        The target values for training.",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "hyperparameter_tuning",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def hyperparameter_tuning(models, X, y):\n    # Almacena los resultados en un DataFrame\n    results = []\n    # Loop sobre los modelos\n    for model_name, config in models.items():\n        print(f\"Tuning hyperparameters for {model_name}\")\n        model = RandomizedSearchCV(config[\"model\"], config[\"params\"], n_iter=50, cv=5, verbose=2, random_state=42)\n        model.fit(X, y)  # Ajusta el modelo con los datos de entrenamiento\n        best_params = model.best_params_\n        best_score = model.best_score_",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "perform_cross_validation",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def perform_cross_validation(models, x_train, y_train, n_splits=8, random_state=42,metric='accuracy'):\n    kfold = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=random_state)\n    cv_results = []\n    for name, model in models.items():\n        cv_results.append(cross_val_score(model, x_train, y_train, scoring=metric, cv=kfold, n_jobs=-1))\n    cv_means = [cv_result.mean() for cv_result in cv_results]\n    cv_std = [cv_result.std() for cv_result in cv_results]\n    cv_df = pd.DataFrame({\"CrossVal_Score_Means\": cv_means, \"CrossValerrors\": cv_std, \"Algorithm\": list(models.keys())})\n    plt.figure(figsize=(10, 7))\n    g = sns.barplot(x=\"CrossVal_Score_Means\", y=\"Algorithm\", data=cv_df, orient=\"h\", palette='cool', ",
         "detail": "src.utils.utils",
         "documentation": {}
     }
