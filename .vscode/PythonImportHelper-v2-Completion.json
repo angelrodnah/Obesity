@@ -1,0 +1,241 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "iqr",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "kurtosis",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "skew",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "norm",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "statsmodels.api",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "statsmodels.api",
+        "description": "statsmodels.api",
+        "detail": "statsmodels.api",
+        "documentation": {}
+    },
+    {
+        "label": "data_report",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def data_report(df):\n    # Sacamos los NOMBRES\n    cols = pd.DataFrame(df.columns.values, columns=[\"COL_N\"])\n    # Sacamos los TIPOS\n    types = pd.DataFrame(df.dtypes.values, columns=[\"DATA_TYPE\"])\n    # Sacamos los MISSINGS\n    percent_missing = round(df.isnull().sum() * 100 / len(df), 2)\n    percent_missing_df = pd.DataFrame(percent_missing.values, columns=[\"MISSINGS (%)\"])\n    # Sacamos los VALORES UNICOS\n    unicos = pd.DataFrame(df.nunique().values, columns=[\"UNIQUE_VALUES\"])",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "drop_cols",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def drop_cols(df_, max_cardi=20, max_miss=30):\n    df = df_.copy()\n    delete_col = []\n    for i in df.columns:\n        missings = df[i].isnull().sum() * 100 / len(df)\n        # Elimina por missings\n        if missings >= max_miss:\n            df.drop(i, 1, inplace=True)\n            continue\n        # Elimina por cardinalidad en variables categoricas",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "outliers_quantile",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def outliers_quantile(df, feature, param=1.5):  \n    iqr_ = iqr(df[feature], nan_policy='omit')\n    q1 = np.nanpercentile(df[feature], 25)\n    q3 = np.nanpercentile(df[feature], 75)\n    th1 = q1 - iqr_*param\n    th2 = q3 + iqr_*param\n    return df[(df[feature] >= th1) & (df[feature] <= th2)].reset_index(drop=True)\ndef outlier_meanSd(df, feature, param=3):   \n    media = df[feature].mean()\n    desEst = df[feature].std()",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "outlier_meanSd",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def outlier_meanSd(df, feature, param=3):   \n    media = df[feature].mean()\n    desEst = df[feature].std()\n    th1 = media - desEst*param\n    th2 = media + desEst*param\n    return df[((df[feature] >= th1) & (df[feature] <= th2))  | (df[feature].isnull())].reset_index(drop=True)\ndef plot_tidy_categorical(df, sel_cols, target, file_output=None):\n    \"\"\"\n    Generate bar plots for each categorical variable,\n    grouped by target variable.",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "plot_tidy_categorical",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def plot_tidy_categorical(df, sel_cols, target, file_output=None):\n    \"\"\"\n    Generate bar plots for each categorical variable,\n    grouped by target variable.\n    Parameters:\n    - df: DataFrame, the input dataset\n    - sel_cols: list, categorical variables\n    - target: str, name of the column containing the target variable\n    Returns:\n    - None (displays the plots)",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "plot_tidy",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def plot_tidy(df, sel_cols, target,file_output=None):\n    \"\"\"\n    Generate kernel density estimation (KDE) plots for each variable,\n    grouped by target variable.\n    Parameters:\n    - df: DataFrame, the input dataset\n    - sel_cols: list, variables used for clustering\n    - target: str, name of the column containing the target variable\n    Returns:\n    - None (displays the plots)",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "reduce_memory_usage",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def reduce_memory_usage(df, verbose=True):\n    numerics = [\"int8\", \"int16\", \"int32\", \"int64\", \"float16\", \"float32\", \"float64\"]\n    start_mem = df.memory_usage().sum() / 1024 ** 2\n    # Excluir las columnas de índice\n    columns_to_exclude = df.index.names if df.index.name else []\n    for col in df.columns:\n        if col in columns_to_exclude:\n            continue\n        col_type = df[col].dtypes\n        if col_type in numerics:",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "plot_kde_histogram_with_stats",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def plot_kde_histogram_with_stats(data, column_name, title, ax=None):\n    # Use provided ax or create a new subplot\n    if ax is None:\n        fig, ax = plt.subplots(figsize=(10, 6))\n    # KDE + Histogram\n    sns.distplot(data[column_name],fit=norm, kde=True, rug=True, ax=ax)\n    ax.set_title(f'KDE + Histogram - {title}')\n    # Verificar si la columna contiene datos numéricos\n    if pd.api.types.is_numeric_dtype(data[column_name].dtype):\n        # Calcular estadísticas solo si la columna contiene datos numéricos",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "box_violin_plot",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def box_violin_plot(data, column, title, ax=None):\n    # Use provided ax or create a new subplot\n    if ax is None:\n        fig, ax = plt.subplots(figsize=(8, 4))\n    # Violin + Boxplot\n    sns.violinplot(data=data, x=column, inner='point', linewidth=0, saturation=0.4, orient='h', ax=ax)\n    sns.boxplot(x=column, data=data, width=0.3, boxprops={'zorder': 2}, ax=ax, orient='h', fliersize=5)\n    # Adjust the plot design\n    ax.set_title(f\"Boxplot + Violin Plot - {title}\")\n    # Get statistics",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "qq_plot",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def qq_plot(data, column_name, title,ax=None):\n    if ax is None:\n        _, ax = plt.subplots(figsize=(8, 4))\n    # Create QQ plot\n    sm.qqplot(data[column_name], line='s', ax=ax)\n    ax.set_title(f\"Quantile-Quantile Plot - {title}\")\n    plt.xlabel(\"Cuantiles teóricos\")\n    plt.ylabel(\"Cuantiles observados\")\ndef plot_distribucion(data, column_name, **kwargs):\n    title = kwargs.get('title', column_name)",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "plot_distribucion",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def plot_distribucion(data, column_name, **kwargs):\n    title = kwargs.get('title', column_name)\n    save_png, filename = kwargs.get('save_png', False), kwargs.get('filename', 'tmp.png')\n    # Create subplots with specified width ratios\n    fig, axs = plt.subplots(1, 3, figsize=(15, 6), gridspec_kw={'width_ratios': [2, 2, 1]})\n    # Loop through the plots and functions\n    for i, plot_function in enumerate([plot_kde_histogram_with_stats, box_violin_plot, qq_plot]):\n        plot_function(data, column_name, title, ax=axs[i])\n    # Adjust the layout of the subplots\n    plt.tight_layout()",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "sim_curtosis",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def sim_curtosis(data, column_name):\n    kurtosis_valor = kurtosis(data[column_name])\n    skewness_valor = skew(data[column_name])\n    if kurtosis_valor > 3:\n        kurtosis_=\"La distribución es leptocúrtica, lo que sugiere colas pesadas y picos agudos.\"\n    elif kurtosis_valor < 3:\n        kurtosis_=\"La distribución es platicúrtica, lo que sugiere colas ligeras y un pico achatado.\"\n    else:\n        kurtosis_=\"La distribución es mesocúrtica, similar a una distribución normal.\"\n    if skewness_valor > 0:",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "plot_horizontal_catplot",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def plot_horizontal_catplot(df, catcols, diccionario_columnas=None, diccionario_valores=None,\n                            save_png=False, filename='tmp.png'):\n    \"\"\"\n    Genera gráficos Seaborn para la frecuencia de valores únicos en las columnas categóricas del DataFrame.\n    Los gráficos se organizan en filas y las categorías se ordenan por porcentaje descendente.\n    El número de valores NaN o nulos se muestra en el título de cada gráfico.\n    Parameters:\n    - df: DataFrame de pandas\n    - catcols: Lista de columnas categóricas\n    - diccionario_columnas: Diccionario para decodificar nombres de columnas (opcional)",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "plot_analysis",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def plot_analysis(data, target, col):\n    col_mean = []\n    for each in df[target].unique():\n        x = data[data[target] == each]\n        mean = x[col].mean()\n        col_mean.append(mean)\n    plt.figure(figsize=(8,6))\n    plt.subplot(2,2,1)\n    plt.hist(data[col], color=\"lightgreen\")\n    plt.xlabel(col)",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "sqrt_transform",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def sqrt_transform(X):\n    return np.sqrt(X)\ndef log_transform(X):\n    return np.log1p(X)\ndef classify_distributions(df, threshold=0.05):\n    \"\"\"\n    Clasifica las distribuciones de las columnas numéricas del DataFrame en una de las siguientes categorías:\n    - 'normal': si la distribución se ajusta a una distribución normal según el test de Shapiro-Wilk.\n    - 'positive_increasing': si la distribución es estrictamente creciente positiva.\n    - 'positive_decreasing': si la distribución es estrictamente decreciente positiva.",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "log_transform",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def log_transform(X):\n    return np.log1p(X)\ndef classify_distributions(df, threshold=0.05):\n    \"\"\"\n    Clasifica las distribuciones de las columnas numéricas del DataFrame en una de las siguientes categorías:\n    - 'normal': si la distribución se ajusta a una distribución normal según el test de Shapiro-Wilk.\n    - 'positive_increasing': si la distribución es estrictamente creciente positiva.\n    - 'positive_decreasing': si la distribución es estrictamente decreciente positiva.\n    - 'rectangular': si la distribución es rectangular.\n    - 'skewed_left': si la distribución tiene sesgo a la izquierda.",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "classify_distributions",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def classify_distributions(df, threshold=0.05):\n    \"\"\"\n    Clasifica las distribuciones de las columnas numéricas del DataFrame en una de las siguientes categorías:\n    - 'normal': si la distribución se ajusta a una distribución normal según el test de Shapiro-Wilk.\n    - 'positive_increasing': si la distribución es estrictamente creciente positiva.\n    - 'positive_decreasing': si la distribución es estrictamente decreciente positiva.\n    - 'rectangular': si la distribución es rectangular.\n    - 'skewed_left': si la distribución tiene sesgo a la izquierda.\n    - 'skewed_right': si la distribución tiene sesgo a la derecha.\n    - 'bimodal': si la distribución tiene dos modas.",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "selvars_boruta",
+        "kind": 2,
+        "importPath": "src.utils.utils",
+        "description": "src.utils.utils",
+        "peekOfCode": "def selvars_boruta(df,target):\n    Feature_Selector = BorutaShap(importance_measure='shap',\n                                classification=True)\n    Feature_Selector.fit(X=df, y=df[target], n_trials=100, random_state=0)\n    Feature_Selector.TentativeRoughFix()\n    Feature_Selector.plot(X_size=8, figsize=(20,8),\n                y_scale='log', which_features='all')\n    selvars=sorted(list(Feature_Selector.Subset().columns))\n    return selvars",
+        "detail": "src.utils.utils",
+        "documentation": {}
+    }
+]
