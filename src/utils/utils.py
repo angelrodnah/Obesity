@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+from scipy.stats import skew, kurtosis
+from scipy.stats import shapiro
+from BorutaShap import BorutaShap
 
 def data_report(df):
     # Sacamos los NOMBRES
@@ -414,7 +417,7 @@ def plot_horizontal_catplot(df, catcols, diccionario_columnas=None, diccionario_
 def plot_analysis(data, target, col):
     col_mean = []
 
-    for each in df[target].unique():
+    for each in data[target].unique():
         x = data[data[target] == each]
         mean = x[col].mean()
         col_mean.append(mean)
@@ -431,7 +434,7 @@ def plot_analysis(data, target, col):
     plt.title(f"{col} Distplot", color="black", fontweight='bold', fontsize=6)
     
     plt.subplot(2,2,3)
-    sns.barplot(x=df[target].unique(), y=col_mean, palette="Greens")
+    sns.barplot(x=data[target].unique(), y=col_mean, palette="Greens")
     plt.title(f"The average value of {col} by {target}", color="black", fontweight='bold', fontsize=6)
     plt.xlabel(target)
     plt.ylabel(f"{col} mean")
@@ -519,11 +522,11 @@ def classify_distributions(df, threshold=0.05):
 
     return dist_class
 
-def selvars_boruta(df,target):
+def selvars_boruta(data,ytarget,isclass=True,n_trials=100):
     
     Feature_Selector = BorutaShap(importance_measure='shap',
-                                classification=True)
-    Feature_Selector.fit(X=df, y=df[target], n_trials=100, random_state=0)
+                                classification=isclass)
+    Feature_Selector.fit(X=data, y=ytarget, n_trials=n_trials, random_state=0)
     Feature_Selector.TentativeRoughFix()
     Feature_Selector.plot(X_size=8, figsize=(20,8),
                 y_scale='log', which_features='all')

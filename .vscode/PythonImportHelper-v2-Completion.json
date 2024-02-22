@@ -36,6 +36,30 @@
         "documentation": {}
     },
     {
+        "label": "skew",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "kurtosis",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "shapiro",
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "isExtraImport": true,
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
         "label": "iqr",
         "importPath": "scipy.stats",
         "description": "scipy.stats",
@@ -81,6 +105,14 @@
         "description": "scipy.stats",
         "isExtraImport": true,
         "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
+        "label": "BorutaShap",
+        "importPath": "BorutaShap",
+        "description": "BorutaShap",
+        "isExtraImport": true,
+        "detail": "BorutaShap",
         "documentation": {}
     },
     {
@@ -310,7 +342,7 @@
         "kind": 2,
         "importPath": "src.utils.utils",
         "description": "src.utils.utils",
-        "peekOfCode": "def plot_analysis(data, target, col):\n    col_mean = []\n    for each in df[target].unique():\n        x = data[data[target] == each]\n        mean = x[col].mean()\n        col_mean.append(mean)\n    plt.figure(figsize=(8,6))\n    plt.subplot(2,2,1)\n    plt.hist(data[col], color=\"lightgreen\")\n    plt.xlabel(col)",
+        "peekOfCode": "def plot_analysis(data, target, col):\n    col_mean = []\n    for each in data[target].unique():\n        x = data[data[target] == each]\n        mean = x[col].mean()\n        col_mean.append(mean)\n    plt.figure(figsize=(8,6))\n    plt.subplot(2,2,1)\n    plt.hist(data[col], color=\"lightgreen\")\n    plt.xlabel(col)",
         "detail": "src.utils.utils",
         "documentation": {}
     },
@@ -346,7 +378,7 @@
         "kind": 2,
         "importPath": "src.utils.utils",
         "description": "src.utils.utils",
-        "peekOfCode": "def selvars_boruta(df,target):\n    Feature_Selector = BorutaShap(importance_measure='shap',\n                                classification=True)\n    Feature_Selector.fit(X=df, y=df[target], n_trials=100, random_state=0)\n    Feature_Selector.TentativeRoughFix()\n    Feature_Selector.plot(X_size=8, figsize=(20,8),\n                y_scale='log', which_features='all')\n    selvars=sorted(list(Feature_Selector.Subset().columns))\n    return selvars\nimport seaborn as sns",
+        "peekOfCode": "def selvars_boruta(data,ytarget,isclass=True,n_trials=100):\n    Feature_Selector = BorutaShap(importance_measure='shap',\n                                classification=isclass)\n    Feature_Selector.fit(X=data, y=ytarget, n_trials=n_trials, random_state=0)\n    Feature_Selector.TentativeRoughFix()\n    Feature_Selector.plot(X_size=8, figsize=(20,8),\n                y_scale='log', which_features='all')\n    selvars=sorted(list(Feature_Selector.Subset().columns))\n    return selvars\nimport seaborn as sns",
         "detail": "src.utils.utils",
         "documentation": {}
     },
