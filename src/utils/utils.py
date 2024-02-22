@@ -685,14 +685,20 @@ def generate_roc_auc(estimator, X_train, y_train, X_val, y_val):
 
 from sklearn.model_selection import RandomizedSearchCV
 from scipy.stats import uniform, randint
-def hyperparameter_tuning(models, X, y):
+from tqdm import tqdm
+
+
+
+from tqdm import tqdm
+
+def hyperparameter_tuning(models, X, y, scoring='accuracy'):
     # Almacena los resultados en un DataFrame
     results = []
 
-    # Loop sobre los modelos
-    for model_name, config in models.items():
-        print(f"Tuning hyperparameters for {model_name}")
-        model = RandomizedSearchCV(config["model"], config["params"], n_iter=50, cv=5, verbose=2, random_state=42)
+    # Loop sobre los modelos con tqdm para mostrar una barra de progreso
+    for model_name, config in tqdm(models.items(), desc="Hyperparameter Tuning"):
+        model = RandomizedSearchCV(config["model"], config["params"], n_iter=50, cv=5, scoring=scoring,
+                                   random_state=42)
         model.fit(X, y)  # Ajusta el modelo con los datos de entrenamiento
         best_params = model.best_params_
         best_score = model.best_score_
@@ -703,19 +709,19 @@ def hyperparameter_tuning(models, X, y):
 
     return results_df
 
+
+
 from sklearn.model_selection import StratifiedKFold,cross_val_score
 
-def perform_cross_validation(models, x_train, y_train, n_splits=8, random_state=42,metric='accuracy'):
+def perform_cross_validation(models, x_train, y_train, n_splits=8, random_state=42, metric='accuracy'):
     kfold = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=random_state)
     
     cv_results = []
     for name, model in models.items():
-        cv_results.append(cross_val_score(model, x_train, y_train, scoring=metric, cv=kfold, n_jobs=-1))
+        cv_scores = cross_val_score(model, x_train, y_train, scoring=metric, cv=kfold, n_jobs=-1)
+        cv_results.append(np.mean(cv_scores))
     
-    cv_means = [cv_result.mean() for cv_result in cv_results]
-    cv_std = [cv_result.std() for cv_result in cv_results]
-    
-    cv_df = pd.DataFrame({"CrossVal_Score_Means": cv_means, "CrossValerrors": cv_std, "Algorithm": list(models.keys())})
+    cv_df = pd.DataFrame({"CrossVal_Score_Means": cv_results, "Algorithm": list(models.keys())})
     
     plt.figure(figsize=(10, 7))
     g = sns.barplot(x="CrossVal_Score_Means", y="Algorithm", data=cv_df, orient="h", palette='cool', 

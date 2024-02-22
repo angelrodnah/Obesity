@@ -221,6 +221,22 @@
         "documentation": {}
     },
     {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
         "label": "data_report",
         "kind": 2,
         "importPath": "src.utils.utils",
@@ -423,7 +439,7 @@
         "kind": 2,
         "importPath": "src.utils.utils",
         "description": "src.utils.utils",
-        "peekOfCode": "def hyperparameter_tuning(models, X, y):\n    # Almacena los resultados en un DataFrame\n    results = []\n    # Loop sobre los modelos\n    for model_name, config in models.items():\n        print(f\"Tuning hyperparameters for {model_name}\")\n        model = RandomizedSearchCV(config[\"model\"], config[\"params\"], n_iter=50, cv=5, verbose=2, random_state=42)\n        model.fit(X, y)  # Ajusta el modelo con los datos de entrenamiento\n        best_params = model.best_params_\n        best_score = model.best_score_",
+        "peekOfCode": "def hyperparameter_tuning(models, X, y, scoring='accuracy'):\n    # Almacena los resultados en un DataFrame\n    results = []\n    # Loop sobre los modelos con tqdm para mostrar una barra de progreso\n    for model_name, config in tqdm(models.items(), desc=\"Hyperparameter Tuning\"):\n        model = RandomizedSearchCV(config[\"model\"], config[\"params\"], n_iter=50, cv=5, scoring=scoring,\n                                   random_state=42)\n        model.fit(X, y)  # Ajusta el modelo con los datos de entrenamiento\n        best_params = model.best_params_\n        best_score = model.best_score_",
         "detail": "src.utils.utils",
         "documentation": {}
     },
@@ -432,7 +448,7 @@
         "kind": 2,
         "importPath": "src.utils.utils",
         "description": "src.utils.utils",
-        "peekOfCode": "def perform_cross_validation(models, x_train, y_train, n_splits=8, random_state=42,metric='accuracy'):\n    kfold = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=random_state)\n    cv_results = []\n    for name, model in models.items():\n        cv_results.append(cross_val_score(model, x_train, y_train, scoring=metric, cv=kfold, n_jobs=-1))\n    cv_means = [cv_result.mean() for cv_result in cv_results]\n    cv_std = [cv_result.std() for cv_result in cv_results]\n    cv_df = pd.DataFrame({\"CrossVal_Score_Means\": cv_means, \"CrossValerrors\": cv_std, \"Algorithm\": list(models.keys())})\n    plt.figure(figsize=(10, 7))\n    g = sns.barplot(x=\"CrossVal_Score_Means\", y=\"Algorithm\", data=cv_df, orient=\"h\", palette='cool', ",
+        "peekOfCode": "def perform_cross_validation(models, x_train, y_train, n_splits=8, random_state=42, metric='accuracy'):\n    kfold = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=random_state)\n    cv_results = []\n    for name, model in models.items():\n        cv_scores = cross_val_score(model, x_train, y_train, scoring=metric, cv=kfold, n_jobs=-1)\n        cv_results.append(np.mean(cv_scores))\n    cv_df = pd.DataFrame({\"CrossVal_Score_Means\": cv_results, \"Algorithm\": list(models.keys())})\n    plt.figure(figsize=(10, 7))\n    g = sns.barplot(x=\"CrossVal_Score_Means\", y=\"Algorithm\", data=cv_df, orient=\"h\", palette='cool', \n                    edgecolor=\"black\", linewidth=1)",
         "detail": "src.utils.utils",
         "documentation": {}
     }
