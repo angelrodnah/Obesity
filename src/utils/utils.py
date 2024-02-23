@@ -731,3 +731,36 @@ def perform_cross_validation(models, x_train, y_train, n_splits=8, random_state=
     plt.show()
     
     return cv_df
+
+from scipy import stats
+from sklearn.model_selection import KFold
+
+def test_distribution_cv(dataframe, perfrac=0.01, columns=None, n_trials=10):
+    sample = X_train.sample(frac=perfrac)
+    kf = KFold(n_splits=n_trials, shuffle=True, random_state=42)
+    results = []
+
+    if columns is None:
+        columns = dataframe.columns
+
+    for column_name in columns:
+        equal_distributions = 0
+
+        for train_index, test_index in kf.split(dataframe):
+            train_data = dataframe.iloc[train_index]
+            test_data = sample.sample(len(train_data), replace=True)
+
+            # Realizar la prueba de Kolmogorov-Smirnov
+            statistic, p_value = stats.ks_2samp(train_data[column_name], test_data[column_name])
+
+            # Interpretar el resultado
+            if p_value > 0.05:
+                equal_distributions += 1  # Contar distribuciones iguales
+
+        # Calcular el porcentaje de distribuciones iguales
+        percent_equal_distributions = (equal_distributions / n_trials) * 100
+        results.append({"Columna": column_name, f"Perc_igual_dist_"+str(perfrac): percent_equal_distributions})
+
+    # Convertir la lista de resultados en un DataFrame
+    results_df = pd.DataFrame(results)
+    return results_df
