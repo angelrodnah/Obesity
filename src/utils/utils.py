@@ -764,3 +764,14 @@ def test_distribution_cv(dataframe, perfrac=0.01, columns=None, n_trials=10):
     # Convertir la lista de resultados en un DataFrame
     results_df = pd.DataFrame(results)
     return results_df
+def get_input_columns_pipeline(pipeline):
+    input_columns = []
+    column_transformer=pipeline.named_steps['preprocessor']   
+    # Iterar sobre las transformaciones dentro del ColumnTransformer
+    for _, _, columns in column_transformer.transformers_:
+        # Si el transformer es 'passthrough', agregar las columnas originales
+        if columns == 'passthrough':
+            input_columns.extend(columns)
+        else:
+            input_columns.extend(columns)
+    return input_columns

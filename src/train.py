@@ -477,6 +477,4 @@ if __name__ == '__main__':
         pickle.dump(stacking_model, f)
 
 
-##########################################################################
-# This file was converted using nb2py: https://github.com/BardiaKh/nb2py #
-##########################################################################
+
