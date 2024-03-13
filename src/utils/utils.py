@@ -736,7 +736,7 @@ from scipy import stats
 from sklearn.model_selection import KFold
 
 def test_distribution_cv(dataframe, perfrac=0.01, columns=None, n_trials=10):
-    sample = X_train.sample(frac=perfrac)
+    sample = dataframe.sample(frac=perfrac)
     kf = KFold(n_splits=n_trials, shuffle=True, random_state=42)
     results = []
 
