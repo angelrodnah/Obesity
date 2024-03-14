@@ -1,920 +1,11 @@
 [
     {
-        "label": "sqlite3",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sqlite3",
-        "description": "sqlite3",
-        "detail": "sqlite3",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "SimpleImputer",
-        "importPath": "sklearn.impute",
-        "description": "sklearn.impute",
-        "isExtraImport": true,
-        "detail": "sklearn.impute",
-        "documentation": {}
-    },
-    {
-        "label": "OneHotEncoder",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "StandardScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "RobustScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "LabelBinarizer",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "OrdinalEncoder",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "FunctionTransformer",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "OneHotEncoder",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "StandardScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "FunctionTransformer",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "PowerTransformer",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "ColumnTransformer",
-        "importPath": "sklearn.compose",
-        "description": "sklearn.compose",
-        "isExtraImport": true,
-        "detail": "sklearn.compose",
-        "documentation": {}
-    },
-    {
-        "label": "ColumnTransformer",
-        "importPath": "sklearn.compose",
-        "description": "sklearn.compose",
-        "isExtraImport": true,
-        "detail": "sklearn.compose",
-        "documentation": {}
-    },
-    {
-        "label": "ColumnTransformer",
-        "importPath": "sklearn.compose",
-        "description": "sklearn.compose",
-        "isExtraImport": true,
-        "detail": "sklearn.compose",
-        "documentation": {}
-    },
-    {
-        "label": "FeatureUnion",
-        "importPath": "sklearn.pipeline",
-        "description": "sklearn.pipeline",
-        "isExtraImport": true,
-        "detail": "sklearn.pipeline",
-        "documentation": {}
-    },
-    {
-        "label": "Pipeline",
-        "importPath": "sklearn.pipeline",
-        "description": "sklearn.pipeline",
-        "isExtraImport": true,
-        "detail": "sklearn.pipeline",
-        "documentation": {}
-    },
-    {
-        "label": "Pipeline",
-        "importPath": "sklearn.pipeline",
-        "description": "sklearn.pipeline",
-        "isExtraImport": true,
-        "detail": "sklearn.pipeline",
-        "documentation": {}
-    },
-    {
-        "label": "Pipeline",
-        "importPath": "sklearn.pipeline",
-        "description": "sklearn.pipeline",
-        "isExtraImport": true,
-        "detail": "sklearn.pipeline",
-        "documentation": {}
-    },
-    {
         "label": "pandas",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "pandas",
         "description": "pandas",
         "detail": "pandas",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "datetime",
-        "description": "datetime",
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "pickle",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pickle",
-        "description": "pickle",
-        "detail": "pickle",
-        "documentation": {}
-    },
-    {
-        "label": "BaseModel",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Field",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "confloat",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "conint",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "constr",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "custom_calculus",
-        "importPath": "src.obesity_etl_functions",
-        "description": "src.obesity_etl_functions",
-        "isExtraImport": true,
-        "detail": "src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "load_clean_transform",
-        "importPath": "src.obesity_etl_functions",
-        "description": "src.obesity_etl_functions",
-        "isExtraImport": true,
-        "detail": "src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "calc_age_range",
-        "importPath": "src.obesity_etl_functions",
-        "description": "src.obesity_etl_functions",
-        "isExtraImport": true,
-        "detail": "src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "generate_kmodes_clusters",
-        "importPath": "src.obesity_kmodes_functions",
-        "description": "src.obesity_kmodes_functions",
-        "isExtraImport": true,
-        "detail": "src.obesity_kmodes_functions",
-        "documentation": {}
-    },
-    {
-        "label": "src.data_common_functions",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "src.data_common_functions",
-        "description": "src.data_common_functions",
-        "detail": "src.data_common_functions",
-        "documentation": {}
-    },
-    {
-        "label": "select_data",
-        "importPath": "src.data_common_functions",
-        "description": "src.data_common_functions",
-        "isExtraImport": true,
-        "detail": "src.data_common_functions",
-        "documentation": {}
-    },
-    {
-        "label": "read_file",
-        "importPath": "src.data_common_functions",
-        "description": "src.data_common_functions",
-        "isExtraImport": true,
-        "detail": "src.data_common_functions",
-        "documentation": {}
-    },
-    {
-        "label": "select_data",
-        "importPath": "src.data_common_functions",
-        "description": "src.data_common_functions",
-        "isExtraImport": true,
-        "detail": "src.data_common_functions",
-        "documentation": {}
-    },
-    {
-        "label": "CURRENT_DIR",
-        "importPath": "src.bd",
-        "description": "src.bd",
-        "isExtraImport": true,
-        "detail": "src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "URL_DB",
-        "importPath": "src.bd",
-        "description": "src.bd",
-        "isExtraImport": true,
-        "detail": "src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "open_connection",
-        "importPath": "src.bd",
-        "description": "src.bd",
-        "isExtraImport": true,
-        "detail": "src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "close_connection",
-        "importPath": "src.bd",
-        "description": "src.bd",
-        "isExtraImport": true,
-        "detail": "src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "exec_query_result",
-        "importPath": "src.bd",
-        "description": "src.bd",
-        "isExtraImport": true,
-        "detail": "src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "exec_query",
-        "importPath": "src.bd",
-        "description": "src.bd",
-        "isExtraImport": true,
-        "detail": "src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "CURRENT_DIR",
-        "importPath": "src.bd",
-        "description": "src.bd",
-        "isExtraImport": true,
-        "detail": "src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "KModes",
-        "importPath": "kmodes.kmodes",
-        "description": "kmodes.kmodes",
-        "isExtraImport": true,
-        "detail": "kmodes.kmodes",
-        "documentation": {}
-    },
-    {
-        "label": "silhouette_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "calinski_harabasz_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "davies_bouldin_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "confusion_matrix",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "confusion_matrix",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "classification_report",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "roc_curve",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "roc_auc_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "roc_curve",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "auc",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "adjusted_rand_score",
-        "importPath": "sklearn.metrics.cluster",
-        "description": "sklearn.metrics.cluster",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics.cluster",
-        "documentation": {}
-    },
-    {
-        "label": "FastAPI",
-        "importPath": "fastapi",
-        "description": "fastapi",
-        "isExtraImport": true,
-        "detail": "fastapi",
-        "documentation": {}
-    },
-    {
-        "label": "src.obesity",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "src.obesity",
-        "description": "src.obesity",
-        "detail": "src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "streamlit",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "streamlit",
-        "description": "streamlit",
-        "detail": "streamlit",
-        "documentation": {}
-    },
-    {
-        "label": "page_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "sidebar_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "page_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "sidebar_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "page_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "sidebar_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "page_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "COEF_SIL_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "DB_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "CH_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "N_INIT_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "RDM_STE_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "page_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "sidebar_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "COLS_CLUSTER_LABEL",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "page_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "sidebar_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "page_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "sidebar_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "LABEL_SIZE",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "TITLE_SIZE",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "LABEL_SIZE",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "TITLE_SIZE",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "page_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "sidebar_config",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "BMI_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "CC_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "RCC_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "ICT_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "OBESITY_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "COMMENTS_HELP",
-        "importPath": "src.app_config",
-        "description": "src.app_config",
-        "isExtraImport": true,
-        "detail": "src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "io",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "io",
-        "description": "io",
-        "detail": "io",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_data_etl",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_return_data",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_clusters_kmodes",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_return_data",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_return_data",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_return_nb_clusters",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_update_var",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_data_etl",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_return_data",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_data_etl",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_return_data",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_prediction",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "save_obesity_info",
-        "importPath": "src.call_api",
-        "description": "src.call_api",
-        "isExtraImport": true,
-        "detail": "src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "src.eda_functions",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "src.eda_functions",
-        "description": "src.eda_functions",
-        "detail": "src.eda_functions",
-        "documentation": {}
-    },
-    {
-        "label": "src.chart_common_functions",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "src.chart_common_functions",
-        "description": "src.chart_common_functions",
-        "detail": "src.chart_common_functions",
-        "documentation": {}
-    },
-    {
-        "label": "src.clustering_functions",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "src.clustering_functions",
-        "description": "src.clustering_functions",
-        "detail": "src.clustering_functions",
-        "documentation": {}
-    },
-    {
-        "label": "requests",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "requests",
-        "description": "requests",
-        "detail": "requests",
-        "documentation": {}
-    },
-    {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
         "documentation": {}
     },
     {
@@ -927,21 +18,47 @@
         "documentation": {}
     },
     {
-        "label": "matplotlib.pyplot",
+        "label": "streamlit",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "matplotlib.pyplot",
-        "description": "matplotlib.pyplot",
-        "detail": "matplotlib.pyplot",
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
         "documentation": {}
     },
     {
-        "label": "matplotlib.ticker",
+        "label": "plotly.express",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "matplotlib.ticker",
-        "description": "matplotlib.ticker",
-        "detail": "matplotlib.ticker",
+        "importPath": "plotly.express",
+        "description": "plotly.express",
+        "detail": "plotly.express",
+        "documentation": {}
+    },
+    {
+        "label": "joblib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "joblib",
+        "description": "joblib",
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
         "documentation": {}
     },
     {
@@ -954,20 +71,12 @@
         "documentation": {}
     },
     {
-        "label": "altair",
+        "label": "matplotlib.pyplot",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "altair",
-        "description": "altair",
-        "detail": "altair",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
         "documentation": {}
     },
     {
@@ -1060,6 +169,62 @@
         "documentation": {}
     },
     {
+        "label": "confusion_matrix",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "confusion_matrix",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "classification_report",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "roc_curve",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "roc_auc_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "roc_curve",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "auc",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
         "label": "cross_val_predict",
         "importPath": "sklearn.model_selection",
         "description": "sklearn.model_selection",
@@ -1140,15 +305,6 @@
         "documentation": {}
     },
     {
-        "label": "subprocess",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "subprocess",
-        "description": "subprocess",
-        "detail": "subprocess",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -1164,6 +320,63 @@
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "pickle",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pickle",
+        "description": "pickle",
+        "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "ColumnTransformer",
+        "importPath": "sklearn.compose",
+        "description": "sklearn.compose",
+        "isExtraImport": true,
+        "detail": "sklearn.compose",
+        "documentation": {}
+    },
+    {
+        "label": "OneHotEncoder",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "StandardScaler",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "FunctionTransformer",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "PowerTransformer",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "sklearn.pipeline",
+        "description": "sklearn.pipeline",
+        "isExtraImport": true,
+        "detail": "sklearn.pipeline",
         "documentation": {}
     },
     {
@@ -1232,840 +445,264 @@
         "documentation": {}
     },
     {
-        "label": "open_connection",
-        "kind": 2,
-        "importPath": "src.api.src.bd",
-        "description": "src.api.src.bd",
-        "peekOfCode": "def open_connection():\n    conn = sqlite3.connect(URL_DB)\n    return conn\ndef close_connection(conn):\n    conn.commit()\n    conn.close()\ndef exec_query_result(query, conn, varios=True):\n    cur = conn.cursor()\n    cur.execute(query)\n    if varios:",
-        "detail": "src.api.src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "close_connection",
-        "kind": 2,
-        "importPath": "src.api.src.bd",
-        "description": "src.api.src.bd",
-        "peekOfCode": "def close_connection(conn):\n    conn.commit()\n    conn.close()\ndef exec_query_result(query, conn, varios=True):\n    cur = conn.cursor()\n    cur.execute(query)\n    if varios:\n        return cur.fetchall()\n    else: \n        return cur.fetchone()",
-        "detail": "src.api.src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "exec_query_result",
-        "kind": 2,
-        "importPath": "src.api.src.bd",
-        "description": "src.api.src.bd",
-        "peekOfCode": "def exec_query_result(query, conn, varios=True):\n    cur = conn.cursor()\n    cur.execute(query)\n    if varios:\n        return cur.fetchall()\n    else: \n        return cur.fetchone()\ndef exec_query(query, conn):\n    cur = conn.cursor()\n    cur.execute(query)",
-        "detail": "src.api.src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "exec_query",
-        "kind": 2,
-        "importPath": "src.api.src.bd",
-        "description": "src.api.src.bd",
-        "peekOfCode": "def exec_query(query, conn):\n    cur = conn.cursor()\n    cur.execute(query)\n    conn.commit()",
-        "detail": "src.api.src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "CURRENT_DIR",
-        "kind": 5,
-        "importPath": "src.api.src.bd",
-        "description": "src.api.src.bd",
-        "peekOfCode": "CURRENT_DIR = Path.cwd()\nBASE_DIR = Path(CURRENT_DIR).parent\nURL_DB = f\"{CURRENT_DIR / 'data/db/antropometry'}\"\ndef open_connection():\n    conn = sqlite3.connect(URL_DB)\n    return conn\ndef close_connection(conn):\n    conn.commit()\n    conn.close()\ndef exec_query_result(query, conn, varios=True):",
-        "detail": "src.api.src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "BASE_DIR",
-        "kind": 5,
-        "importPath": "src.api.src.bd",
-        "description": "src.api.src.bd",
-        "peekOfCode": "BASE_DIR = Path(CURRENT_DIR).parent\nURL_DB = f\"{CURRENT_DIR / 'data/db/antropometry'}\"\ndef open_connection():\n    conn = sqlite3.connect(URL_DB)\n    return conn\ndef close_connection(conn):\n    conn.commit()\n    conn.close()\ndef exec_query_result(query, conn, varios=True):\n    cur = conn.cursor()",
-        "detail": "src.api.src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "URL_DB",
-        "kind": 5,
-        "importPath": "src.api.src.bd",
-        "description": "src.api.src.bd",
-        "peekOfCode": "URL_DB = f\"{CURRENT_DIR / 'data/db/antropometry'}\"\ndef open_connection():\n    conn = sqlite3.connect(URL_DB)\n    return conn\ndef close_connection(conn):\n    conn.commit()\n    conn.close()\ndef exec_query_result(query, conn, varios=True):\n    cur = conn.cursor()\n    cur.execute(query)",
-        "detail": "src.api.src.bd",
-        "documentation": {}
-    },
-    {
-        "label": "read_file",
-        "kind": 2,
-        "importPath": "src.api.src.data_common_functions",
-        "description": "src.api.src.data_common_functions",
-        "peekOfCode": "def read_file(file, sep=','):\n    df = pd.DataFrame()\n    file_type = file[file.index('.') - len(file) + 1:]\n    print(file_type)\n    if (file_type == 'csv'):\n        df = pd.read_csv(file, sep=sep)\n    elif (file_type == 'parquet'):\n        df = pd.read_parquet(file, engine='fastparquet')\n    elif (file_type == 'xlsx' or file_type == 'xls'):\n        df = pd.read_excel(file)",
-        "detail": "src.api.src.data_common_functions",
-        "documentation": {}
-    },
-    {
-        "label": "select_data",
-        "kind": 2,
-        "importPath": "src.api.src.data_common_functions",
-        "description": "src.api.src.data_common_functions",
-        "peekOfCode": "def select_data(df, col_drop=[], col_leave=[]):\n    if col_leave:\n        df = df.loc[:,col_leave]\n    if col_drop:\n        df.drop(col_drop, axis=1, inplace=True)\n    return df\n# Crea y transforma el DF para utilizar los algoritmos\n# con las variables: age_range, gender, height, weight, waist_circum_preferred y hip_circum\ndef transform_df(df, columns_to_encode, columns_to_scale, columns_to_pass):\n    ordinal_cols = ( ['age_range'] if 'age_range' in columns_to_encode else [] )",
-        "detail": "src.api.src.data_common_functions",
-        "documentation": {}
-    },
-    {
-        "label": "transform_df",
-        "kind": 2,
-        "importPath": "src.api.src.data_common_functions",
-        "description": "src.api.src.data_common_functions",
-        "peekOfCode": "def transform_df(df, columns_to_encode, columns_to_scale, columns_to_pass):\n    ordinal_cols = ( ['age_range'] if 'age_range' in columns_to_encode else [] )\n    columns_to_encode = ( ['gender'] if 'gender' in columns_to_encode else [] )\n    ordinal_encoding = ColumnTransformer([\n        (\n            'ordinal_encoding',\n            OrdinalEncoder(categories=[['17-25', '26-35', '36-45', '46-55', '56-65', '66-100']]),\n            ordinal_cols\n        )\n    ])",
-        "detail": "src.api.src.data_common_functions",
-        "documentation": {}
-    },
-    {
-        "label": "PersonObesity",
-        "kind": 6,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "class PersonObesity(BaseModel):\n    age: int = 18\n    gender: str = Field(..., description=\"Género de la persona\", pattern=\"^(female|male)$\")\n    weight: confloat(gt=0) \n    height: confloat(gt=0)\n    waist_circum_preferred: confloat(gt=0) \n    hip_circum: confloat(gt=0) \nclass PredictedObesityTable(BaseModel):\n    age: float\n    age_range: constr(regex='^(17-25|26-35|36-45|46-55|56-65|66-100)$')",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "PredictedObesityTable",
-        "kind": 6,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "class PredictedObesityTable(BaseModel):\n    age: float\n    age_range: constr(regex='^(17-25|26-35|36-45|46-55|56-65|66-100)$')\n    gender:  str = Field(..., description=\"Género de la persona\", pattern=\"^(female|male)$\")\n    height: float\n    weight: float\n    waist_circum_preferred: float\n    hip_circum: float\n    gender_bin: int\n    bmi: float",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "ObesityTable",
-        "kind": 6,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "class ObesityTable(BaseModel):\n    age: float\n    age_range: constr(regex='^(17-25|26-35|36-45|46-55|56-65|66-100)$')\n    gender:  str = Field(..., description=\"Género de la persona\", pattern=\"^(female|male)$\")\n    height: float\n    weight: float\n    waist_circum_preferred: float\n    hip_circum: float\n    gender_bin: int\n    bmi: float",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "ParamsKModes",
-        "kind": 6,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "class ParamsKModes(BaseModel):\n    n_clusters: conint(gt=1)\n    n_init: conint(gt=0)\n    random_state: conint(gt=0)\nclass ParamsObesity(BaseModel):\n    obesity: Optional[int] = None\n    cluster: Optional[int] = None\n    age_range: Optional[str] = None\n    bmi: Optional[int] = None\n    cc: Optional[int] = None",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "ParamsObesity",
-        "kind": 6,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "class ParamsObesity(BaseModel):\n    obesity: Optional[int] = None\n    cluster: Optional[int] = None\n    age_range: Optional[str] = None\n    bmi: Optional[int] = None\n    cc: Optional[int] = None\n    rcc: Optional[int] = None\n    ict: Optional[int] = None\ndef save_data_obesity(df, table, repĺace=True):\n    conn = open_connection()",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "save_data_obesity",
-        "kind": 2,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "def save_data_obesity(df, table, repĺace=True):\n    conn = open_connection()\n    action = ('replace' if repĺace else 'append') \n    df.to_sql(table, conn, if_exists=action, index=False)\n    close_connection(conn)\ndef update_data_obesity(query):\n    conn = open_connection()\n    exec_query(query, conn)\n    close_connection(conn)\ndef return_data_obesity():",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "update_data_obesity",
-        "kind": 2,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "def update_data_obesity(query):\n    conn = open_connection()\n    exec_query(query, conn)\n    close_connection(conn)\ndef return_data_obesity():\n    conn = open_connection()\n    query = f'SELECT * FROM obesity'\n    result = pd.read_sql_query(query, conn)\n    #result = exec_query_result(query, conn, True)\n    close_connection(conn)",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "return_data_obesity",
-        "kind": 2,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "def return_data_obesity():\n    conn = open_connection()\n    query = f'SELECT * FROM obesity'\n    result = pd.read_sql_query(query, conn)\n    #result = exec_query_result(query, conn, True)\n    close_connection(conn)\n    return result\ndef return_number_clusters():\n    conn = open_connection()\n    query = f'SELECT MAX(cluster) + 1 FROM obesity'",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "return_number_clusters",
-        "kind": 2,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "def return_number_clusters():\n    conn = open_connection()\n    query = f'SELECT MAX(cluster) + 1 FROM obesity'\n    result = exec_query_result(query, conn, False)\n    close_connection(conn)\n    return result[0]\ndef make_obesity_prediction(person: PersonObesity):\n    person = person.dict()\n    df = pd.DataFrame([person])\n    df_transformed = custom_calculus(df)",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "make_obesity_prediction",
-        "kind": 2,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "def make_obesity_prediction(person: PersonObesity):\n    person = person.dict()\n    df = pd.DataFrame([person])\n    df_transformed = custom_calculus(df)\n    cols_to_leave = ['age', 'gender_bin', 'obesity_cc', 'obesity_bmi', 'obesity_rcc', 'obesity_ict']  \n    df_transformed = select_data(df_transformed, [], cols_to_leave)\n    with open(f\"{CURRENT_DIR}/ml_models/rf_obesity.pkl\", \"rb\") as f:\n        trained_model = pickle.load(f)\n    df['obesity'] = trained_model.predict(df_transformed) \n    df['age_range'] = calc_age_range(person['age'])",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "make_obesity_data_etl",
-        "kind": 2,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "def make_obesity_data_etl(replace=True):\n    if replace:\n        columns_to_drop = []\n        columns_to_leave = [\n            'age',\n            'age_range',\n            'gender',\n            'height',\n            'weight',\n            'waist_circum_preferred',",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "make_clusters_kmodes",
-        "kind": 2,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "def make_clusters_kmodes(params: ParamsKModes):\n    params = params.dict()\n    df_obesity = return_data_obesity()\n    (df_obesity, metrics) = generate_kmodes_clusters(df_obesity, \n                                                     params['n_clusters'], \n                                                     params['n_init'], \n                                                     params['random_state'])\n    df_obesity['cluster_kmodes_date'] = datetime.datetime.now() \n    save_data_obesity(df_obesity, 'Obesity')\n    return metrics",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "update_obesity",
-        "kind": 2,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "def update_obesity(params: ParamsObesity):\n    params = params.dict()\n    query = f\"UPDATE obesity SET obesity = {params['obesity']}, obesity_date = '{datetime.datetime.now()}' \"\n    # if params['cluster']:\n    #     query_where = f\"cluster={params['cluster'] }\"\n    # else:\n    query_where = f\"WHERE cluster={params['cluster']} AND \"\n    query_where = query_where + f\"age_range='{params['age_range']}' AND \"\n    query_where = query_where + f\"obesity_bmi={params['bmi']} AND \"\n    query_where = query_where + f\"obesity_cc={params['cc']} AND \"",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "save_obesity_predicted",
-        "kind": 2,
-        "importPath": "src.api.src.obesity",
-        "description": "src.api.src.obesity",
-        "peekOfCode": "def save_obesity_predicted(info: PredictedObesityTable):\n    info = info.dict()\n    df = pd.DataFrame(info, index=[0])\n    df['creation_date'] = datetime.datetime.now()\n    save_data_obesity(df, 'PredictedObesity', False)\n    items = df.to_dict(orient = 'records')\n    validated_items = [PredictedObesityTable(**item) for item in items]\n    return validated_items",
-        "detail": "src.api.src.obesity",
-        "documentation": {}
-    },
-    {
-        "label": "calc_age_range",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def calc_age_range(age):\n    if age >= 17 and age < 26 : return '17-25'\n    if age >= 26 and age < 36 : return '26-35'\n    if age >= 36 and age < 46 : return '36-45'\n    if age >= 46 and age < 56 : return '46-55'\n    if age >= 56 and age < 66 : return '56-65'\n    if age >= 66 : return '66-100'\n# Clasificación según BMI: Body Mass Index (Índice de Masa Corporal)\n# Cálculo del índice de masa corporal (BMI)\ndef bmi_calc(weight, height):",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "bmi_calc",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def bmi_calc(weight, height):\n    height = height/100\n    bmi = weight / (height*height)    \n    return bmi\ndef calc_obesity_bmi(bmi):\n    if bmi < 18.5: return 0\n    if bmi >= 18.5 and bmi < 25 : return 1\n    if bmi >= 25 and bmi < 30 : return 2\n    if bmi >= 30 : return 3\ndef calc_obesity_bmi_txt(bmi):",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "calc_obesity_bmi",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def calc_obesity_bmi(bmi):\n    if bmi < 18.5: return 0\n    if bmi >= 18.5 and bmi < 25 : return 1\n    if bmi >= 25 and bmi < 30 : return 2\n    if bmi >= 30 : return 3\ndef calc_obesity_bmi_txt(bmi):\n    if bmi == 0: return '0-Bajo Peso'\n    if bmi == 1 : return '1-Normal'\n    if bmi == 2 : return '2-Sobrepeso'\n    if bmi == 3 : return '3-Obesidad'",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "calc_obesity_bmi_txt",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def calc_obesity_bmi_txt(bmi):\n    if bmi == 0: return '0-Bajo Peso'\n    if bmi == 1 : return '1-Normal'\n    if bmi == 2 : return '2-Sobrepeso'\n    if bmi == 3 : return '3-Obesidad'\n# Clasificación según CC: Circunferencia de cadera\ndef calc_obesity_cc(gender, waist_circum):\n    if gender=='male':\n        if waist_circum>94.0: return 1            \n    if gender=='female':",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "calc_obesity_cc",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def calc_obesity_cc(gender, waist_circum):\n    if gender=='male':\n        if waist_circum>94.0: return 1            \n    if gender=='female':\n        if waist_circum>80.0: return 1 \n    return 0\ndef calc_obesity_cc_txt(cc):\n    if cc == 0: return '0-Bajo'\n    if cc == 1 : return '1-Alto'\n# Clasificación según RCC: Racio entre la circunferencia de la cintura y el de la cadera",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "calc_obesity_cc_txt",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def calc_obesity_cc_txt(cc):\n    if cc == 0: return '0-Bajo'\n    if cc == 1 : return '1-Alto'\n# Clasificación según RCC: Racio entre la circunferencia de la cintura y el de la cadera\ndef calc_obesity_rcc(gender, rcc):\n    if gender == 'female':\n        if rcc <= 0.8: return 0\n        if rcc > 0.8 and rcc <= 0.85 : return 1\n        if rcc > 0.85 : return 2\n    if gender == 'male':",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "calc_obesity_rcc",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def calc_obesity_rcc(gender, rcc):\n    if gender == 'female':\n        if rcc <= 0.8: return 0\n        if rcc > 0.8 and rcc <= 0.85 : return 1\n        if rcc > 0.85 : return 2\n    if gender == 'male':\n        if rcc <= 0.95: return 0\n        if rcc > 0.95 and rcc <= 1 : return 1\n        if rcc > 1 : return 2\ndef calc_obesity_rcc_txt(rcc):",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "calc_obesity_rcc_txt",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def calc_obesity_rcc_txt(rcc):\n    if rcc == 0: return '0-Bajo'\n    if rcc == 1: return '1-Medio'\n    if rcc == 2: return '2-Alto'\n# Clasificación ICT: Índice o racio de circunferencia de cintura y talla (estatura)\ndef calc_obesity_ict(gender, ict):\n    if gender == 'female':\n        if ict <= 0.41: return 0\n        if ict > 0.41 and ict <= 0.48 : return 1\n        if ict > 0.48 and ict <= 0.57 : return 2",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "calc_obesity_ict",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def calc_obesity_ict(gender, ict):\n    if gender == 'female':\n        if ict <= 0.41: return 0\n        if ict > 0.41 and ict <= 0.48 : return 1\n        if ict > 0.48 and ict <= 0.57 : return 2\n        if ict > 0.57 : return 3\n    if gender == 'male':\n        if ict <= 0.42: return 0\n        if ict > 0.42 and ict <= 0.52 : return 1\n        if ict > 0.52 and ict <= 0.62 : return 2",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "calc_obesity_ict_txt",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def calc_obesity_ict_txt(ict):\n    if ict == 0 : return '0-Delgado'\n    if ict == 1 : return '1-Normal'\n    if ict == 2 : return '2-Sobrepeso'\n    if ict == 3 : return '3-Obesidad'\n# Cuántos factores de riesgo posee una persona\ndef calc_risk_factors(bmi, cc, rcc, ict):  \n    total = 0\n    if bmi >= 2: total = total + 1\n    if cc >= 1: total = total + 1",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "calc_risk_factors",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def calc_risk_factors(bmi, cc, rcc, ict):  \n    total = 0\n    if bmi >= 2: total = total + 1\n    if cc >= 1: total = total + 1\n    if rcc >= 1: total = total + 1\n    if ict >= 2: total = total + 1\n    return total\n# Transforma los datos del dataset, \n# en particular pasa las medidas de pulgadas a cm\n# y de libras a Kg",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "custom_transformations",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def custom_transformations(df):\n    # Columnas que no están en cm\n    not_in_cm = ['age', 'age_range', 'gender', 'weight', 'num_children', 'bra_size_chest', 'bra_size_cup', 'shoe_size_us']\n    # Columnas en cm: Son todas las columnas menos las que se encuentran más arriba\n    in_cm_columns = [ele for ele in df.select_dtypes('float64').columns.to_list() if ele not in not_in_cm]\n    # Transformamos de pulgadas a cm \n    for col in in_cm_columns:\n        df[col] = df.apply(lambda  row: row[col] * 2.54, axis=1)\n    # Transformamos de libras a Kg\n    df['weight'] = df.apply(lambda  row: row['weight'] * 0.454, axis=1)",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "custom_calculus",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def custom_calculus(df):\n    df['gender_bin'] = df.apply(lambda  row: (1 if row['gender']=='male' else 0), axis=1)\n    # Calculamos el BMI para cada registro\n    df['bmi'] = df.apply(lambda  row: bmi_calc(row['weight'], row['height']) , axis=1)\n    # Calculamos el racio cintura / cadera para cada registro\n    df['rcc'] = df.apply(lambda  row: row['waist_circum_preferred'] / row['hip_circum'], axis=1)\n    # Calculamos el racio cintura / talla para cada registro\n    df['ict'] = df.apply(lambda  row: row['waist_circum_preferred'] / row['height'], axis=1)\n    df['obesity_bmi'] = df.apply(lambda  row: calc_obesity_bmi(row['bmi']) , axis=1)\n    df['obesity_bmi_txt'] = df.apply(lambda  row: calc_obesity_bmi_txt(row['obesity_bmi']) , axis=1)",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "transform_calcul",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def transform_calcul(df):\n    # Aplicamos transformaciones y cálculos personalizados\n    custom_transformations_pipeline = Pipeline([\n        ('custom_transforms', FunctionTransformer(custom_transformations)), # Función de transformación personalizada\n        ('custom_calculus', FunctionTransformer(custom_calculus)) # Función de cálculos personalizados\n    ])\n    # Aplicar el pipeline al conjunto de datos\n    return custom_transformations_pipeline.fit_transform(df)\n# Esta función puede ser utilizada para extraer un subconjunto de datos del dataset original\n# Parámetros:",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "load_clean_transform",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_etl_functions",
-        "description": "src.api.src.obesity_etl_functions",
-        "peekOfCode": "def load_clean_transform(columns_to_drop, columns_to_leave, transform=True):\n    import pickle\n    ## Workflow: Extracción\n    ########################################\n    file = f\"{CURRENT_DIR}/data/in/caesar.csv\"\n    df = read_file(file, ',')\n    # Limpio y eliminos los datos erróneos\n    # Borro la primera línea que no contiene datos significativos\n    df.drop([0], axis=0, inplace=True)\n    # Selecciono las variables que me interesan",
-        "detail": "src.api.src.obesity_etl_functions",
-        "documentation": {}
-    },
-    {
-        "label": "generate_kmodes_clusters",
-        "kind": 2,
-        "importPath": "src.api.src.obesity_kmodes_functions",
-        "description": "src.api.src.obesity_kmodes_functions",
-        "peekOfCode": "def generate_kmodes_clusters(df, n_clusters, n_init, random_state, eda_report=True):    \n    df_kmodes = _generate_df_kmodes(df)\n    k_modes = KModes(n_clusters=n_clusters, init='Huang', n_init=n_init, random_state=random_state)\n    cluster_labels = k_modes.fit_predict(df_kmodes)\n    # Agrega los resultados de la agrupación al dataframe original\n    df['cluster'] = cluster_labels\n    # Métricas del modelo\n    metrics = {\n        'model': 'KModes',\n        'n_clusters': n_clusters,",
-        "detail": "src.api.src.obesity_kmodes_functions",
-        "documentation": {}
-    },
-    {
-        "label": "read_root",
-        "kind": 2,
-        "importPath": "src.api.api",
-        "description": "src.api.api",
-        "peekOfCode": "def read_root():\n    print('hola')\n    return {'message': 'API Medidas Antropométricas'}\n# Return obesity prediction for a person\n@app.post('/obesity_prediction')\nasync def obesity_prediction(person: ob.PersonObesity):\n    result = ob.make_obesity_prediction(person)\n    return result\n# Save obesity prediction and real information\n@app.patch('/obesity_prediction')",
-        "detail": "src.api.api",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "kind": 5,
-        "importPath": "src.api.api",
-        "description": "src.api.api",
-        "peekOfCode": "app = FastAPI() \n@app.get(\"/\")\ndef read_root():\n    print('hola')\n    return {'message': 'API Medidas Antropométricas'}\n# Return obesity prediction for a person\n@app.post('/obesity_prediction')\nasync def obesity_prediction(person: ob.PersonObesity):\n    result = ob.make_obesity_prediction(person)\n    return result",
-        "detail": "src.api.api",
-        "documentation": {}
-    },
-    {
-        "label": "main",
+        "label": "obtener_datos2",
         "kind": 2,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "def main():\n    # Configuración de la página\n    st.set_page_config(layout=\"wide\", page_icon='💪', page_title='Obeso o No')\n    st.title(titulo)\n    st.write(subtitulo)\n    # Formulario para ingresar los datos\n    formulario = st.form(\"Datos de entrada\")\n    genero = formulario.selectbox('Género', ['Masculino', 'Femenino'])\n    edad = formulario.number_input('¿Qué edad tienes?', min_value=1, max_value=100)\n    antecedentes_familiares = formulario.selectbox('¿Tienes antecedentes familiares de sobrepeso?', ['Sí', 'No'])",
+        "peekOfCode": "def obtener_datos2():\n    df = pd.read_excel(\"Kitap1.xlsx\")\n    return df\ndf2 = obtener_datos2()\ncolumn_conjunto_datos.dataframe(df2)\ncolumn_inf.subheader(\"Conjunto de Datos\")\ndef obtener_datos():\n    df = pd.read_csv(\"ObesityDataSet.csv\")\n    return df\ndf = obtener_datos()",
         "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "titulo",
-        "kind": 5,
+        "label": "obtener_datos",
+        "kind": 2,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "titulo = '¿Obeso o no? 💪'\nsubtitulo = 'Predice el nivel de obesidad con aprendizaje automático'\ndef main():\n    # Configuración de la página\n    st.set_page_config(layout=\"wide\", page_icon='💪', page_title='Obeso o No')\n    st.title(titulo)\n    st.write(subtitulo)\n    # Formulario para ingresar los datos\n    formulario = st.form(\"Datos de entrada\")\n    genero = formulario.selectbox('Género', ['Masculino', 'Femenino'])",
+        "peekOfCode": "def obtener_datos():\n    df = pd.read_csv(\"ObesityDataSet.csv\")\n    return df\ndf = obtener_datos()\ncolumn_inf.dataframe(df)\ndf[\"Nivel de Obesidad\"] = df[\"NObeyesdad\"]\ndf[\"Frecuencia de Actividad Física\"] = df[\"FAF\"]\ndf[\"Fumar\"] = df[\"SMOKE\"]\ndf[\"Consumo de Alimentos Altos en Calorías\"] = df[\"FAVC\"]\ndf[\"Consumo de Verduras\"] = df[\"FCVC\"]",
         "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "subtitulo",
-        "kind": 5,
+        "label": "grafico_cruzado",
+        "kind": 2,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "subtitulo = 'Predice el nivel de obesidad con aprendizaje automático'\ndef main():\n    # Configuración de la página\n    st.set_page_config(layout=\"wide\", page_icon='💪', page_title='Obeso o No')\n    st.title(titulo)\n    st.write(subtitulo)\n    # Formulario para ingresar los datos\n    formulario = st.form(\"Datos de entrada\")\n    genero = formulario.selectbox('Género', ['Masculino', 'Femenino'])\n    edad = formulario.number_input('¿Qué edad tienes?', min_value=1, max_value=100)",
+        "peekOfCode": "def grafico_cruzado(data, columna_objetivo, columna_categorica, categorias):\n    fig3 = px.histogram(\n        data[data[columna_objetivo].isin(categorias)],\n        x=columna_objetivo,\n        color=columna_categorica,\n        barmode='group',\n        category_orders={columna_categorica: categorias},\n    )\n    tab_graficos.plotly_chart(fig3, use_container_width=True)\ncolumnas_categoricas = ['Género', 'Frecuencia de Actividad Física', 'Consumo de Alimentos Altos en Calorías', 'Consumo de Verduras', 'Número de Comidas Principales', 'Comer Entre Comidas','Fumar', 'Consumo Diario de Agua', 'Monitoreo de Calorías', 'Consumo de Alcohol', 'Uso de Dispositivos Tecnológicos', 'Antecedentes Familiares de Sobrepeso', 'Preferencia_de_Transporte']",
         "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "st.latex('IMC",
+        "label": "principal",
+        "kind": 2,
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "def principal():\n    tab_modelo.subheader(\"Por favor, ingresa la siguiente información:\")\n    GENERO = tab_modelo.selectbox('¿Cuál es tu género?', options=opciones_GENERO)\n    EDAD = tab_modelo.text_input('Ingresa tu edad', placeholder='Por ejemplo, 25')\n    ANTECEDENTES_FAMILIARES_CON_SOBREPESO = tab_modelo.selectbox('¿Tiene un familiar que ha sufrido o sufre de sobrepeso?',\n                                                         options=opciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO)\n    FAVC = tab_modelo.selectbox('¿Consumes alimentos altos en calorías con frecuencia?', options=opciones_FAVC)\n    FCVC = tab_modelo.selectbox('¿Sueles comer verduras en tus comidas?', options=opciones_FCVC)\n    NCP = tab_modelo.selectbox('¿Cuántas comidas principales tienes al día?', options=opciones_NCP)\n    CAEC = tab_modelo.selectbox('¿Comes algo entre comidas?', options=opciones_CAEC)",
+        "detail": "src.app.app",
+        "documentation": {}
+    },
+    {
+        "label": "imagen2",
         "kind": 5,
-        "importPath": "src.streamlit.pages.1 - Descripción del Estudio",
-        "description": "src.streamlit.pages.1 - Descripción del Estudio",
-        "peekOfCode": "st.latex('IMC = Peso (Kg) / Altura (m)^2')\nst.latex('RCC = Cintura (cm) / Cadera (cm)')\nst.latex('RCT = Cintura (cm) / Altura (cm)')\nst.markdown(\n    '''\n    Luego, existen tablas que permiten clasificar el grado de sobrepeso y obesidad y el riesgo de tener exceso de grasa abdominal, en función de los valores obtenidos:\n    1. Clasificación de obesidad según el IMC:\n    |Riesgo|IMC|\n    |------|---------|\n    |Peso bajo | < 18.5 |",
-        "detail": "src.streamlit.pages.1 - Descripción del Estudio",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "imagen2 = Image.open('Obesity.webp')\nst.set_page_config(page_title=\"Conoce tu riesgo de obesidad :question:\", layout=\"wide\")\nst.header(\":blue[Conoce Tu Obesidad] :red[ Estás en Riesgo?]\")\ntab_inicio, tab_conjunto_datos, tab_graficos, tab_modelo = st.tabs([\"Inicio\", \"Sobre el Conjunto de Datos\", \"Gráficos\", \"Predicción del Nivel de Obesidad\"])\n# TAB INICIO\ninf, video = tab_inicio.columns(2, gap=\"large\")\ninf.markdown(\"El objetivo principal de este proyecto es desarrollar un modelo predictivo que pueda anticipar la probabilidad de que un individuo se vuelva obeso basándose en un análisis de datos exhaustivo. La obesidad está asociada con una serie de resultados adversos, incluido un mayor riesgo de enfermedades cardiovasculares, diabetes tipo 2, problemas respiratorios y articulares. Además, puede afectar la salud mental, lo que lleva a un aumento de las tasas de depresión y ansiedad. Por eso, abordar y prevenir la obesidad es vital para la salud y el bienestar en general.\")\ninf.markdown(\"Usando el conjunto de datos, que abarca variables cruciales como antecedentes familiares de sobrepeso, hábitos alimenticios (incluido el consumo frecuente de alimentos altos en calorías, frecuencia de consumo de verduras y consumo de alimentos entre comidas), factores de estilo de vida (hábitos de fumar, consumo diario de agua, monitoreo del consumo de calorías, frecuencia de actividad física, tiempo usando dispositivos tecnológicos y consumo de alcohol), y tipo de transporte utilizado, el objetivo es descubrir patrones y correlaciones que contribuyen a la obesidad. A través de la exploración de estos factores multifacéticos, el proyecto busca proporcionar ideas valiosas para intervenciones proactivas, permitiendo a las personas tomar decisiones informadas sobre su estilo de vida y potencialmente reducir el riesgo de obesidad en el futuro.\")\ninf.markdown(\"Por último, reconocer la importancia de abordar la obesidad es crucial, dadas sus profundas implicaciones para la salud en general y el mayor riesgo de diversos problemas de salud. Al comprender y predecir la obesidad, esperamos contribuir al esfuerzo más amplio de promover estilos de vida más saludables y prevenir los riesgos potenciales para la salud asociados con la obesidad.\")\nvideo.markdown(\"![Conoce tu Obesidad](https://masvidasinobesidad.com/wp-content/uploads/2018/02/IMC.png)\")",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "st.latex('RCC",
+        "label": "video_file",
         "kind": 5,
-        "importPath": "src.streamlit.pages.1 - Descripción del Estudio",
-        "description": "src.streamlit.pages.1 - Descripción del Estudio",
-        "peekOfCode": "st.latex('RCC = Cintura (cm) / Cadera (cm)')\nst.latex('RCT = Cintura (cm) / Altura (cm)')\nst.markdown(\n    '''\n    Luego, existen tablas que permiten clasificar el grado de sobrepeso y obesidad y el riesgo de tener exceso de grasa abdominal, en función de los valores obtenidos:\n    1. Clasificación de obesidad según el IMC:\n    |Riesgo|IMC|\n    |------|---------|\n    |Peso bajo | < 18.5 |\n    |Peso normal|18.5 - 25 |",
-        "detail": "src.streamlit.pages.1 - Descripción del Estudio",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "video_file = open('https://www.youtube.com/watch?v=RvNwyyBE1CY', 'rb')\nvideo_bytes = video_file.read()\nvideo.video(video_bytes)\n# TAB CONJUNTO DE DATOS\ntab_conjunto_datos.subheader(\"Sobre el Conjunto de Datos\")\ncolumn_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap=\"large\")\ncolumn_inf.image(imagen2, width=300, use_column_width=True, clamp=False, channels='RGB', output_format='auto')\ncolumn_conjunto_datos.markdown(\n    \"\"\"\n    - El conjunto de datos utilizado para el análisis se obtuvo de [UCI ML Repository](https://archive.ics.uci.edu/datasets).",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "st.latex('RCT",
+        "label": "video_bytes",
         "kind": 5,
-        "importPath": "src.streamlit.pages.1 - Descripción del Estudio",
-        "description": "src.streamlit.pages.1 - Descripción del Estudio",
-        "peekOfCode": "st.latex('RCT = Cintura (cm) / Altura (cm)')\nst.markdown(\n    '''\n    Luego, existen tablas que permiten clasificar el grado de sobrepeso y obesidad y el riesgo de tener exceso de grasa abdominal, en función de los valores obtenidos:\n    1. Clasificación de obesidad según el IMC:\n    |Riesgo|IMC|\n    |------|---------|\n    |Peso bajo | < 18.5 |\n    |Peso normal|18.5 - 25 |\n    |Sobrepeso|25 - 30 |",
-        "detail": "src.streamlit.pages.1 - Descripción del Estudio",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "video_bytes = video_file.read()\nvideo.video(video_bytes)\n# TAB CONJUNTO DE DATOS\ntab_conjunto_datos.subheader(\"Sobre el Conjunto de Datos\")\ncolumn_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap=\"large\")\ncolumn_inf.image(imagen2, width=300, use_column_width=True, clamp=False, channels='RGB', output_format='auto')\ncolumn_conjunto_datos.markdown(\n    \"\"\"\n    - El conjunto de datos utilizado para el análisis se obtuvo de [UCI ML Repository](https://archive.ics.uci.edu/datasets).\n    - Incluye datos para estimar los niveles de obesidad en personas de 14 a 61 años con diversos hábitos alimenticios y condiciones físicas en México, Perú y Colombia.",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "result",
+        "label": "df2",
         "kind": 5,
-        "importPath": "src.streamlit.pages.3 - EDA",
-        "description": "src.streamlit.pages.3 - EDA",
-        "peekOfCode": "result = obesity_return_data()\nif result:\n    df_obesity = pd.read_json(result, orient='records')\n    df_eda_f = ef.divide_by_gender(df_obesity, 'female')\n    df_eda_m = ef.divide_by_gender(df_obesity, 'male')\n    st.markdown('#### Resumen estadístico de los datos:')\n    st.markdown('**Datos numéricos**')\n    st.write(df_obesity.describe())\n    st.markdown('**Datos no numéricos**')\n    st.write(df_obesity.select_dtypes(include=['object']).describe())",
-        "detail": "src.streamlit.pages.3 - EDA",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "df2 = obtener_datos2()\ncolumn_conjunto_datos.dataframe(df2)\ncolumn_inf.subheader(\"Conjunto de Datos\")\ndef obtener_datos():\n    df = pd.read_csv(\"ObesityDataSet.csv\")\n    return df\ndf = obtener_datos()\ncolumn_inf.dataframe(df)\ndf[\"Nivel de Obesidad\"] = df[\"NObeyesdad\"]\ndf[\"Frecuencia de Actividad Física\"] = df[\"FAF\"]",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "update_obesity",
-        "kind": 2,
-        "importPath": "src.streamlit.pages.5 - Análisis y Etiquetado",
-        "description": "src.streamlit.pages.5 - Análisis y Etiquetado",
-        "peekOfCode": "def update_obesity(df, cluster):\n    for index, row in df.iterrows():\n        params = {\n                    'obesity': row['obesity'],\n                    'cluster': cluster,\n                    'age_range': row['age_range'],\n                    'bmi': int(row['bmi'][:1]),\n                    'cc': int(row['cc'][:1]),\n                    'rcc': int(row['rcc'][:1]),\n                    'ict': int(row['ict'][:1])",
-        "detail": "src.streamlit.pages.5 - Análisis y Etiquetado",
-        "documentation": {}
-    },
-    {
-        "label": "nb_clusters",
+        "label": "df",
         "kind": 5,
-        "importPath": "src.streamlit.pages.5 - Análisis y Etiquetado",
-        "description": "src.streamlit.pages.5 - Análisis y Etiquetado",
-        "peekOfCode": "nb_clusters = obesity_return_nb_clusters()\nif nb_clusters:\n    result = obesity_return_data()\n    df_obesity = pd.read_json(result, orient='records')\n    clusters = range(int(nb_clusters))\n    cluster = st.selectbox('**Selecciona el cluster o grupo que quieres analizar:**', (clusters))\n    df_cluster = cf.eda_cluster(df_obesity, cluster)\n    with st.form('form_analisis'):\n        cols_disabled = [\"age_range\", \"bmi\", \"cc\", \"rcc\", \"ict\",\n                        \"risk_factors\", \"total\", \"label\"]",
-        "detail": "src.streamlit.pages.5 - Análisis y Etiquetado",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "df = obtener_datos()\ncolumn_inf.dataframe(df)\ndf[\"Nivel de Obesidad\"] = df[\"NObeyesdad\"]\ndf[\"Frecuencia de Actividad Física\"] = df[\"FAF\"]\ndf[\"Fumar\"] = df[\"SMOKE\"]\ndf[\"Consumo de Alimentos Altos en Calorías\"] = df[\"FAVC\"]\ndf[\"Consumo de Verduras\"] = df[\"FCVC\"]\ndf[\"Número de Comidas Principales\"] = df[\"NCP\"]\ndf[\"Comer Entre Comidas\"] = df[\"CAEC\"]\ndf[\"Consumo Diario de Agua\"] = df[\"CH2O\"]",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "page_config",
-        "kind": 2,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "def page_config():\n    return st.set_page_config(\n        page_title='dIAna Antropometría y Obesidad', \n        page_icon=':health_worker:', \n        layout=\"centered\", \n        initial_sidebar_state=\"auto\", \n        menu_items={\n            'Get Help': None,\n            'Report a bug': None,\n            'About': '''## Medidas Antropométricas para el predecir el riesgo de obesidad y ENT ",
-        "detail": "src.streamlit.src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "sidebar_config",
-        "kind": 2,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "def sidebar_config():\n    st.sidebar.markdown(':orange[El estudio de los datos, la clasificación y el entrenamiento del modelo, no afectan el modelo ya existente y utilizado para las predicciones.]')\nLABEL_SIZE=12\nTITLE_SIZE=16\nBMI_HELP = '''\n      Índice de Masa Corporal.\\n\n      \\t0 - Peso Bajo\\n\n      \\t1 - Peso Normal\\n\n      \\t2 - Sobrepeso\\n\n      \\t3 - Obesidad",
-        "detail": "src.streamlit.src.app_config",
-        "documentation": {}
-    },
-    {
-        "label": "BMI_HELP",
+        "label": "df[\"Fumar\"]",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "BMI_HELP = '''\n      Índice de Masa Corporal.\\n\n      \\t0 - Peso Bajo\\n\n      \\t1 - Peso Normal\\n\n      \\t2 - Sobrepeso\\n\n      \\t3 - Obesidad\n'''\nCC_HELP = '''\n      Contorno de Cintura (CC) y acumulación de grasa abdominal.\\n\n      \\t0 - Sin riesgo\\n",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "df[\"Fumar\"] = df[\"SMOKE\"]\ndf[\"Consumo de Alimentos Altos en Calorías\"] = df[\"FAVC\"]\ndf[\"Consumo de Verduras\"] = df[\"FCVC\"]\ndf[\"Número de Comidas Principales\"] = df[\"NCP\"]\ndf[\"Comer Entre Comidas\"] = df[\"CAEC\"]\ndf[\"Consumo Diario de Agua\"] = df[\"CH2O\"]\ndf[\"Monitoreo de Calorías\"] = df[\"SCC\"]\ndf[\"Uso de Dispositivos Tecnológicos\"] = df[\"TUE\"]\ndf[\"Consumo de Alcohol\"] = df[\"CALC\"]\ndf[\"Preferencia_de_Transporte\"] = df[\"MTRANS\"]",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "CC_HELP",
+        "label": "df[\"Preferencia_de_Transporte\"]",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "CC_HELP = '''\n      Contorno de Cintura (CC) y acumulación de grasa abdominal.\\n\n      \\t0 - Sin riesgo\\n\n      \\t1 - Riesgo o exceso de grasa abdominal\n'''\nRCC_HELP = '''\n      Relación entre el Contorno de Cintura y la Cadera.\\n\n      \\t0 - Sin riesgo\\n\n      \\t1 - Riesgo medio\\n\n      \\t2 - Riesgo alto",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "df[\"Preferencia_de_Transporte\"] = df[\"MTRANS\"]\ndf[\"Antecedentes Familiares de Sobrepeso\"] = df[\"family_history_with_overweight\"]\ndf[\"IMC\"] = df[\"Weight\"]/(df[\"Height\"]*df[\"Height\"])\n# TAB GRÁFICOS\n## Gráfico 1\ntab_graficos.subheader(\"Distribuciones de Variables Numéricas por Género\")\ncolumnas_numericas = [\"Edad\", \"Altura\", \"Peso\", \"IMC\"]\ncolumnas_numericas_seleccionadas = tab_graficos.multiselect(label=\"Selecciona columnas numéricas\", options=columnas_numericas[0:], default=columnas_numericas[0:])\nfor col in columnas_numericas_seleccionadas:\n    fig1 = px.histogram(df, x=col, marginal=\"box\", color=\"Género\")",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "RCC_HELP",
+        "label": "df[\"IMC\"]",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "RCC_HELP = '''\n      Relación entre el Contorno de Cintura y la Cadera.\\n\n      \\t0 - Sin riesgo\\n\n      \\t1 - Riesgo medio\\n\n      \\t2 - Riesgo alto\n'''\nICT_HELP = '''\n      Relación entre el Contorno de Cintura y la Estatura.\\n\n      \\t0 - Delgado\\n\n      \\t1 - Peso Normal\\n",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "df[\"IMC\"] = df[\"Weight\"]/(df[\"Height\"]*df[\"Height\"])\n# TAB GRÁFICOS\n## Gráfico 1\ntab_graficos.subheader(\"Distribuciones de Variables Numéricas por Género\")\ncolumnas_numericas = [\"Edad\", \"Altura\", \"Peso\", \"IMC\"]\ncolumnas_numericas_seleccionadas = tab_graficos.multiselect(label=\"Selecciona columnas numéricas\", options=columnas_numericas[0:], default=columnas_numericas[0:])\nfor col in columnas_numericas_seleccionadas:\n    fig1 = px.histogram(df, x=col, marginal=\"box\", color=\"Género\")\n    fig1.update_layout(template='plotly_dark', title_x=0.5, yaxis_title='Cuenta', xaxis_title=f\"{col}\", title=f\"Distribución de {col}\")\n    tab_graficos.plotly_chart(fig1, use_container_width=True)",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "ICT_HELP",
+        "label": "columnas_numericas",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "ICT_HELP = '''\n      Relación entre el Contorno de Cintura y la Estatura.\\n\n      \\t0 - Delgado\\n\n      \\t1 - Peso Normal\\n\n      \\t2 - Sobrepeso\\n\n      \\t3 - Obesidad\n'''\nOBESITY_HELP = '''\n    Asigna un valor entre 0 y 2:\\n\n    \\t0 - Riesgo bajo o nulo: La persona no padece ninguna ENT y a priori ",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "columnas_numericas = [\"Edad\", \"Altura\", \"Peso\", \"IMC\"]\ncolumnas_numericas_seleccionadas = tab_graficos.multiselect(label=\"Selecciona columnas numéricas\", options=columnas_numericas[0:], default=columnas_numericas[0:])\nfor col in columnas_numericas_seleccionadas:\n    fig1 = px.histogram(df, x=col, marginal=\"box\", color=\"Género\")\n    fig1.update_layout(template='plotly_dark', title_x=0.5, yaxis_title='Cuenta', xaxis_title=f\"{col}\", title=f\"Distribución de {col}\")\n    tab_graficos.plotly_chart(fig1, use_container_width=True)\n## Gráfico 2\ntab_graficos.subheader(\"Correlación entre Altura y Peso\")\nfig2 = px.scatter(data_frame=df,y=\"Altura\",x=\"Peso\",size=\"IMC\",color=\"Género\",trendline=\"ols\")\nfig2.update_layout(template='plotly_dark')",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "OBESITY_HELP",
+        "label": "columnas_numericas_seleccionadas",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "OBESITY_HELP = '''\n    Asigna un valor entre 0 y 2:\\n\n    \\t0 - Riesgo bajo o nulo: La persona no padece ninguna ENT y a priori \n          tiene un riesgo nulo o bajo de padecerlas.\\n\n    \\t1 - Riesgo medio: La persona no padece ninguna ENT pero hay indicadores \n          que señalan que podría comenzar a padecerlas: Puede estar desarrollando \n          resistencia a la insulina o tener episodios de hipertensión, por ejemplo.\\n\n    \\t2 - Riesgo alto: La persona padece alguna ENT, diagnosticada o no.\n'''\nCOMMENTS_HELP = '''",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "columnas_numericas_seleccionadas = tab_graficos.multiselect(label=\"Selecciona columnas numéricas\", options=columnas_numericas[0:], default=columnas_numericas[0:])\nfor col in columnas_numericas_seleccionadas:\n    fig1 = px.histogram(df, x=col, marginal=\"box\", color=\"Género\")\n    fig1.update_layout(template='plotly_dark', title_x=0.5, yaxis_title='Cuenta', xaxis_title=f\"{col}\", title=f\"Distribución de {col}\")\n    tab_graficos.plotly_chart(fig1, use_container_width=True)\n## Gráfico 2\ntab_graficos.subheader(\"Correlación entre Altura y Peso\")\nfig2 = px.scatter(data_frame=df,y=\"Altura\",x=\"Peso\",size=\"IMC\",color=\"Género\",trendline=\"ols\")\nfig2.update_layout(template='plotly_dark')\ntab_graficos.plotly_chart(fig2, use_container_width=True)",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "COMMENTS_HELP",
+        "label": "fig2",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "COMMENTS_HELP = '''\n    Cualquier información relevante sobre el estado del paciente:\\n\n    Si padece de patologías como hipertensión, diabetes, enfermedades cardiovasculares, etc.\\n\n    Información relevante que podría estar relacionada con el peso y la acumulación de grasa.\n'''\nN_INIT_HELP = '''\n    **n_init** es el número de veces que se ejecutará el algoritmo con diferentes semillas aleatorias. El valor predeterminado es 10. Un valor mayor de n_init puede ayudar a encontrar una solución más óptima, pero también puede aumentar el tiempo de ejecución.\n'''\nRDM_STE_HELP = '''\n    **random_state** es una semilla aleatoria que se utiliza para inicializar el generador de números aleatorios. Un valor constante de random_state garantizará que el algoritmo produzca los mismos resultados cada vez que se ejecute.",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "fig2 = px.scatter(data_frame=df,y=\"Altura\",x=\"Peso\",size=\"IMC\",color=\"Género\",trendline=\"ols\")\nfig2.update_layout(template='plotly_dark')\ntab_graficos.plotly_chart(fig2, use_container_width=True)\n## Gráfico 3\ndef grafico_cruzado(data, columna_objetivo, columna_categorica, categorias):\n    fig3 = px.histogram(\n        data[data[columna_objetivo].isin(categorias)],\n        x=columna_objetivo,\n        color=columna_categorica,\n        barmode='group',",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "N_INIT_HELP",
+        "label": "columnas_categoricas",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "N_INIT_HELP = '''\n    **n_init** es el número de veces que se ejecutará el algoritmo con diferentes semillas aleatorias. El valor predeterminado es 10. Un valor mayor de n_init puede ayudar a encontrar una solución más óptima, pero también puede aumentar el tiempo de ejecución.\n'''\nRDM_STE_HELP = '''\n    **random_state** es una semilla aleatoria que se utiliza para inicializar el generador de números aleatorios. Un valor constante de random_state garantizará que el algoritmo produzca los mismos resultados cada vez que se ejecute.\n'''\nCOLS_CLUSTER_LABEL = {\n  \"age_range\": 'Rango de Edad',\n  \"bmi\": 'IMC',\n  \"cc\": 'Cintura',",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "columnas_categoricas = ['Género', 'Frecuencia de Actividad Física', 'Consumo de Alimentos Altos en Calorías', 'Consumo de Verduras', 'Número de Comidas Principales', 'Comer Entre Comidas','Fumar', 'Consumo Diario de Agua', 'Monitoreo de Calorías', 'Consumo de Alcohol', 'Uso de Dispositivos Tecnológicos', 'Antecedentes Familiares de Sobrepeso', 'Preferencia_de_Transporte']\ncolumna_categorica_seleccionada = tab_graficos.multiselect(label=\"Selecciona una variable\", options=columnas_categoricas, default=[\"Género\"])\ncategorias = [\"Peso Insuficiente\", \"Peso Normal\", \"Nivel de Sobrepeso I\", \"Nivel de Sobrepeso II\", \"Obesidad Tipo I\", \"Obesidad Tipo II\", \"Obesidad Tipo III\"]\nif columna_categorica_seleccionada:\n    tab_graficos.subheader(f\"Gráfico Cruzado: Distribución de Niveles de Obesidad por {columna_categorica_seleccionada[0]}\")\ngrafico_cruzado(df, \"Nivel de Obesidad\", columna_categorica_seleccionada[0], categorias)\n## Gráfico 4\ntab_graficos.subheader(\"Frecuencia de Actividad Física por Nivel de Obesidad\")\nfig4 = px.box(df, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "RDM_STE_HELP",
+        "label": "columna_categorica_seleccionada",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "RDM_STE_HELP = '''\n    **random_state** es una semilla aleatoria que se utiliza para inicializar el generador de números aleatorios. Un valor constante de random_state garantizará que el algoritmo produzca los mismos resultados cada vez que se ejecute.\n'''\nCOLS_CLUSTER_LABEL = {\n  \"age_range\": 'Rango de Edad',\n  \"bmi\": 'IMC',\n  \"cc\": 'Cintura',\n  \"rcc\": 'RCC',\n  \"ict\": 'ICT',\n  \"risk_factors\": 'N° factores de riesgo',",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "columna_categorica_seleccionada = tab_graficos.multiselect(label=\"Selecciona una variable\", options=columnas_categoricas, default=[\"Género\"])\ncategorias = [\"Peso Insuficiente\", \"Peso Normal\", \"Nivel de Sobrepeso I\", \"Nivel de Sobrepeso II\", \"Obesidad Tipo I\", \"Obesidad Tipo II\", \"Obesidad Tipo III\"]\nif columna_categorica_seleccionada:\n    tab_graficos.subheader(f\"Gráfico Cruzado: Distribución de Niveles de Obesidad por {columna_categorica_seleccionada[0]}\")\ngrafico_cruzado(df, \"Nivel de Obesidad\", columna_categorica_seleccionada[0], categorias)\n## Gráfico 4\ntab_graficos.subheader(\"Frecuencia de Actividad Física por Nivel de Obesidad\")\nfig4 = px.box(df, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)\n## Gráfico 5",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "COLS_CLUSTER_LABEL",
+        "label": "categorias",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "COLS_CLUSTER_LABEL = {\n  \"age_range\": 'Rango de Edad',\n  \"bmi\": 'IMC',\n  \"cc\": 'Cintura',\n  \"rcc\": 'RCC',\n  \"ict\": 'ICT',\n  \"risk_factors\": 'N° factores de riesgo',\n#   \"obesity\": st.column_config.NumberColumn(\n#             \"Grado de Obesidad\",\n#             help=OBESITY_HELP,",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "categorias = [\"Peso Insuficiente\", \"Peso Normal\", \"Nivel de Sobrepeso I\", \"Nivel de Sobrepeso II\", \"Obesidad Tipo I\", \"Obesidad Tipo II\", \"Obesidad Tipo III\"]\nif columna_categorica_seleccionada:\n    tab_graficos.subheader(f\"Gráfico Cruzado: Distribución de Niveles de Obesidad por {columna_categorica_seleccionada[0]}\")\ngrafico_cruzado(df, \"Nivel de Obesidad\", columna_categorica_seleccionada[0], categorias)\n## Gráfico 4\ntab_graficos.subheader(\"Frecuencia de Actividad Física por Nivel de Obesidad\")\nfig4 = px.box(df, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)\n## Gráfico 5\ntab_graficos.subheader(\"Gráfico de Dispersión de Edad e IMC\")",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "COEF_SIL_HELP",
+        "label": "fig4",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "COEF_SIL_HELP = '''\n      Coeficiente de Silhouette: Varía entre -1 y 1.\\n\n      \\t-1 - Mal agrupamiento\\n\n      \\t0 - Indiferente\\n\n      \\t1 - Buen agrupamiento\n'''\nDB_HELP = '''\n    Valores pequeños para el índice David-Bouldin \n    indican grupos compactos y cuyos centros \n    están bien separados los unos de los otros.",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "fig4 = px.box(df, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)\n## Gráfico 5\ntab_graficos.subheader(\"Gráfico de Dispersión de Edad e IMC\")\nfig5 = px.scatter(df, x=\"Edad\", y=\"IMC\", color=\"Nivel de Obesidad\")\ntab_graficos.plotly_chart(fig5, use_container_width=True)\n## Gráfico 6\ntab_graficos.subheader(\"Comparación de IMC Basada en Género y Preferencia_de_Transporte\")\ntransporte_seleccionado = tab_graficos.multiselect(label=\"Selecciona un tipo de transporte\", options=df.Preferencia_de_Transporte.unique(), default=[\"Transporte Público\"])\ndf_filtrado = df[df.Preferencia_de_Transporte.isin(transporte_seleccionado)]",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "DB_HELP",
+        "label": "fig5",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "DB_HELP = '''\n    Valores pequeños para el índice David-Bouldin \n    indican grupos compactos y cuyos centros \n    están bien separados los unos de los otros.\n    El número de grupos o clusters que minimiza el índice DB\n    se toma como el óptimo.\n'''\nCH_HELP = '''\n    El índice de Calinski-Harabasz,\n    es una métrica con la que se puede evaluar ",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "fig5 = px.scatter(df, x=\"Edad\", y=\"IMC\", color=\"Nivel de Obesidad\")\ntab_graficos.plotly_chart(fig5, use_container_width=True)\n## Gráfico 6\ntab_graficos.subheader(\"Comparación de IMC Basada en Género y Preferencia_de_Transporte\")\ntransporte_seleccionado = tab_graficos.multiselect(label=\"Selecciona un tipo de transporte\", options=df.Preferencia_de_Transporte.unique(), default=[\"Transporte Público\"])\ndf_filtrado = df[df.Preferencia_de_Transporte.isin(transporte_seleccionado)]\nfig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"IMC\",",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "CH_HELP",
+        "label": "transporte_seleccionado",
         "kind": 5,
-        "importPath": "src.streamlit.src.app_config",
-        "description": "src.streamlit.src.app_config",
-        "peekOfCode": "CH_HELP = '''\n    El índice de Calinski-Harabasz,\n    es una métrica con la que se puede evaluar \n    el grado de agrupación de un conjunto de datos. \n    Cuando mayor sea el valor del índice, \n    mejor será la agrupación.\n'''",
-        "detail": "src.streamlit.src.app_config",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "transporte_seleccionado = tab_graficos.multiselect(label=\"Selecciona un tipo de transporte\", options=df.Preferencia_de_Transporte.unique(), default=[\"Transporte Público\"])\ndf_filtrado = df[df.Preferencia_de_Transporte.isin(transporte_seleccionado)]\nfig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"IMC\",\n    color=\"Género\",\n    facet_col=\"Preferencia_de_Transporte\",\n    labels={\"IMC\": \"Índice de Masa Corporal\"}\n)",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "obesity_prediction",
-        "kind": 2,
-        "importPath": "src.streamlit.src.call_api",
-        "description": "src.streamlit.src.call_api",
-        "peekOfCode": "def obesity_prediction(person):\n      url = URL_BASE + '/obesity_prediction'                  \n      person = json.dumps(person) \n      try:\n            response = requests.post(url,\n                              headers={'Content-Type': 'application/json'},\n                              data=person,\n                              timeout=8000)\n            return json.loads(response.content)\n      except requests.exceptions.RequestException as e:",
-        "detail": "src.streamlit.src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "save_obesity_info",
-        "kind": 2,
-        "importPath": "src.streamlit.src.call_api",
-        "description": "src.streamlit.src.call_api",
-        "peekOfCode": "def save_obesity_info(info):\n      url = URL_BASE + '/obesity_prediction'                  \n      info = json.dumps(info) \n      try:\n            response = requests.patch(url,\n                              headers={'Content-Type': 'application/json'},\n                              data=info,\n                              timeout=8000)\n            return json.loads(response.content)\n      except requests.exceptions.RequestException as e:",
-        "detail": "src.streamlit.src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_data_etl",
-        "kind": 2,
-        "importPath": "src.streamlit.src.call_api",
-        "description": "src.streamlit.src.call_api",
-        "peekOfCode": "def obesity_data_etl(replace):\n      url = URL_BASE + f'/obesity_data_etl/{replace}'\n      try:\n            response = requests.post(url,\n                              headers={'Content-Type': 'application/json'},\n                              timeout=8000)\n            result = io.BytesIO(response.content)\n            return result\n      except requests.exceptions.RequestException as e:\n            # Manejar errores de solicitud (por ejemplo, problemas de red)",
-        "detail": "src.streamlit.src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_return_data",
-        "kind": 2,
-        "importPath": "src.streamlit.src.call_api",
-        "description": "src.streamlit.src.call_api",
-        "peekOfCode": "def obesity_return_data():\n      url = URL_BASE + f'/obesity_data'\n      try:\n            response = requests.get(url,\n                              headers={'Content-Type': 'application/json'},\n                              timeout=8000)\n            result = io.BytesIO(response.content)\n            return result\n      except requests.exceptions.RequestException as e:\n            # Manejar errores de solicitud (por ejemplo, problemas de red)",
-        "detail": "src.streamlit.src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_clusters_kmodes",
-        "kind": 2,
-        "importPath": "src.streamlit.src.call_api",
-        "description": "src.streamlit.src.call_api",
-        "peekOfCode": "def obesity_clusters_kmodes(params):\n      url = URL_BASE + '/clusters_kmodes'                  \n      params = json.dumps(params) \n      try:\n            response = requests.post(url,\n                              headers={'Content-Type': 'application/json'},\n                              data=params,\n                              timeout=8000)\n            return json.loads(response.content)\n      except requests.exceptions.RequestException as e:",
-        "detail": "src.streamlit.src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_update_var",
-        "kind": 2,
-        "importPath": "src.streamlit.src.call_api",
-        "description": "src.streamlit.src.call_api",
-        "peekOfCode": "def obesity_update_var(params):\n      url = URL_BASE + f'/obesity_data'                \n      params = json.dumps(params) \n      try:\n            response = requests.patch(url,\n                              headers={'Content-Type': 'application/json'},\n                              data=params,\n                              timeout=8000)\n            return json.loads(response.content)\n      except requests.exceptions.RequestException as e:",
-        "detail": "src.streamlit.src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_return_nb_clusters",
-        "kind": 2,
-        "importPath": "src.streamlit.src.call_api",
-        "description": "src.streamlit.src.call_api",
-        "peekOfCode": "def obesity_return_nb_clusters():\n      url = URL_BASE + f'/nb_clusters'\n      try:\n            response = requests.get(url,\n                              headers={'Content-Type': 'application/json'},\n                              timeout=8000)\n            return json.loads(response.content) #response.content\n      except requests.exceptions.RequestException as e:\n            # Manejar errores de solicitud (por ejemplo, problemas de red)\n            st.error(\"Error de solicitud a la API: \" + str(e))",
-        "detail": "src.streamlit.src.call_api",
-        "documentation": {}
-    },
-    {
-        "label": "URL_BASE",
+        "label": "df_filtrado",
         "kind": 5,
-        "importPath": "src.streamlit.src.call_api",
-        "description": "src.streamlit.src.call_api",
-        "peekOfCode": "URL_BASE = 'https://antropo-api-ft3evlkfyq-rj.a.run.app'\n#URL_BASE = 'http://127.0.0.1:8000'\n#URL_BASE = 'http://localhost'\ndef obesity_prediction(person):\n      url = URL_BASE + '/obesity_prediction'                  \n      person = json.dumps(person) \n      try:\n            response = requests.post(url,\n                              headers={'Content-Type': 'application/json'},\n                              data=person,",
-        "detail": "src.streamlit.src.call_api",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "df_filtrado = df[df.Preferencia_de_Transporte.isin(transporte_seleccionado)]\nfig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"IMC\",\n    color=\"Género\",\n    facet_col=\"Preferencia_de_Transporte\",\n    labels={\"IMC\": \"Índice de Masa Corporal\"}\n)\ntab_graficos.plotly_chart(fig6, use_container_width=True)",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "#URL_BASE",
+        "label": "fig6",
         "kind": 5,
-        "importPath": "src.streamlit.src.call_api",
-        "description": "src.streamlit.src.call_api",
-        "peekOfCode": "#URL_BASE = 'http://127.0.0.1:8000'\n#URL_BASE = 'http://localhost'\ndef obesity_prediction(person):\n      url = URL_BASE + '/obesity_prediction'                  \n      person = json.dumps(person) \n      try:\n            response = requests.post(url,\n                              headers={'Content-Type': 'application/json'},\n                              data=person,\n                              timeout=8000)",
-        "detail": "src.streamlit.src.call_api",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "fig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"IMC\",\n    color=\"Género\",\n    facet_col=\"Preferencia_de_Transporte\",\n    labels={\"IMC\": \"Índice de Masa Corporal\"}\n)\ntab_graficos.plotly_chart(fig6, use_container_width=True)\n# TAB MODELO",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "#URL_BASE",
+        "label": "df3",
         "kind": 5,
-        "importPath": "src.streamlit.src.call_api",
-        "description": "src.streamlit.src.call_api",
-        "peekOfCode": "#URL_BASE = 'http://localhost'\ndef obesity_prediction(person):\n      url = URL_BASE + '/obesity_prediction'                  \n      person = json.dumps(person) \n      try:\n            response = requests.post(url,\n                              headers={'Content-Type': 'application/json'},\n                              data=person,\n                              timeout=8000)\n            return json.loads(response.content)",
-        "detail": "src.streamlit.src.call_api",
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "df3 = pd.read_csv(\"ObesityDataSet.csv\")\ndf3.columns = [col.upper() for col in df3.columns]\n# cargando el modelo guardado\nmodelo = joblib.load(\"rta_model_deploy3.joblib\")\ncodificador = joblib.load(\"onehot_encoder.joblib\")\n# creando la lista de opciones para el menú desplegable\nopciones_GENERO = [\"Selecciona una opción\", \"Femenino\", \"Masculino\"]\nopciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "num_var_distribution",
-        "kind": 2,
-        "importPath": "src.streamlit.src.chart_common_functions",
-        "description": "src.streamlit.src.chart_common_functions",
-        "peekOfCode": "def num_var_distribution(df):\n    fig, axes = plt.subplots(nrows=5, ncols=3, figsize=(12, 10))\n    axes = axes.flat\n    col_num = df.select_dtypes(include=['float64', 'int64']).columns\n    colormap = sns.color_palette('Oranges')\n    for i, colum in enumerate(col_num):\n        sns.histplot(\n            data     = df,\n            x        = colum,\n            stat     = \"count\",",
-        "detail": "src.streamlit.src.chart_common_functions",
+        "label": "df3.columns",
+        "kind": 5,
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "df3.columns = [col.upper() for col in df3.columns]\n# cargando el modelo guardado\nmodelo = joblib.load(\"rta_model_deploy3.joblib\")\ncodificador = joblib.load(\"onehot_encoder.joblib\")\n# creando la lista de opciones para el menú desplegable\nopciones_GENERO = [\"Selecciona una opción\", \"Femenino\", \"Masculino\"]\nopciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']\nopciones_NCP   = [\"Selecciona una opción\", 'Una', 'Dos', 'Tres', 'Más de tres']",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "num_var_correl",
-        "kind": 2,
-        "importPath": "src.streamlit.src.chart_common_functions",
-        "description": "src.streamlit.src.chart_common_functions",
-        "peekOfCode": "def num_var_correl(df, col):\n    fig, axes = plt.subplots(nrows=3, ncols=3, figsize=(12, 10))\n    axes = axes.flat\n    cols = df.select_dtypes(include=['float64']).columns\n    if col in cols: #df[col].dtype == np.float64 or df[col].dtype == np.int: \n        cols = cols.drop(col)\n    col_num = [col for col in cols if not re.search('date$', col)]\n    for i, colum in enumerate(col_num):\n        sns.regplot(\n            x           = df[col],",
-        "detail": "src.streamlit.src.chart_common_functions",
+        "label": "modelo",
+        "kind": 5,
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "modelo = joblib.load(\"rta_model_deploy3.joblib\")\ncodificador = joblib.load(\"onehot_encoder.joblib\")\n# creando la lista de opciones para el menú desplegable\nopciones_GENERO = [\"Selecciona una opción\", \"Femenino\", \"Masculino\"]\nopciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']\nopciones_NCP   = [\"Selecciona una opción\", 'Una', 'Dos', 'Tres', 'Más de tres']\nopciones_CAEC   = [\"Selecciona una opción\", 'No', 'A veces', 'Frecuentemente', 'Siempre']\nopciones_SMOKE   = [\"Selecciona una opción\", 'No', 'Sí']",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "distribution_var_categ",
-        "kind": 2,
-        "importPath": "src.streamlit.src.chart_common_functions",
-        "description": "src.streamlit.src.chart_common_functions",
-        "peekOfCode": "def distribution_var_categ(df, col, invert=False):\n    fig, axes = plt.subplots(nrows=3, ncols=3, figsize=(18, 15))\n    axes = axes.flat\n    if invert:\n        cols = df.select_dtypes(include=['float64']).columns\n    else:\n        cols = df.select_dtypes(include=['object']).columns\n    object_cols = [col for col in cols if not re.search('date$', col)]\n    for i, colum in enumerate(object_cols):\n        if invert:",
-        "detail": "src.streamlit.src.chart_common_functions",
+        "label": "codificador",
+        "kind": 5,
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "codificador = joblib.load(\"onehot_encoder.joblib\")\n# creando la lista de opciones para el menú desplegable\nopciones_GENERO = [\"Selecciona una opción\", \"Femenino\", \"Masculino\"]\nopciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']\nopciones_NCP   = [\"Selecciona una opción\", 'Una', 'Dos', 'Tres', 'Más de tres']\nopciones_CAEC   = [\"Selecciona una opción\", 'No', 'A veces', 'Frecuentemente', 'Siempre']\nopciones_SMOKE   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_CH2O   = [\"Selecciona una opción\", 'Menos de 1L', 'Entre 1L y 2L', 'Más de 2L']",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "bars_chart",
-        "kind": 2,
-        "importPath": "src.streamlit.src.chart_common_functions",
-        "description": "src.streamlit.src.chart_common_functions",
-        "peekOfCode": "def bars_chart(df, x_in, y_in, detail, title, title_x, title_y):\n    x = alt.X(x_in, title = title_x, stack='zero', \n          axis = alt.Axis(format = \",.2s\", grid=True, titleAnchor='middle', labelFontSize=LABEL_SIZE))\n    y = alt.Y(y_in, title=title_y, axis = alt.Axis(labelAngle=0, labelFontSize=LABEL_SIZE))\n    tooltip=[alt.Tooltip(detail, title='Grado de obesidad'),\n             alt.Tooltip(y_in, title='Rango de edad'),\n             alt.Tooltip(x_in, title='Cantidad individuos')]\n    bars = alt.Chart(df).mark_bar().encode(\n        x=x,\n        y=y,",
-        "detail": "src.streamlit.src.chart_common_functions",
+        "label": "opciones_GENERO",
+        "kind": 5,
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "opciones_GENERO = [\"Selecciona una opción\", \"Femenino\", \"Masculino\"]\nopciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']\nopciones_NCP   = [\"Selecciona una opción\", 'Una', 'Dos', 'Tres', 'Más de tres']\nopciones_CAEC   = [\"Selecciona una opción\", 'No', 'A veces', 'Frecuentemente', 'Siempre']\nopciones_SMOKE   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_CH2O   = [\"Selecciona una opción\", 'Menos de 1L', 'Entre 1L y 2L', 'Más de 2L']\nopciones_SCC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAF   = [\"Selecciona una opción\", 'No tengo', '1 o 2 días', '3 o 4 días', '4 o 5 días']",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "pie_chart",
-        "kind": 2,
-        "importPath": "src.streamlit.src.chart_common_functions",
-        "description": "src.streamlit.src.chart_common_functions",
-        "peekOfCode": "def pie_chart(df, theta_in, category, title, cat_title):\n    theta = alt.Theta(theta_in, stack=True, title='Total de personas')\n    text = alt.Text(theta_in) \n    base = alt.Chart(df).encode(\n        theta=theta, \n        color=alt.Color(category, scale=alt.Scale(scheme='Oranges'), title=cat_title)\n    ).properties(title={\n                \"text\": title,\n                #\"color\": \"orange\",  # Cambiar color del título\n                \"fontSize\": TITLE_SIZE    # Cambiar tamaño de la fuente del título",
-        "detail": "src.streamlit.src.chart_common_functions",
-        "documentation": {}
-    },
-    {
-        "label": "clusters_chart",
-        "kind": 2,
-        "importPath": "src.streamlit.src.clustering_functions",
-        "description": "src.streamlit.src.clustering_functions",
-        "peekOfCode": "def clusters_chart(df):\n    x = 'count(*):Q'\n    y = 'age_range:O'\n    detail = 'cluster:N'\n    title='Cantidad de Individuos por rango de edad y el Cluster asignado'\n    title_x = 'Total individuos'\n    title_y = 'Rangos de Edad'\n    char = ccf.bars_chart(df, x, y, detail, title, title_x, title_y)\n    return char\ndef define_label(bmi, cc, rcc, ict):",
-        "detail": "src.streamlit.src.clustering_functions",
-        "documentation": {}
-    },
-    {
-        "label": "define_label",
-        "kind": 2,
-        "importPath": "src.streamlit.src.clustering_functions",
-        "description": "src.streamlit.src.clustering_functions",
-        "peekOfCode": "def define_label(bmi, cc, rcc, ict):\n    return bmi + '-' + cc + '-' + rcc + '-' + ict\ndef cluster_labels_chart(df):\n    title = 'Cantidad de individuos por etiqueta'\n    tooltip=[alt.Tooltip('label:N', title='Etiqueta o grupo'),\n             alt.Tooltip('sum(total):Q', title='Cantidad individuos')]\n    bars = alt.Chart(df).mark_bar().encode(\n        x=alt.X('sum(total):Q', title='Total personas'),\n        y=alt.Y('label:N', title='Etiqueta o grupo'),\n        tooltip=tooltip,",
-        "detail": "src.streamlit.src.clustering_functions",
-        "documentation": {}
-    },
-    {
-        "label": "cluster_labels_chart",
-        "kind": 2,
-        "importPath": "src.streamlit.src.clustering_functions",
-        "description": "src.streamlit.src.clustering_functions",
-        "peekOfCode": "def cluster_labels_chart(df):\n    title = 'Cantidad de individuos por etiqueta'\n    tooltip=[alt.Tooltip('label:N', title='Etiqueta o grupo'),\n             alt.Tooltip('sum(total):Q', title='Cantidad individuos')]\n    bars = alt.Chart(df).mark_bar().encode(\n        x=alt.X('sum(total):Q', title='Total personas'),\n        y=alt.Y('label:N', title='Etiqueta o grupo'),\n        tooltip=tooltip,\n        color=alt.Color(\n        'label:N', title='Etiqueta o grupo', legend=alt.Legend(orient=\"bottom\", titleOrient=\"left\")",
-        "detail": "src.streamlit.src.clustering_functions",
-        "documentation": {}
-    },
-    {
-        "label": "obesity_chart",
-        "kind": 2,
-        "importPath": "src.streamlit.src.clustering_functions",
-        "description": "src.streamlit.src.clustering_functions",
-        "peekOfCode": "def obesity_chart(df):\n    chart = alt.Chart(df, width=500, height=alt.Step(10)).mark_bar().encode(\n    y=alt.Y('label:N', axis=None),\n    x=alt.X('sum(total):Q', title='Total personas'),\n    color=alt.Color(\n        'label:N', title='Etiqueta o grupo', legend=alt.Legend(orient=\"bottom\", titleOrient=\"left\")\n    ),\n    tooltip=[alt.Tooltip('label:N', title='Etiqueta'),\n             alt.Tooltip('sum(total):Q', title='Cantidad individuos'),\n             alt.Tooltip('obesity:N', title='Grado de Riesgo')],",
-        "detail": "src.streamlit.src.clustering_functions",
-        "documentation": {}
-    },
-    {
-        "label": "clusters_factors_charts",
-        "kind": 2,
-        "importPath": "src.streamlit.src.clustering_functions",
-        "description": "src.streamlit.src.clustering_functions",
-        "peekOfCode": "def clusters_factors_charts(df, cluster):\n    if cluster >= 0:\n        query = f'cluster=={cluster}'\n        df = df.query(query)[['cluster', 'age_range', 'risk_factors', 'gender']]\n    else:\n        df = df[['cluster', 'age_range', 'risk_factors', 'gender']]\n    fig, (ax1, ax2, ax3) = plt.subplots(nrows=1, ncols=3, figsize=(18, 6))\n    sns.countplot(x='cluster', hue='risk_factors', data=df, ax=ax1)\n    sns.countplot(x='cluster', hue='age_range', data=df, ax=ax2)\n    sns.countplot(x='cluster', hue='gender', data=df, ax=ax3)",
-        "detail": "src.streamlit.src.clustering_functions",
-        "documentation": {}
-    },
-    {
-        "label": "eda_cluster",
-        "kind": 2,
-        "importPath": "src.streamlit.src.clustering_functions",
-        "description": "src.streamlit.src.clustering_functions",
-        "peekOfCode": "def eda_cluster(df, cluster):      \n    query = f'cluster=={cluster}'\n    df_table = df.query(query)[['age_range',\n                                'obesity_bmi_txt', 'obesity_cc_txt',  \n                                'obesity_rcc_txt', 'obesity_ict_txt', \n                                'risk_factors', 'obesity', 'cluster']]\n    if df_table.obesity.isnull().any():\n        index_cols = ['age_range',\n                        'obesity_bmi_txt', 'obesity_cc_txt',  \n                        'obesity_rcc_txt', 'obesity_ict_txt', ",
-        "detail": "src.streamlit.src.clustering_functions",
-        "documentation": {}
-    },
-    {
-        "label": "divide_by_gender",
-        "kind": 2,
-        "importPath": "src.streamlit.src.eda_functions",
-        "description": "src.streamlit.src.eda_functions",
-        "peekOfCode": "def divide_by_gender(df, val):\n    query = f\"gender == '{val}'\"\n    df = df.query(query)\n    return df\ndef correlation(df):\n    colormap = sns.color_palette('Oranges')\n    corr_df = df.corr(method='pearson', numeric_only=True)\n    fig, ax = plt.subplots(figsize=(12, 8))\n    sns.heatmap(corr_df, annot=True, cmap=colormap)\n    ax.set_title('Matriz de Correlación', fontsize=14, weight='bold')   ",
-        "detail": "src.streamlit.src.eda_functions",
-        "documentation": {}
-    },
-    {
-        "label": "correlation",
-        "kind": 2,
-        "importPath": "src.streamlit.src.eda_functions",
-        "description": "src.streamlit.src.eda_functions",
-        "peekOfCode": "def correlation(df):\n    colormap = sns.color_palette('Oranges')\n    corr_df = df.corr(method='pearson', numeric_only=True)\n    fig, ax = plt.subplots(figsize=(12, 8))\n    sns.heatmap(corr_df, annot=True, cmap=colormap)\n    ax.set_title('Matriz de Correlación', fontsize=14, weight='bold')   \n    return fig\ndef bmi_char(df, df_eda_f, df_eda_m):\n    x = 'count(*):Q'\n    y = 'age_range:O'",
-        "detail": "src.streamlit.src.eda_functions",
-        "documentation": {}
-    },
-    {
-        "label": "bmi_char",
-        "kind": 2,
-        "importPath": "src.streamlit.src.eda_functions",
-        "description": "src.streamlit.src.eda_functions",
-        "peekOfCode": "def bmi_char(df, df_eda_f, df_eda_m):\n    x = 'count(*):Q'\n    y = 'age_range:O'\n    detail = 'obesity_bmi_txt:N'\n    title='Cantidad de Individuos según su rango de edad y grado de Obesidad según su IMC'\n    title_f='Sólo Mujeres'\n    title_m='Sólo Hombres'\n    title_x = 'Total individuos'\n    title_y = 'Rangos de Edad'\n    char_todo = ccf.bars_chart(df, x, y, detail, title, title_x, title_y)",
-        "detail": "src.streamlit.src.eda_functions",
-        "documentation": {}
-    },
-    {
-        "label": "ict_char",
-        "kind": 2,
-        "importPath": "src.streamlit.src.eda_functions",
-        "description": "src.streamlit.src.eda_functions",
-        "peekOfCode": "def ict_char(df, df_eda_f, df_eda_m):\n    x = 'count(*):Q'\n    y = 'age_range:O'\n    detail = 'obesity_ict_txt:N'\n    title='Cantidad de Individuos según su rango de edad y grado de Obesidad según su ICT'\n    title_f='Sólo Mujeres'\n    title_m='Sólo Hombres'\n    title_x = 'Total individuos'\n    title_y = 'Rangos de Edad'\n    char_todo = ccf.bars_chart(df, x, y, detail, title, title_x, title_y)",
-        "detail": "src.streamlit.src.eda_functions",
-        "documentation": {}
-    },
-    {
-        "label": "rcc_char",
-        "kind": 2,
-        "importPath": "src.streamlit.src.eda_functions",
-        "description": "src.streamlit.src.eda_functions",
-        "peekOfCode": "def rcc_char(df, df_eda_f, df_eda_m):\n    x = 'count(*):Q'\n    y = 'age_range:O'\n    detail = 'obesity_rcc_txt:N'\n    title='Cantidad de Individuos según su rango de edad y riesgo de Obesidad según su RCC'\n    title_f='Sólo Mujeres'\n    title_m='Sólo Hombres'\n    title_x = 'Total individuos'\n    title_y = 'Rangos de Edad'\n    char_todo = ccf.bars_chart(df, x, y, detail, title, title_x, title_y)",
-        "detail": "src.streamlit.src.eda_functions",
-        "documentation": {}
-    },
-    {
-        "label": "cc_char",
-        "kind": 2,
-        "importPath": "src.streamlit.src.eda_functions",
-        "description": "src.streamlit.src.eda_functions",
-        "peekOfCode": "def cc_char(df, df_eda_f, df_eda_m):\n    x = 'count(*):Q'\n    y = 'age_range:O'\n    detail = 'obesity_cc_txt:N'\n    title='Cantidad de Individuos según su rango de edad y riesgo de Obesidad según su CC'\n    title_f='Sólo Mujeres'\n    title_m='Sólo Hombres'\n    title_x = 'Total individuos'\n    title_y = 'Rangos de Edad'\n    char_todo = ccf.bars_chart(df, x, y, detail, title, title_x, title_y)",
-        "detail": "src.streamlit.src.eda_functions",
-        "documentation": {}
-    },
-    {
-        "label": "risks_char",
-        "kind": 2,
-        "importPath": "src.streamlit.src.eda_functions",
-        "description": "src.streamlit.src.eda_functions",
-        "peekOfCode": "def risks_char(df, df_eda_f, df_eda_m):\n    x = 'count(*):Q'\n    y = 'age_range:O'\n    detail = 'risk_factors:N'\n    title='Cantidad de Individuos según su rango de edad y cantidad de factores de riesgo'\n    title_f='Sólo Mujeres'\n    title_m='Sólo Hombres'\n    title_x = 'Total individuos'\n    title_y = 'Rangos de Edad'\n    char_todo = ccf.bars_chart(df, x, y, detail, title, title_x, title_y)",
-        "detail": "src.streamlit.src.eda_functions",
+        "label": "opciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO",
+        "kind": 5,
+        "importPath": "src.app.app",
+        "description": "src.app.app",
+        "peekOfCode": "opciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']\nopciones_NCP   = [\"Selecciona una opción\", 'Una', 'Dos', 'Tres', 'Más de tres']\nopciones_CAEC   = [\"Selecciona una opción\", 'No', 'A veces', 'Frecuentemente', 'Siempre']\nopciones_SMOKE   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_CH2O   = [\"Selecciona una opción\", 'Menos de 1L', 'Entre 1L y 2L', 'Más de 2L']\nopciones_SCC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAF   = [\"Selecciona una opción\", 'No tengo', '1 o 2 días', '3 o 4 días', '4 o 5 días']\nopciones_TUE   = [\"Selecciona una opción\", '0-2 horas', '3-5 horas', 'Más de 5 horas']",
+        "detail": "src.app.app",
         "documentation": {}
     },
     {
@@ -2300,24 +937,6 @@
         "description": "src.utils.utils",
         "peekOfCode": "def get_input_columns_pipeline(pipeline):\n    input_columns = []\n    column_transformer=pipeline.named_steps['preprocessor']   \n    # Iterar sobre las transformaciones dentro del ColumnTransformer\n    for _, _, columns in column_transformer.transformers_:\n        # Si el transformer es 'passthrough', agregar las columnas originales\n        if columns == 'passthrough':\n            input_columns.extend(columns)\n        else:\n            input_columns.extend(columns)",
         "detail": "src.utils.utils",
-        "documentation": {}
-    },
-    {
-        "label": "open_terminal",
-        "kind": 2,
-        "importPath": "src.open",
-        "description": "src.open",
-        "peekOfCode": "def open_terminal(comando):\n    subprocess.run([\"gnome-terminal -e \" + comando], shell=True, check=True)\ndef run_command(comando):\n    subprocess.call([comando], shell=True)\nif __name__ == \"__main__\":\n    # Abre una terminal y ejecuta el comando ls\n    open_terminal(\"sh run-app.sh\")\n    # Abre otra terminal y ejecuta el comando ps\n    open_terminal(\"ls\")\n    # Ejecuta el comando date en la terminal actual",
-        "detail": "src.open",
-        "documentation": {}
-    },
-    {
-        "label": "run_command",
-        "kind": 2,
-        "importPath": "src.open",
-        "description": "src.open",
-        "peekOfCode": "def run_command(comando):\n    subprocess.call([comando], shell=True)\nif __name__ == \"__main__\":\n    # Abre una terminal y ejecuta el comando ls\n    open_terminal(\"sh run-app.sh\")\n    # Abre otra terminal y ejecuta el comando ps\n    open_terminal(\"ls\")\n    # Ejecuta el comando date en la terminal actual\n    run_command(\"date\")",
-        "detail": "src.open",
         "documentation": {}
     }
 ]
