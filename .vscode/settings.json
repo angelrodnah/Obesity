@@ -1,3 +1,8 @@
 {
-  "commentTranslate.hover.enabled": false
+  "name": "streamlit debug",
+  "type": "python",
+  "request": "launch",
+  "module": "streamlit",
+  "args": ["run", "${file}"],
+  "justMyCode": true
 }

@@ -62,6 +62,15 @@
         "documentation": {}
     },
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "seaborn",
         "kind": 6,
         "isExtraImport": true,
@@ -305,15 +314,6 @@
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
-        "documentation": {}
-    },
-    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -449,7 +449,7 @@
         "kind": 2,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "def obtener_datos2():\n    df = pd.read_excel(\"Kitap1.xlsx\")\n    return df\ndf2 = obtener_datos2()\ncolumn_conjunto_datos.dataframe(df2)\ncolumn_inf.subheader(\"Conjunto de Datos\")\ndef obtener_datos():\n    df = pd.read_csv(\"ObesityDataSet.csv\")\n    return df\ndf = obtener_datos()",
+        "peekOfCode": "def obtener_datos2():\n    df = pd.read_pickle(\"./data/df.pkl\")\n    return df\ndf2 = obtener_datos2()\ncolumn_conjunto_datos.dataframe(df2)\ncolumn_inf.subheader(\"Conjunto de Datos\")\ndef obtener_datos():\n    df = pd.read_pickle(\"./data/df.pkl\")\n    return df\ndf = obtener_datos()",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -458,7 +458,7 @@
         "kind": 2,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "def obtener_datos():\n    df = pd.read_csv(\"ObesityDataSet.csv\")\n    return df\ndf = obtener_datos()\ncolumn_inf.dataframe(df)\ndf[\"Nivel de Obesidad\"] = df[\"NObeyesdad\"]\ndf[\"Frecuencia de Actividad Física\"] = df[\"FAF\"]\ndf[\"Fumar\"] = df[\"SMOKE\"]\ndf[\"Consumo de Alimentos Altos en Calorías\"] = df[\"FAVC\"]\ndf[\"Consumo de Verduras\"] = df[\"FCVC\"]",
+        "peekOfCode": "def obtener_datos():\n    df = pd.read_pickle(\"./data/df.pkl\")\n    return df\ndf = obtener_datos()\ncolumn_inf.dataframe(df)\ndf[\"Nivel de Obesidad\"] = df[\"NObeyesdad\"]\ndf[\"Frecuencia de Actividad Física\"] = df[\"FAF\"]\ndf[\"Fumar\"] = df[\"SMOKE\"]\ndf[\"Consumo de Alimentos Altos en Calorías\"] = df[\"FAVC\"]\ndf[\"Consumo de Verduras\"] = df[\"FCVC\"]",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -485,7 +485,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "imagen2 = Image.open('Obesity.webp')\nst.set_page_config(page_title=\"Conoce tu riesgo de obesidad :question:\", layout=\"wide\")\nst.header(\":blue[Conoce Tu Obesidad] :red[ Estás en Riesgo?]\")\ntab_inicio, tab_conjunto_datos, tab_graficos, tab_modelo = st.tabs([\"Inicio\", \"Sobre el Conjunto de Datos\", \"Gráficos\", \"Predicción del Nivel de Obesidad\"])\n# TAB INICIO\ninf, video = tab_inicio.columns(2, gap=\"large\")\ninf.markdown(\"El objetivo principal de este proyecto es desarrollar un modelo predictivo que pueda anticipar la probabilidad de que un individuo se vuelva obeso basándose en un análisis de datos exhaustivo. La obesidad está asociada con una serie de resultados adversos, incluido un mayor riesgo de enfermedades cardiovasculares, diabetes tipo 2, problemas respiratorios y articulares. Además, puede afectar la salud mental, lo que lleva a un aumento de las tasas de depresión y ansiedad. Por eso, abordar y prevenir la obesidad es vital para la salud y el bienestar en general.\")\ninf.markdown(\"Usando el conjunto de datos, que abarca variables cruciales como antecedentes familiares de sobrepeso, hábitos alimenticios (incluido el consumo frecuente de alimentos altos en calorías, frecuencia de consumo de verduras y consumo de alimentos entre comidas), factores de estilo de vida (hábitos de fumar, consumo diario de agua, monitoreo del consumo de calorías, frecuencia de actividad física, tiempo usando dispositivos tecnológicos y consumo de alcohol), y tipo de transporte utilizado, el objetivo es descubrir patrones y correlaciones que contribuyen a la obesidad. A través de la exploración de estos factores multifacéticos, el proyecto busca proporcionar ideas valiosas para intervenciones proactivas, permitiendo a las personas tomar decisiones informadas sobre su estilo de vida y potencialmente reducir el riesgo de obesidad en el futuro.\")\ninf.markdown(\"Por último, reconocer la importancia de abordar la obesidad es crucial, dadas sus profundas implicaciones para la salud en general y el mayor riesgo de diversos problemas de salud. Al comprender y predecir la obesidad, esperamos contribuir al esfuerzo más amplio de promover estilos de vida más saludables y prevenir los riesgos potenciales para la salud asociados con la obesidad.\")\nvideo.markdown(\"![Conoce tu Obesidad](https://masvidasinobesidad.com/wp-content/uploads/2018/02/IMC.png)\")",
+        "peekOfCode": "imagen2 = Image.open('./img/Obesity.webp')\nst.set_page_config(page_title=\"Conoce tu riesgo de obesidad :question:\", layout=\"wide\")\nst.header(\":blue[Conoce Tu Obesidad: ] :red[ Estás en Riesgo?]\")\ntab_inicio, tab_conjunto_datos, tab_graficos, tab_modelo = st.tabs([\"Inicio\", \"Sobre el Conjunto de Datos\", \"Gráficos\", \"Predicción del Nivel de Obesidad\"])\n# TAB INICIO\ninf, video = tab_inicio.columns(2, gap=\"large\")\ninf.markdown(\"El objetivo principal de este proyecto es desarrollar un modelo predictivo que pueda anticipar la probabilidad de que un individuo se vuelva obeso basándose en un análisis de datos exhaustivo. \\\n             La obesidad está asociada con una serie de resultados adversos, incluido un mayor riesgo de enfermedades cardiovasculares, diabetes tipo 2, problemas respiratorios y articulares. \\\n             Además, puede afectar la salud mental, lo que lleva a un aumento de las tasas de depresión y ansiedad. Por eso, abordar y prevenir la obesidad es vital para la salud y el bienestar en general.\")\ninf.markdown(\"Usando el conjunto de datos, que abarca variables cruciales como antecedentes familiares de sobrepeso, hábitos alimenticios (incluido el consumo frecuente de alimentos altos en calorías,\\",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -494,7 +494,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "video_file = open('https://www.youtube.com/watch?v=RvNwyyBE1CY', 'rb')\nvideo_bytes = video_file.read()\nvideo.video(video_bytes)\n# TAB CONJUNTO DE DATOS\ntab_conjunto_datos.subheader(\"Sobre el Conjunto de Datos\")\ncolumn_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap=\"large\")\ncolumn_inf.image(imagen2, width=300, use_column_width=True, clamp=False, channels='RGB', output_format='auto')\ncolumn_conjunto_datos.markdown(\n    \"\"\"\n    - El conjunto de datos utilizado para el análisis se obtuvo de [UCI ML Repository](https://archive.ics.uci.edu/datasets).",
+        "peekOfCode": "video_file = open('./video/Obesidad_ Un grave problema de salud pública.mp4', 'rb')\nvideo_bytes = video_file.read()\nvideo.video(video_bytes)\n# TAB CONJUNTO DE DATOS\ntab_conjunto_datos.subheader(\"Sobre el Conjunto de Datos\")\ncolumn_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap=\"large\")\ncolumn_inf.image(imagen2, width=100, use_column_width=True, clamp=False, channels='RGB', output_format='auto')\ncolumn_conjunto_datos.markdown(\n    \"\"\"\n    - El conjunto de datos utilizado para el análisis se obtuvo de [Kaagle](https://www.kaggle.com/competitions/playground-series-s4e2).",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -503,7 +503,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "video_bytes = video_file.read()\nvideo.video(video_bytes)\n# TAB CONJUNTO DE DATOS\ntab_conjunto_datos.subheader(\"Sobre el Conjunto de Datos\")\ncolumn_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap=\"large\")\ncolumn_inf.image(imagen2, width=300, use_column_width=True, clamp=False, channels='RGB', output_format='auto')\ncolumn_conjunto_datos.markdown(\n    \"\"\"\n    - El conjunto de datos utilizado para el análisis se obtuvo de [UCI ML Repository](https://archive.ics.uci.edu/datasets).\n    - Incluye datos para estimar los niveles de obesidad en personas de 14 a 61 años con diversos hábitos alimenticios y condiciones físicas en México, Perú y Colombia.",
+        "peekOfCode": "video_bytes = video_file.read()\nvideo.video(video_bytes)\n# TAB CONJUNTO DE DATOS\ntab_conjunto_datos.subheader(\"Sobre el Conjunto de Datos\")\ncolumn_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap=\"large\")\ncolumn_inf.image(imagen2, width=100, use_column_width=True, clamp=False, channels='RGB', output_format='auto')\ncolumn_conjunto_datos.markdown(\n    \"\"\"\n    - El conjunto de datos utilizado para el análisis se obtuvo de [Kaagle](https://www.kaggle.com/competitions/playground-series-s4e2).\n    - Incluye datos para estimar los niveles de obesidad en personas de 14 a 61 años con diversos hábitos alimenticios y condiciones físicas en México, Perú y Colombia.",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -512,7 +512,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "df2 = obtener_datos2()\ncolumn_conjunto_datos.dataframe(df2)\ncolumn_inf.subheader(\"Conjunto de Datos\")\ndef obtener_datos():\n    df = pd.read_csv(\"ObesityDataSet.csv\")\n    return df\ndf = obtener_datos()\ncolumn_inf.dataframe(df)\ndf[\"Nivel de Obesidad\"] = df[\"NObeyesdad\"]\ndf[\"Frecuencia de Actividad Física\"] = df[\"FAF\"]",
+        "peekOfCode": "df2 = obtener_datos2()\ncolumn_conjunto_datos.dataframe(df2)\ncolumn_inf.subheader(\"Conjunto de Datos\")\ndef obtener_datos():\n    df = pd.read_pickle(\"./data/df.pkl\")\n    return df\ndf = obtener_datos()\ncolumn_inf.dataframe(df)\ndf[\"Nivel de Obesidad\"] = df[\"NObeyesdad\"]\ndf[\"Frecuencia de Actividad Física\"] = df[\"FAF\"]",
         "detail": "src.app.app",
         "documentation": {}
     },

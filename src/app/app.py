@@ -5,22 +5,30 @@ import plotly.express as px
 import joblib
 import time
 from PIL import Image
+import os
 
+cdir=os.getcwd()
 
-imagen2 = Image.open('Obesity.webp')
+imagen1=Image.open('./img/nutricion-tratar-obesidad.webp')
+imagen2 = Image.open('./img/Obesity.webp')
 st.set_page_config(page_title="Conoce tu riesgo de obesidad :question:", layout="wide")
-st.header(":blue[Conoce Tu Obesidad] :red[ Estás en Riesgo?]")
+st.header(":blue[Conoce Tu Obesidad: ] :red[ Estás en Riesgo?]")
 
 tab_inicio, tab_conjunto_datos, tab_graficos, tab_modelo = st.tabs(["Inicio", "Sobre el Conjunto de Datos", "Gráficos", "Predicción del Nivel de Obesidad"])
 
 # TAB INICIO
 inf, video = tab_inicio.columns(2, gap="large")
-inf.markdown("El objetivo principal de este proyecto es desarrollar un modelo predictivo que pueda anticipar la probabilidad de que un individuo se vuelva obeso basándose en un análisis de datos exhaustivo. La obesidad está asociada con una serie de resultados adversos, incluido un mayor riesgo de enfermedades cardiovasculares, diabetes tipo 2, problemas respiratorios y articulares. Además, puede afectar la salud mental, lo que lleva a un aumento de las tasas de depresión y ansiedad. Por eso, abordar y prevenir la obesidad es vital para la salud y el bienestar en general.")
-inf.markdown("Usando el conjunto de datos, que abarca variables cruciales como antecedentes familiares de sobrepeso, hábitos alimenticios (incluido el consumo frecuente de alimentos altos en calorías, frecuencia de consumo de verduras y consumo de alimentos entre comidas), factores de estilo de vida (hábitos de fumar, consumo diario de agua, monitoreo del consumo de calorías, frecuencia de actividad física, tiempo usando dispositivos tecnológicos y consumo de alcohol), y tipo de transporte utilizado, el objetivo es descubrir patrones y correlaciones que contribuyen a la obesidad. A través de la exploración de estos factores multifacéticos, el proyecto busca proporcionar ideas valiosas para intervenciones proactivas, permitiendo a las personas tomar decisiones informadas sobre su estilo de vida y potencialmente reducir el riesgo de obesidad en el futuro.")
-inf.markdown("Por último, reconocer la importancia de abordar la obesidad es crucial, dadas sus profundas implicaciones para la salud en general y el mayor riesgo de diversos problemas de salud. Al comprender y predecir la obesidad, esperamos contribuir al esfuerzo más amplio de promover estilos de vida más saludables y prevenir los riesgos potenciales para la salud asociados con la obesidad.")
+inf.markdown("El objetivo principal de este proyecto es desarrollar un modelo predictivo que pueda anticipar la probabilidad de que un individuo se vuelva obeso basándose en un análisis de datos exhaustivo. \
+             La obesidad está asociada con una serie de resultados adversos, incluido un mayor riesgo de enfermedades cardiovasculares, diabetes tipo 2, problemas respiratorios y articulares. \
+             Además, puede afectar la salud mental, lo que lleva a un aumento de las tasas de depresión y ansiedad. Por eso, abordar y prevenir la obesidad es vital para la salud y el bienestar en general.")
+inf.markdown("Usando el conjunto de datos, que abarca variables cruciales como antecedentes familiares de sobrepeso, hábitos alimenticios (incluido el consumo frecuente de alimentos altos en calorías,\
+    frecuencia de consumo de verduras y consumo de alimentos entre comidas), factores de estilo de vida (hábitos de fumar, consumo diario de agua, monitoreo del consumo de calorías, \
+        frecuencia de actividad física, tiempo usando dispositivos tecnológicos y consumo de alcohol), y tipo de transporte utilizado, el objetivo es descubrir patrones y correlaciones \
+            que contribuyen a la obesidad. A través de la exploración de estos factores multifacéticos, esta aplicación constituye una herramienta proactiva para permitir a las personas\
+                tomar decisiones informadas sobre su estilo de vida y potencialmente reducir el riesgo de obesidad en el futuro.")
 
-video.markdown("![Conoce tu Obesidad](https://masvidasinobesidad.com/wp-content/uploads/2018/02/IMC.png)")
-video_file = open('https://www.youtube.com/watch?v=RvNwyyBE1CY', 'rb')
+inf.image(imagen1, width=200, use_column_width=True, clamp=False, channels='RGB', output_format='auto')
+video_file = open('./video/Obesidad_ Un grave problema de salud pública.mp4', 'rb')
 video_bytes = video_file.read()
 video.video(video_bytes)
 
@@ -28,11 +36,11 @@ video.video(video_bytes)
 tab_conjunto_datos.subheader("Sobre el Conjunto de Datos")
 column_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap="large")
 
-column_inf.image(imagen2, width=300, use_column_width=True, clamp=False, channels='RGB', output_format='auto')
+column_inf.image(imagen2, width=100, use_column_width=True, clamp=False, channels='RGB', output_format='auto')
 
 column_conjunto_datos.markdown(
     """
-    - El conjunto de datos utilizado para el análisis se obtuvo de [UCI ML Repository](https://archive.ics.uci.edu/datasets).
+    - El conjunto de datos utilizado para el análisis se obtuvo de [Kaagle](https://www.kaggle.com/competitions/playground-series-s4e2).
     - Incluye datos para estimar los niveles de obesidad en personas de 14 a 61 años con diversos hábitos alimenticios y condiciones físicas en México, Perú y Colombia.
     - Los datos se recopilaron utilizando una encuesta en una plataforma web con 17 atributos y 2111 registros.
     - Los datos se preprocesaron, incluida la eliminación de datos faltantes y atípicos, y la normalización de datos.
@@ -50,7 +58,7 @@ column_conjunto_datos.markdown(
 
 column_conjunto_datos.subheader("Preguntas de la encuesta utilizada para la recopilación inicial de información")
 def obtener_datos2():
-    df = pd.read_excel("Kitap1.xlsx")
+    df = pd.read_pickle("./data/df.pkl")
     return df
 
 df2 = obtener_datos2()
@@ -58,7 +66,7 @@ column_conjunto_datos.dataframe(df2)
 
 column_inf.subheader("Conjunto de Datos")
 def obtener_datos():
-    df = pd.read_csv("ObesityDataSet.csv")
+    df = pd.read_pickle("./data/df.pkl")
     return df
 
 df = obtener_datos()
