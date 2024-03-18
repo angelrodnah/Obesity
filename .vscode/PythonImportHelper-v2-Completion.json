@@ -111,14 +111,6 @@
         "documentation": {}
     },
     {
-        "label": "XEncoder",
-        "importPath": "app.utils.funcs",
-        "description": "app.utils.funcs",
-        "isExtraImport": true,
-        "detail": "app.utils.funcs",
-        "documentation": {}
-    },
-    {
         "label": "*",
         "importPath": "funcs",
         "description": "funcs",

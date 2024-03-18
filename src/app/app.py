@@ -10,7 +10,7 @@ import joblib
 appdir=so.path.dirname(so.path.abspath(__file__))
 so.chdir(appdir)
 sys.path.append(appdir+'/utils')
-from app.utils.funcs import XEncoder
+
 from funcs import *
 from values import *
 
