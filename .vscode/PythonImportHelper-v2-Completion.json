@@ -18,6 +18,46 @@
         "documentation": {}
     },
     {
+        "label": "Pipeline",
+        "importPath": "sklearn.pipeline",
+        "description": "sklearn.pipeline",
+        "isExtraImport": true,
+        "detail": "sklearn.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "sklearn.pipeline",
+        "description": "sklearn.pipeline",
+        "isExtraImport": true,
+        "detail": "sklearn.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "values",
+        "description": "values",
+        "isExtraImport": true,
+        "detail": "values",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "values",
+        "description": "values",
+        "isExtraImport": true,
+        "detail": "values",
+        "documentation": {}
+    },
+    {
+        "label": "pipeline",
+        "importPath": "sklearn",
+        "description": "sklearn",
+        "isExtraImport": true,
+        "detail": "sklearn",
+        "documentation": {}
+    },
+    {
         "label": "streamlit",
         "kind": 6,
         "isExtraImport": true,
@@ -36,24 +76,6 @@
         "documentation": {}
     },
     {
-        "label": "joblib",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "joblib",
-        "description": "joblib",
-        "detail": "joblib",
-        "documentation": {}
-    },
-    {
-        "label": "time",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "time",
-        "description": "time",
-        "detail": "time",
-        "documentation": {}
-    },
-    {
         "label": "Image",
         "importPath": "PIL",
         "description": "PIL",
@@ -68,6 +90,40 @@
         "importPath": "os",
         "description": "os",
         "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "joblib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "joblib",
+        "description": "joblib",
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "XEncoder",
+        "importPath": "app.utils.funcs",
+        "description": "app.utils.funcs",
+        "isExtraImport": true,
+        "detail": "app.utils.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "funcs",
+        "description": "funcs",
+        "isExtraImport": true,
+        "detail": "funcs",
         "documentation": {}
     },
     {
@@ -314,15 +370,6 @@
         "documentation": {}
     },
     {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
-        "documentation": {}
-    },
-    {
         "label": "pickle",
         "kind": 6,
         "isExtraImport": true,
@@ -369,14 +416,6 @@
         "description": "sklearn.preprocessing",
         "isExtraImport": true,
         "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "Pipeline",
-        "importPath": "sklearn.pipeline",
-        "description": "sklearn.pipeline",
-        "isExtraImport": true,
-        "detail": "sklearn.pipeline",
         "documentation": {}
     },
     {
@@ -445,21 +484,147 @@
         "documentation": {}
     },
     {
-        "label": "obtener_datos2",
+        "label": "Feature_Engineering",
         "kind": 2,
-        "importPath": "src.app.app",
-        "description": "src.app.app",
-        "peekOfCode": "def obtener_datos2():\n    df = pd.read_pickle(\"./data/df.pkl\")\n    return df\ndf2 = obtener_datos2()\ncolumn_conjunto_datos.dataframe(df2)\ncolumn_inf.subheader(\"Conjunto de Datos\")\ndef obtener_datos():\n    df = pd.read_pickle(\"./data/df.pkl\")\n    return df\ndf = obtener_datos()",
-        "detail": "src.app.app",
+        "importPath": "src.app.utils.funcs",
+        "description": "src.app.utils.funcs",
+        "peekOfCode": "def Feature_Engineering(df):\n        try:\n            df.set_index('id', inplace=True)\n            df['IMC'] = df['Weight'] / (df['Height'] ** 2)\n            df['HA'] = df['FCVC'] * df['NCP']\n            df['UT'] = df['TUE'] / df['Age']\n        except:\n            pass\n        return df\ndef XEncoder(Pipeline,X):",
+        "detail": "src.app.utils.funcs",
         "documentation": {}
     },
     {
-        "label": "obtener_datos",
+        "label": "XEncoder",
         "kind": 2,
-        "importPath": "src.app.app",
-        "description": "src.app.app",
-        "peekOfCode": "def obtener_datos():\n    df = pd.read_pickle(\"./data/df.pkl\")\n    return df\ndf = obtener_datos()\ncolumn_inf.dataframe(df)\ndf[\"Nivel de Obesidad\"] = df[\"NObeyesdad\"]\ndf[\"Frecuencia de Actividad Física\"] = df[\"FAF\"]\ndf[\"Fumar\"] = df[\"SMOKE\"]\ndf[\"Consumo de Alimentos Altos en Calorías\"] = df[\"FAVC\"]\ndf[\"Consumo de Verduras\"] = df[\"FCVC\"]",
-        "detail": "src.app.app",
+        "importPath": "src.app.utils.funcs",
+        "description": "src.app.utils.funcs",
+        "peekOfCode": "def XEncoder(Pipeline,X):\n    categorical_columns = X.columns[X.dtypes==\"object\"].tolist()\n    numeric_columns_to_transform = X.columns[X.dtypes!=\"object\"].tolist()    \n    X_trans = Pipeline.transform(X)\n    transformed_columns = []\n    # Obtener columnas transformadas de OHE\n    if categorical_columns:\n        ohe_columns = Pipeline.named_steps['preprocessor'].named_transformers_['categorical'].named_steps['onehot'].get_feature_names_out()\n        transformed_columns.extend(ohe_columns)\n    # Obtener columnas transformadas de variables numéricas",
+        "detail": "src.app.utils.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "traduce_columnas",
+        "kind": 2,
+        "importPath": "src.app.utils.funcs",
+        "description": "src.app.utils.funcs",
+        "peekOfCode": "def traduce_columnas(df, diccionario):\n    df.columns = [diccionario.get(col, col) for col in df.columns]\n    return df\ndef codifica_columnas(df, diccionario):\n    dff=df.copy(True)\n    for col in dff.columns:\n        if col in diccionario.keys():\n            dff[col] = dff[col].map(diccionario[col])\n    Feature_Engineering(dff)\n    return dff",
+        "detail": "src.app.utils.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "codifica_columnas",
+        "kind": 2,
+        "importPath": "src.app.utils.funcs",
+        "description": "src.app.utils.funcs",
+        "peekOfCode": "def codifica_columnas(df, diccionario):\n    dff=df.copy(True)\n    for col in dff.columns:\n        if col in diccionario.keys():\n            dff[col] = dff[col].map(diccionario[col])\n    Feature_Engineering(dff)\n    return dff\ndef redondea_vars(df):\n    dff=df.copy(deep=True)\n    for var in vars2round:",
+        "detail": "src.app.utils.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "redondea_vars",
+        "kind": 2,
+        "importPath": "src.app.utils.funcs",
+        "description": "src.app.utils.funcs",
+        "peekOfCode": "def redondea_vars(df):\n    dff=df.copy(deep=True)\n    for var in vars2round:\n        dff[var] = dff[var].apply(lambda x: round(x, 0))\n        dff[var] = dff[var].astype(int)\n    return dff",
+        "detail": "src.app.utils.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "rev_dict",
+        "kind": 2,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "def rev_dict(diccionario):\n    return {valor: clave for clave, valor in diccionario.items()}\ndiccionario_columnas = {\n    'FAVC': 'Consumo de Alimentos Altos en Calorías',\n    'FCVC': 'Consumo de Verduras',\n    'NCP': 'Número de Comidas Principales',\n    'CAEC': 'Comer Entre Comidas',\n    'CH2O': 'Consumo Diario de Agua',\n    'CALC': 'Consumo de Alcohol',\n    'SCC': 'Monitoreo de Calorías',",
+        "detail": "src.app.utils.values",
+        "documentation": {}
+    },
+    {
+        "label": "diccionario_columnas",
+        "kind": 5,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "diccionario_columnas = {\n    'FAVC': 'Consumo de Alimentos Altos en Calorías',\n    'FCVC': 'Consumo de Verduras',\n    'NCP': 'Número de Comidas Principales',\n    'CAEC': 'Comer Entre Comidas',\n    'CH2O': 'Consumo Diario de Agua',\n    'CALC': 'Consumo de Alcohol',\n    'SCC': 'Monitoreo de Calorías',\n    'FAF': 'Frecuencia de Actividad Física',\n    'TUE': 'Uso de Dispositivos Tecnológicos',",
+        "detail": "src.app.utils.values",
+        "documentation": {}
+    },
+    {
+        "label": "target",
+        "kind": 5,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "target = \"NObeyesdad\"\ndecod_target= \"Nivel de obesidad\"\ndict_CAEC={\n    'no': 0,\n    'Sometimes': 1,\n    'Frequently': 2,\n    'Always': 3}\ndict_CALC={\n    'no': 0,\n    'Sometimes': 1,",
+        "detail": "src.app.utils.values",
+        "documentation": {}
+    },
+    {
+        "label": "dict_var_modelo",
+        "kind": 5,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "dict_var_modelo = {\n    'Edad': 'Age',\n    'Comer Entre Comidas': 'CAEC',\n    'Consumo de Alcohol': 'CALC',\n    'Consumo Diario de Agua': 'CH2O',\n    'Frecuencia de Actividad Física': 'FAF',\n    'Consumo de Verduras': 'FCVC',\n    'Género': 'Gender_Male',\n    'Hábitos alimienticios': 'HA',\n    'Altura': 'Height',",
+        "detail": "src.app.utils.values",
+        "documentation": {}
+    },
+    {
+        "label": "variables",
+        "kind": 5,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "variables = [\n    'Gender',\n    'Age',\n    'Height',\n    'Weight',\n    'family_history_with_overweight',\n    'FAVC',\n    'FCVC',\n    'NCP',\n    'CAEC',",
+        "detail": "src.app.utils.values",
+        "documentation": {}
+    },
+    {
+        "label": "preguntas",
+        "kind": 5,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "preguntas = [\n    \"¿Cuál es tu género?\",\n    \"Ingresa tu edad\",\n    \"Ingresa tu altura (m)\",\n    \"Ingresa tu peso (Kg)\",\n    \"¿Tiene un familiar que ha sufrido o sufre de sobrepeso?\",\n    \"¿Consumes alimentos altos en calorías con frecuencia?\",\n    \"¿Sueles comer verduras en tus comidas?\",\n    \"¿Cuántas comidas principales tienes al día?\",\n    \"¿Comes algo entre comidas?\",",
+        "detail": "src.app.utils.values",
+        "documentation": {}
+    },
+    {
+        "label": "opciones_respuesta",
+        "kind": 5,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "opciones_respuesta = [\n    [\"Femenino\", \"Masculino\"],\n    \"-\",\n    \"-\",\n    \"-\",\n    [\"No\", \"Sí\"],\n    [\"No\", \"Sí\"],\n    [\"Nunca\", \"A veces\", \"Siempre\"],\n    [\"Una\", \"Dos\", \"Tres\", \"Más de tres\"],\n    [\"No\", \"A veces\", \"Frecuentemente\", \"Siempre\"],",
+        "detail": "src.app.utils.values",
+        "documentation": {}
+    },
+    {
+        "label": "opciones_respuesta",
+        "kind": 5,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "opciones_respuesta = [[option] if not isinstance(option, list) else option for option in opciones_respuesta]\ndf2= pd.DataFrame({\n    'Columna': variables,\n    'Pregunta': preguntas,\n    'Opciones de Respuesta': opciones_respuesta\n})\nvar_values={\n'FCVC':[1,2,3],\n'NCP':[1,2,3,4],\n'CH2O':[1,2,3],",
+        "detail": "src.app.utils.values",
+        "documentation": {}
+    },
+    {
+        "label": "dicts",
+        "kind": 5,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "dicts = {}\nfor a, b, c in zip(\n    df2.loc[df2.Columna.isin(list(var_values.keys())), 'Columna'],\n    df2.loc[df2.Columna.isin(list(var_values.keys())), 'Opciones de Respuesta'],\n    df2.loc[df2.Columna.isin(list(var_values.keys())), 'Columna'].apply(lambda x: var_values[x])\n):\n    dicts[a] = dict(zip(b, c))\ndicts['Gender']=rev_dict(dict_gender)\ndicts['MTRANS']=rev_dict(dict_mtrans)\ncols_y_n=['family_history_with_overweight','FAVC','SMOKE','SCC']",
+        "detail": "src.app.utils.values",
+        "documentation": {}
+    },
+    {
+        "label": "revdicts",
+        "kind": 5,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "revdicts = {}\nfor a, b, c in zip(\n    df2.loc[df2.Columna.isin(list(var_values.keys())), 'Columna'],\n    df2.loc[df2.Columna.isin(list(var_values.keys())), 'Opciones de Respuesta'],\n    df2.loc[df2.Columna.isin(list(var_values.keys())), 'Columna'].apply(lambda x: var_values[x])\n):\n    revdicts[a] = dict(zip(c, b))\nrevdicts['Gender']=dict_gender\nrevdicts['MTRANS']=dict_mtrans\ncols_y_n=['family_history_with_overweight','FAVC','SMOKE','SCC']",
+        "detail": "src.app.utils.values",
+        "documentation": {}
+    },
+    {
+        "label": "vars2round",
+        "kind": 5,
+        "importPath": "src.app.utils.values",
+        "description": "src.app.utils.values",
+        "peekOfCode": "vars2round = [ 'Age',\n                    'FCVC',\n                    'NCP',\n                    'CAEC',\n                    'CH2O',\n                    'FAF',\n                    'TUE',\n                    'CALC']",
+        "detail": "src.app.utils.values",
         "documentation": {}
     },
     {
@@ -467,16 +632,7 @@
         "kind": 2,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "def grafico_cruzado(data, columna_objetivo, columna_categorica, categorias):\n    fig3 = px.histogram(\n        data[data[columna_objetivo].isin(categorias)],\n        x=columna_objetivo,\n        color=columna_categorica,\n        barmode='group',\n        category_orders={columna_categorica: categorias},\n    )\n    tab_graficos.plotly_chart(fig3, use_container_width=True)\ncolumnas_categoricas = ['Género', 'Frecuencia de Actividad Física', 'Consumo de Alimentos Altos en Calorías', 'Consumo de Verduras', 'Número de Comidas Principales', 'Comer Entre Comidas','Fumar', 'Consumo Diario de Agua', 'Monitoreo de Calorías', 'Consumo de Alcohol', 'Uso de Dispositivos Tecnológicos', 'Antecedentes Familiares de Sobrepeso', 'Preferencia_de_Transporte']",
-        "detail": "src.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "principal",
-        "kind": 2,
-        "importPath": "src.app.app",
-        "description": "src.app.app",
-        "peekOfCode": "def principal():\n    tab_modelo.subheader(\"Por favor, ingresa la siguiente información:\")\n    GENERO = tab_modelo.selectbox('¿Cuál es tu género?', options=opciones_GENERO)\n    EDAD = tab_modelo.text_input('Ingresa tu edad', placeholder='Por ejemplo, 25')\n    ANTECEDENTES_FAMILIARES_CON_SOBREPESO = tab_modelo.selectbox('¿Tiene un familiar que ha sufrido o sufre de sobrepeso?',\n                                                         options=opciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO)\n    FAVC = tab_modelo.selectbox('¿Consumes alimentos altos en calorías con frecuencia?', options=opciones_FAVC)\n    FCVC = tab_modelo.selectbox('¿Sueles comer verduras en tus comidas?', options=opciones_FCVC)\n    NCP = tab_modelo.selectbox('¿Cuántas comidas principales tienes al día?', options=opciones_NCP)\n    CAEC = tab_modelo.selectbox('¿Comes algo entre comidas?', options=opciones_CAEC)",
+        "peekOfCode": "def grafico_cruzado(data, columna_objetivo, columna_categorica, categorias):\n    fig3 = px.histogram(\n        data[data[columna_objetivo].isin(categorias)],\n        x=columna_objetivo,\n        color=columna_categorica,\n        barmode='group',\n        category_orders={columna_categorica: categorias},\n    )\n    tab_graficos.plotly_chart(fig3, use_container_width=True)\ncolumnas_categoricas = ['Género', ",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -485,7 +641,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "imagen2 = Image.open('./img/Obesity.webp')\nst.set_page_config(page_title=\"Conoce tu riesgo de obesidad :question:\", layout=\"wide\")\nst.header(\":blue[Conoce Tu Obesidad: ] :red[ Estás en Riesgo?]\")\ntab_inicio, tab_conjunto_datos, tab_graficos, tab_modelo = st.tabs([\"Inicio\", \"Sobre el Conjunto de Datos\", \"Gráficos\", \"Predicción del Nivel de Obesidad\"])\n# TAB INICIO\ninf, video = tab_inicio.columns(2, gap=\"large\")\ninf.markdown(\"El objetivo principal de este proyecto es desarrollar un modelo predictivo que pueda anticipar la probabilidad de que un individuo se vuelva obeso basándose en un análisis de datos exhaustivo. \\\n             La obesidad está asociada con una serie de resultados adversos, incluido un mayor riesgo de enfermedades cardiovasculares, diabetes tipo 2, problemas respiratorios y articulares. \\\n             Además, puede afectar la salud mental, lo que lleva a un aumento de las tasas de depresión y ansiedad. Por eso, abordar y prevenir la obesidad es vital para la salud y el bienestar en general.\")\ninf.markdown(\"Usando el conjunto de datos, que abarca variables cruciales como antecedentes familiares de sobrepeso, hábitos alimenticios (incluido el consumo frecuente de alimentos altos en calorías,\\",
+        "peekOfCode": "imagen2 = Image.open('./img/Obesity.webp')\nst.set_page_config(page_title=\"Conoce tu riesgo de obesidad :question:\", layout=\"wide\")\nst.header(\":blue[Tus hábitos: ]:pizza: :hamburger: :hotdog: :cake: :arrow_right::arrow_right::arrow_right: :red[:heartbeat: ¿No estarás en riesgo de obesidad?]  :heartbeat:  :skull:\")\ntab_inicio, tab_conjunto_datos, tab_graficos, tab_modelo = st.tabs([\"Inicio\", \"Sobre el Conjunto de Datos\", \"Gráficos\", \"Predicción del Nivel de Obesidad\"])\n# TAB INICIO\ninf, video = tab_inicio.columns(2, gap=\"large\")\ninf.markdown(\"El objetivo principal de este proyecto es desarrollar un modelo predictivo que pueda anticipar la probabilidad de que un individuo se vuelva obeso basándose en un análisis de datos exhaustivo. \\\n            La obesidad está asociada con una serie de resultados adversos, incluido un mayor riesgo de enfermedades cardiovasculares, diabetes tipo 2, problemas respiratorios y articulares. \\\n            Además, puede afectar la salud mental, lo que lleva a un aumento de las tasas de depresión y ansiedad. Por eso, abordar y prevenir la obesidad es vital para la salud y el bienestar en general.\")\ninf.markdown(\"Usando el conjunto de datos, que abarca variables cruciales como antecedentes familiares de sobrepeso, hábitos alimenticios (incluido el consumo frecuente de alimentos altos en calorías,\\",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -494,7 +650,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "video_file = open('./video/Obesidad_ Un grave problema de salud pública.mp4', 'rb')\nvideo_bytes = video_file.read()\nvideo.video(video_bytes)\n# TAB CONJUNTO DE DATOS\ntab_conjunto_datos.subheader(\"Sobre el Conjunto de Datos\")\ncolumn_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap=\"large\")\ncolumn_inf.image(imagen2, width=100, use_column_width=True, clamp=False, channels='RGB', output_format='auto')\ncolumn_conjunto_datos.markdown(\n    \"\"\"\n    - El conjunto de datos utilizado para el análisis se obtuvo de [Kaagle](https://www.kaggle.com/competitions/playground-series-s4e2).",
+        "peekOfCode": "video_file = open('./video/Obesidad_ Un grave problema de salud pública.mp4', 'rb')\nvideo_bytes = video_file.read()\nvideo.video(video_bytes)\n# TAB CONJUNTO DE DATOS\ntab_conjunto_datos.subheader(\"Sobre el Conjunto de Datos\")\ncolumn_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap=\"large\")\ncolumn_conjunto_datos.image(imagen2, width=100, use_column_width=True, clamp=False, channels='RGB', output_format='auto')\ncolumn_inf.subheader(\"Conjunto de Datos\")\ncolumn_conjunto_datos.subheader(\"Preguntas de la encuesta utilizada para la recopilación inicial de información\")\ncolumn_inf.markdown(",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -503,52 +659,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "video_bytes = video_file.read()\nvideo.video(video_bytes)\n# TAB CONJUNTO DE DATOS\ntab_conjunto_datos.subheader(\"Sobre el Conjunto de Datos\")\ncolumn_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap=\"large\")\ncolumn_inf.image(imagen2, width=100, use_column_width=True, clamp=False, channels='RGB', output_format='auto')\ncolumn_conjunto_datos.markdown(\n    \"\"\"\n    - El conjunto de datos utilizado para el análisis se obtuvo de [Kaagle](https://www.kaggle.com/competitions/playground-series-s4e2).\n    - Incluye datos para estimar los niveles de obesidad en personas de 14 a 61 años con diversos hábitos alimenticios y condiciones físicas en México, Perú y Colombia.",
-        "detail": "src.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "df2",
-        "kind": 5,
-        "importPath": "src.app.app",
-        "description": "src.app.app",
-        "peekOfCode": "df2 = obtener_datos2()\ncolumn_conjunto_datos.dataframe(df2)\ncolumn_inf.subheader(\"Conjunto de Datos\")\ndef obtener_datos():\n    df = pd.read_pickle(\"./data/df.pkl\")\n    return df\ndf = obtener_datos()\ncolumn_inf.dataframe(df)\ndf[\"Nivel de Obesidad\"] = df[\"NObeyesdad\"]\ndf[\"Frecuencia de Actividad Física\"] = df[\"FAF\"]",
-        "detail": "src.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "df",
-        "kind": 5,
-        "importPath": "src.app.app",
-        "description": "src.app.app",
-        "peekOfCode": "df = obtener_datos()\ncolumn_inf.dataframe(df)\ndf[\"Nivel de Obesidad\"] = df[\"NObeyesdad\"]\ndf[\"Frecuencia de Actividad Física\"] = df[\"FAF\"]\ndf[\"Fumar\"] = df[\"SMOKE\"]\ndf[\"Consumo de Alimentos Altos en Calorías\"] = df[\"FAVC\"]\ndf[\"Consumo de Verduras\"] = df[\"FCVC\"]\ndf[\"Número de Comidas Principales\"] = df[\"NCP\"]\ndf[\"Comer Entre Comidas\"] = df[\"CAEC\"]\ndf[\"Consumo Diario de Agua\"] = df[\"CH2O\"]",
-        "detail": "src.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "df[\"Fumar\"]",
-        "kind": 5,
-        "importPath": "src.app.app",
-        "description": "src.app.app",
-        "peekOfCode": "df[\"Fumar\"] = df[\"SMOKE\"]\ndf[\"Consumo de Alimentos Altos en Calorías\"] = df[\"FAVC\"]\ndf[\"Consumo de Verduras\"] = df[\"FCVC\"]\ndf[\"Número de Comidas Principales\"] = df[\"NCP\"]\ndf[\"Comer Entre Comidas\"] = df[\"CAEC\"]\ndf[\"Consumo Diario de Agua\"] = df[\"CH2O\"]\ndf[\"Monitoreo de Calorías\"] = df[\"SCC\"]\ndf[\"Uso de Dispositivos Tecnológicos\"] = df[\"TUE\"]\ndf[\"Consumo de Alcohol\"] = df[\"CALC\"]\ndf[\"Preferencia_de_Transporte\"] = df[\"MTRANS\"]",
-        "detail": "src.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "df[\"Preferencia_de_Transporte\"]",
-        "kind": 5,
-        "importPath": "src.app.app",
-        "description": "src.app.app",
-        "peekOfCode": "df[\"Preferencia_de_Transporte\"] = df[\"MTRANS\"]\ndf[\"Antecedentes Familiares de Sobrepeso\"] = df[\"family_history_with_overweight\"]\ndf[\"IMC\"] = df[\"Weight\"]/(df[\"Height\"]*df[\"Height\"])\n# TAB GRÁFICOS\n## Gráfico 1\ntab_graficos.subheader(\"Distribuciones de Variables Numéricas por Género\")\ncolumnas_numericas = [\"Edad\", \"Altura\", \"Peso\", \"IMC\"]\ncolumnas_numericas_seleccionadas = tab_graficos.multiselect(label=\"Selecciona columnas numéricas\", options=columnas_numericas[0:], default=columnas_numericas[0:])\nfor col in columnas_numericas_seleccionadas:\n    fig1 = px.histogram(df, x=col, marginal=\"box\", color=\"Género\")",
-        "detail": "src.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "df[\"IMC\"]",
-        "kind": 5,
-        "importPath": "src.app.app",
-        "description": "src.app.app",
-        "peekOfCode": "df[\"IMC\"] = df[\"Weight\"]/(df[\"Height\"]*df[\"Height\"])\n# TAB GRÁFICOS\n## Gráfico 1\ntab_graficos.subheader(\"Distribuciones de Variables Numéricas por Género\")\ncolumnas_numericas = [\"Edad\", \"Altura\", \"Peso\", \"IMC\"]\ncolumnas_numericas_seleccionadas = tab_graficos.multiselect(label=\"Selecciona columnas numéricas\", options=columnas_numericas[0:], default=columnas_numericas[0:])\nfor col in columnas_numericas_seleccionadas:\n    fig1 = px.histogram(df, x=col, marginal=\"box\", color=\"Género\")\n    fig1.update_layout(template='plotly_dark', title_x=0.5, yaxis_title='Cuenta', xaxis_title=f\"{col}\", title=f\"Distribución de {col}\")\n    tab_graficos.plotly_chart(fig1, use_container_width=True)",
+        "peekOfCode": "video_bytes = video_file.read()\nvideo.video(video_bytes)\n# TAB CONJUNTO DE DATOS\ntab_conjunto_datos.subheader(\"Sobre el Conjunto de Datos\")\ncolumn_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap=\"large\")\ncolumn_conjunto_datos.image(imagen2, width=100, use_column_width=True, clamp=False, channels='RGB', output_format='auto')\ncolumn_inf.subheader(\"Conjunto de Datos\")\ncolumn_conjunto_datos.subheader(\"Preguntas de la encuesta utilizada para la recopilación inicial de información\")\ncolumn_inf.markdown(\n    \"\"\"",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -557,7 +668,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "columnas_numericas = [\"Edad\", \"Altura\", \"Peso\", \"IMC\"]\ncolumnas_numericas_seleccionadas = tab_graficos.multiselect(label=\"Selecciona columnas numéricas\", options=columnas_numericas[0:], default=columnas_numericas[0:])\nfor col in columnas_numericas_seleccionadas:\n    fig1 = px.histogram(df, x=col, marginal=\"box\", color=\"Género\")\n    fig1.update_layout(template='plotly_dark', title_x=0.5, yaxis_title='Cuenta', xaxis_title=f\"{col}\", title=f\"Distribución de {col}\")\n    tab_graficos.plotly_chart(fig1, use_container_width=True)\n## Gráfico 2\ntab_graficos.subheader(\"Correlación entre Altura y Peso\")\nfig2 = px.scatter(data_frame=df,y=\"Altura\",x=\"Peso\",size=\"IMC\",color=\"Género\",trendline=\"ols\")\nfig2.update_layout(template='plotly_dark')",
+        "peekOfCode": "columnas_numericas = [ 'Edad', 'Altura', 'Peso', \"Indice de Masa Corporal\"]\ncolumnas_numericas_seleccionadas = tab_graficos.multiselect(label=\"Selecciona columnas numéricas\", options=columnas_numericas[0:], default=columnas_numericas[0:])\nfor col in columnas_numericas_seleccionadas:\n    fig1 = px.histogram(dff, x=col, marginal=\"box\", color=\"Género\")\n    fig1.update_layout(template='plotly_dark', title_x=0.5, yaxis_title='Cuenta', xaxis_title=f\"{col}\", title=f\"Distribución de {col}\")\n    tab_graficos.plotly_chart(fig1, use_container_width=True)\n## Gráfico 2\ntab_graficos.subheader(\"Correlación entre Altura y Peso\")\nfig2 = px.scatter(data_frame=dff,y=\"Altura\",x=\"Peso\",size=\"Indice de Masa Corporal\",color=\"Género\",trendline=\"ols\")\nfig2.update_layout(template='plotly_dark')",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -566,7 +677,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "columnas_numericas_seleccionadas = tab_graficos.multiselect(label=\"Selecciona columnas numéricas\", options=columnas_numericas[0:], default=columnas_numericas[0:])\nfor col in columnas_numericas_seleccionadas:\n    fig1 = px.histogram(df, x=col, marginal=\"box\", color=\"Género\")\n    fig1.update_layout(template='plotly_dark', title_x=0.5, yaxis_title='Cuenta', xaxis_title=f\"{col}\", title=f\"Distribución de {col}\")\n    tab_graficos.plotly_chart(fig1, use_container_width=True)\n## Gráfico 2\ntab_graficos.subheader(\"Correlación entre Altura y Peso\")\nfig2 = px.scatter(data_frame=df,y=\"Altura\",x=\"Peso\",size=\"IMC\",color=\"Género\",trendline=\"ols\")\nfig2.update_layout(template='plotly_dark')\ntab_graficos.plotly_chart(fig2, use_container_width=True)",
+        "peekOfCode": "columnas_numericas_seleccionadas = tab_graficos.multiselect(label=\"Selecciona columnas numéricas\", options=columnas_numericas[0:], default=columnas_numericas[0:])\nfor col in columnas_numericas_seleccionadas:\n    fig1 = px.histogram(dff, x=col, marginal=\"box\", color=\"Género\")\n    fig1.update_layout(template='plotly_dark', title_x=0.5, yaxis_title='Cuenta', xaxis_title=f\"{col}\", title=f\"Distribución de {col}\")\n    tab_graficos.plotly_chart(fig1, use_container_width=True)\n## Gráfico 2\ntab_graficos.subheader(\"Correlación entre Altura y Peso\")\nfig2 = px.scatter(data_frame=dff,y=\"Altura\",x=\"Peso\",size=\"Indice de Masa Corporal\",color=\"Género\",trendline=\"ols\")\nfig2.update_layout(template='plotly_dark')\ntab_graficos.plotly_chart(fig2, use_container_width=True)",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -575,7 +686,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "fig2 = px.scatter(data_frame=df,y=\"Altura\",x=\"Peso\",size=\"IMC\",color=\"Género\",trendline=\"ols\")\nfig2.update_layout(template='plotly_dark')\ntab_graficos.plotly_chart(fig2, use_container_width=True)\n## Gráfico 3\ndef grafico_cruzado(data, columna_objetivo, columna_categorica, categorias):\n    fig3 = px.histogram(\n        data[data[columna_objetivo].isin(categorias)],\n        x=columna_objetivo,\n        color=columna_categorica,\n        barmode='group',",
+        "peekOfCode": "fig2 = px.scatter(data_frame=dff,y=\"Altura\",x=\"Peso\",size=\"Indice de Masa Corporal\",color=\"Género\",trendline=\"ols\")\nfig2.update_layout(template='plotly_dark')\ntab_graficos.plotly_chart(fig2, use_container_width=True)\n## Gráfico 3\ndef grafico_cruzado(data, columna_objetivo, columna_categorica, categorias):\n    fig3 = px.histogram(\n        data[data[columna_objetivo].isin(categorias)],\n        x=columna_objetivo,\n        color=columna_categorica,\n        barmode='group',",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -584,7 +695,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "columnas_categoricas = ['Género', 'Frecuencia de Actividad Física', 'Consumo de Alimentos Altos en Calorías', 'Consumo de Verduras', 'Número de Comidas Principales', 'Comer Entre Comidas','Fumar', 'Consumo Diario de Agua', 'Monitoreo de Calorías', 'Consumo de Alcohol', 'Uso de Dispositivos Tecnológicos', 'Antecedentes Familiares de Sobrepeso', 'Preferencia_de_Transporte']\ncolumna_categorica_seleccionada = tab_graficos.multiselect(label=\"Selecciona una variable\", options=columnas_categoricas, default=[\"Género\"])\ncategorias = [\"Peso Insuficiente\", \"Peso Normal\", \"Nivel de Sobrepeso I\", \"Nivel de Sobrepeso II\", \"Obesidad Tipo I\", \"Obesidad Tipo II\", \"Obesidad Tipo III\"]\nif columna_categorica_seleccionada:\n    tab_graficos.subheader(f\"Gráfico Cruzado: Distribución de Niveles de Obesidad por {columna_categorica_seleccionada[0]}\")\ngrafico_cruzado(df, \"Nivel de Obesidad\", columna_categorica_seleccionada[0], categorias)\n## Gráfico 4\ntab_graficos.subheader(\"Frecuencia de Actividad Física por Nivel de Obesidad\")\nfig4 = px.box(df, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)",
+        "peekOfCode": "columnas_categoricas = ['Género', \n                        'Frecuencia de Actividad Física',\n                        'Consumo de Alimentos Altos en Calorías',\n                        'Consumo de Verduras',\n                        'Número de Comidas Principales',\n                        'Comer Entre Comidas',\n                        'Fumar',\n                        'Consumo Diario de Agua',\n                        'Monitoreo de Calorías',\n                        'Consumo de Alcohol',",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -593,7 +704,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "columna_categorica_seleccionada = tab_graficos.multiselect(label=\"Selecciona una variable\", options=columnas_categoricas, default=[\"Género\"])\ncategorias = [\"Peso Insuficiente\", \"Peso Normal\", \"Nivel de Sobrepeso I\", \"Nivel de Sobrepeso II\", \"Obesidad Tipo I\", \"Obesidad Tipo II\", \"Obesidad Tipo III\"]\nif columna_categorica_seleccionada:\n    tab_graficos.subheader(f\"Gráfico Cruzado: Distribución de Niveles de Obesidad por {columna_categorica_seleccionada[0]}\")\ngrafico_cruzado(df, \"Nivel de Obesidad\", columna_categorica_seleccionada[0], categorias)\n## Gráfico 4\ntab_graficos.subheader(\"Frecuencia de Actividad Física por Nivel de Obesidad\")\nfig4 = px.box(df, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)\n## Gráfico 5",
+        "peekOfCode": "columna_categorica_seleccionada = tab_graficos.multiselect(label=\"Selecciona una variable\", options=columnas_categoricas, default=[\"Género\"])\ncategorias = [\"Peso Insuficiente\", \"Peso Normal\", \"Nivel de Sobrepeso I\", \"Nivel de Sobrepeso II\", \"Obesidad Tipo I\", \"Obesidad Tipo II\", \"Obesidad Tipo III\"]\nif columna_categorica_seleccionada:\n    tab_graficos.subheader(f\"Distribución de Niveles de Obesidad por {columna_categorica_seleccionada[0]}\")\ngrafico_cruzado(dff, \"Nivel de Obesidad\", columna_categorica_seleccionada[0], categorias)\n## Gráfico 4\ntab_graficos.subheader(\"Frecuencia de Actividad Física por Nivel de Obesidad\")\nfig4 = px.box(dff, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)\n## Gráfico 5",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -602,7 +713,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "categorias = [\"Peso Insuficiente\", \"Peso Normal\", \"Nivel de Sobrepeso I\", \"Nivel de Sobrepeso II\", \"Obesidad Tipo I\", \"Obesidad Tipo II\", \"Obesidad Tipo III\"]\nif columna_categorica_seleccionada:\n    tab_graficos.subheader(f\"Gráfico Cruzado: Distribución de Niveles de Obesidad por {columna_categorica_seleccionada[0]}\")\ngrafico_cruzado(df, \"Nivel de Obesidad\", columna_categorica_seleccionada[0], categorias)\n## Gráfico 4\ntab_graficos.subheader(\"Frecuencia de Actividad Física por Nivel de Obesidad\")\nfig4 = px.box(df, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)\n## Gráfico 5\ntab_graficos.subheader(\"Gráfico de Dispersión de Edad e IMC\")",
+        "peekOfCode": "categorias = [\"Peso Insuficiente\", \"Peso Normal\", \"Nivel de Sobrepeso I\", \"Nivel de Sobrepeso II\", \"Obesidad Tipo I\", \"Obesidad Tipo II\", \"Obesidad Tipo III\"]\nif columna_categorica_seleccionada:\n    tab_graficos.subheader(f\"Distribución de Niveles de Obesidad por {columna_categorica_seleccionada[0]}\")\ngrafico_cruzado(dff, \"Nivel de Obesidad\", columna_categorica_seleccionada[0], categorias)\n## Gráfico 4\ntab_graficos.subheader(\"Frecuencia de Actividad Física por Nivel de Obesidad\")\nfig4 = px.box(dff, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)\n## Gráfico 5\ntab_graficos.subheader(\"Gráfico de Dispersión de Edad e IMC\")",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -611,7 +722,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "fig4 = px.box(df, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)\n## Gráfico 5\ntab_graficos.subheader(\"Gráfico de Dispersión de Edad e IMC\")\nfig5 = px.scatter(df, x=\"Edad\", y=\"IMC\", color=\"Nivel de Obesidad\")\ntab_graficos.plotly_chart(fig5, use_container_width=True)\n## Gráfico 6\ntab_graficos.subheader(\"Comparación de IMC Basada en Género y Preferencia_de_Transporte\")\ntransporte_seleccionado = tab_graficos.multiselect(label=\"Selecciona un tipo de transporte\", options=df.Preferencia_de_Transporte.unique(), default=[\"Transporte Público\"])\ndf_filtrado = df[df.Preferencia_de_Transporte.isin(transporte_seleccionado)]",
+        "peekOfCode": "fig4 = px.box(dff, x=\"Nivel de Obesidad\", y=\"Frecuencia de Actividad Física\", points=\"all\")\ntab_graficos.plotly_chart(fig4, use_container_width=True)\n## Gráfico 5\ntab_graficos.subheader(\"Gráfico de Dispersión de Edad e IMC\")\nfig5 = px.scatter(dff, x=\"Edad\", y=\"Indice de Masa Corporal\", color=\"Nivel de Obesidad\")\ntab_graficos.plotly_chart(fig5, use_container_width=True)\n## Gráfico 6\ntab_graficos.subheader(\"Comparación de IMC Basada en Género y Preferencia de Transporte\")\ntransporte_seleccionado = tab_graficos.multiselect(label=\"Selecciona un tipo de transporte\", options=dff['Preferencia de Transporte'].unique() ,default=[\"Transporte Público\"])\ndf_filtrado = dff[dff['Preferencia de Transporte'].isin(transporte_seleccionado)]",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -620,7 +731,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "fig5 = px.scatter(df, x=\"Edad\", y=\"IMC\", color=\"Nivel de Obesidad\")\ntab_graficos.plotly_chart(fig5, use_container_width=True)\n## Gráfico 6\ntab_graficos.subheader(\"Comparación de IMC Basada en Género y Preferencia_de_Transporte\")\ntransporte_seleccionado = tab_graficos.multiselect(label=\"Selecciona un tipo de transporte\", options=df.Preferencia_de_Transporte.unique(), default=[\"Transporte Público\"])\ndf_filtrado = df[df.Preferencia_de_Transporte.isin(transporte_seleccionado)]\nfig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"IMC\",",
+        "peekOfCode": "fig5 = px.scatter(dff, x=\"Edad\", y=\"Indice de Masa Corporal\", color=\"Nivel de Obesidad\")\ntab_graficos.plotly_chart(fig5, use_container_width=True)\n## Gráfico 6\ntab_graficos.subheader(\"Comparación de IMC Basada en Género y Preferencia de Transporte\")\ntransporte_seleccionado = tab_graficos.multiselect(label=\"Selecciona un tipo de transporte\", options=dff['Preferencia de Transporte'].unique() ,default=[\"Transporte Público\"])\ndf_filtrado = dff[dff['Preferencia de Transporte'].isin(transporte_seleccionado)]\nfig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"Indice de Masa Corporal\",",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -629,7 +740,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "transporte_seleccionado = tab_graficos.multiselect(label=\"Selecciona un tipo de transporte\", options=df.Preferencia_de_Transporte.unique(), default=[\"Transporte Público\"])\ndf_filtrado = df[df.Preferencia_de_Transporte.isin(transporte_seleccionado)]\nfig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"IMC\",\n    color=\"Género\",\n    facet_col=\"Preferencia_de_Transporte\",\n    labels={\"IMC\": \"Índice de Masa Corporal\"}\n)",
+        "peekOfCode": "transporte_seleccionado = tab_graficos.multiselect(label=\"Selecciona un tipo de transporte\", options=dff['Preferencia de Transporte'].unique() ,default=[\"Transporte Público\"])\ndf_filtrado = dff[dff['Preferencia de Transporte'].isin(transporte_seleccionado)]\nfig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"Indice de Masa Corporal\",\n    color=\"Género\",\n    facet_col=\"Preferencia de Transporte\",\n)\ntab_graficos.plotly_chart(fig6, use_container_width=True)",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -638,7 +749,7 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "df_filtrado = df[df.Preferencia_de_Transporte.isin(transporte_seleccionado)]\nfig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"IMC\",\n    color=\"Género\",\n    facet_col=\"Preferencia_de_Transporte\",\n    labels={\"IMC\": \"Índice de Masa Corporal\"}\n)\ntab_graficos.plotly_chart(fig6, use_container_width=True)",
+        "peekOfCode": "df_filtrado = dff[dff['Preferencia de Transporte'].isin(transporte_seleccionado)]\nfig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"Indice de Masa Corporal\",\n    color=\"Género\",\n    facet_col=\"Preferencia de Transporte\",\n)\ntab_graficos.plotly_chart(fig6, use_container_width=True)\n# TAB MODELO",
         "detail": "src.app.app",
         "documentation": {}
     },
@@ -647,61 +758,43 @@
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "fig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"IMC\",\n    color=\"Género\",\n    facet_col=\"Preferencia_de_Transporte\",\n    labels={\"IMC\": \"Índice de Masa Corporal\"}\n)\ntab_graficos.plotly_chart(fig6, use_container_width=True)\n# TAB MODELO",
+        "peekOfCode": "fig6 = px.bar(\n    df_filtrado,\n    x=\"Nivel de Obesidad\",\n    y=\"Indice de Masa Corporal\",\n    color=\"Género\",\n    facet_col=\"Preferencia de Transporte\",\n)\ntab_graficos.plotly_chart(fig6, use_container_width=True)\n# TAB MODELO\ntab_modelo.subheader(\"Modelo de Clasificación de Nivel de Obesidad\")",
         "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "df3",
+        "label": "columnas",
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "df3 = pd.read_csv(\"ObesityDataSet.csv\")\ndf3.columns = [col.upper() for col in df3.columns]\n# cargando el modelo guardado\nmodelo = joblib.load(\"rta_model_deploy3.joblib\")\ncodificador = joblib.load(\"onehot_encoder.joblib\")\n# creando la lista de opciones para el menú desplegable\nopciones_GENERO = [\"Selecciona una opción\", \"Femenino\", \"Masculino\"]\nopciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']",
+        "peekOfCode": "columnas = list(dict_var_modelo)\n#columnas_seleccionadas = tab_modelo.multiselect(label=\"Selecciona columnas\", options=columnas[0:], default=columnas[0:])\n# Página de inicio de presentación\ntab_modelo.markdown(\"## Bienvenido a Conoce Tu Obesidad\")\ntab_modelo.markdown(\"Esta aplicación te ayudará a determinar tu riesgo de obesidad.\")\ntab_modelo.markdown(\"Por favor, ingresa la siguiente información:\")\n# Crear un diccionario para almacenar las respuestas\nrespuestas = {}\n# Dividir la página en dos columnas\ncol1, col2 = tab_modelo.columns(2)",
         "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "df3.columns",
+        "label": "#columnas_seleccionadas",
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "df3.columns = [col.upper() for col in df3.columns]\n# cargando el modelo guardado\nmodelo = joblib.load(\"rta_model_deploy3.joblib\")\ncodificador = joblib.load(\"onehot_encoder.joblib\")\n# creando la lista de opciones para el menú desplegable\nopciones_GENERO = [\"Selecciona una opción\", \"Femenino\", \"Masculino\"]\nopciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']\nopciones_NCP   = [\"Selecciona una opción\", 'Una', 'Dos', 'Tres', 'Más de tres']",
+        "peekOfCode": "#columnas_seleccionadas = tab_modelo.multiselect(label=\"Selecciona columnas\", options=columnas[0:], default=columnas[0:])\n# Página de inicio de presentación\ntab_modelo.markdown(\"## Bienvenido a Conoce Tu Obesidad\")\ntab_modelo.markdown(\"Esta aplicación te ayudará a determinar tu riesgo de obesidad.\")\ntab_modelo.markdown(\"Por favor, ingresa la siguiente información:\")\n# Crear un diccionario para almacenar las respuestas\nrespuestas = {}\n# Dividir la página en dos columnas\ncol1, col2 = tab_modelo.columns(2)\n# Calcular la mitad del número total de preguntas",
         "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "modelo",
+        "label": "respuestas",
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "modelo = joblib.load(\"rta_model_deploy3.joblib\")\ncodificador = joblib.load(\"onehot_encoder.joblib\")\n# creando la lista de opciones para el menú desplegable\nopciones_GENERO = [\"Selecciona una opción\", \"Femenino\", \"Masculino\"]\nopciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']\nopciones_NCP   = [\"Selecciona una opción\", 'Una', 'Dos', 'Tres', 'Más de tres']\nopciones_CAEC   = [\"Selecciona una opción\", 'No', 'A veces', 'Frecuentemente', 'Siempre']\nopciones_SMOKE   = [\"Selecciona una opción\", 'No', 'Sí']",
+        "peekOfCode": "respuestas = {}\n# Dividir la página en dos columnas\ncol1, col2 = tab_modelo.columns(2)\n# Calcular la mitad del número total de preguntas\nmitad_preguntas = len(preguntas) // 2\n# Mostrar los selectbox y campos de entrada en dos columnas\nfor i, pregunta in enumerate(preguntas):\n    # Determinar en qué columna mostrar la pregunta\n    if i < mitad_preguntas:\n        columna = col1",
         "detail": "src.app.app",
         "documentation": {}
     },
     {
-        "label": "codificador",
+        "label": "mitad_preguntas",
         "kind": 5,
         "importPath": "src.app.app",
         "description": "src.app.app",
-        "peekOfCode": "codificador = joblib.load(\"onehot_encoder.joblib\")\n# creando la lista de opciones para el menú desplegable\nopciones_GENERO = [\"Selecciona una opción\", \"Femenino\", \"Masculino\"]\nopciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']\nopciones_NCP   = [\"Selecciona una opción\", 'Una', 'Dos', 'Tres', 'Más de tres']\nopciones_CAEC   = [\"Selecciona una opción\", 'No', 'A veces', 'Frecuentemente', 'Siempre']\nopciones_SMOKE   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_CH2O   = [\"Selecciona una opción\", 'Menos de 1L', 'Entre 1L y 2L', 'Más de 2L']",
-        "detail": "src.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "opciones_GENERO",
-        "kind": 5,
-        "importPath": "src.app.app",
-        "description": "src.app.app",
-        "peekOfCode": "opciones_GENERO = [\"Selecciona una opción\", \"Femenino\", \"Masculino\"]\nopciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']\nopciones_NCP   = [\"Selecciona una opción\", 'Una', 'Dos', 'Tres', 'Más de tres']\nopciones_CAEC   = [\"Selecciona una opción\", 'No', 'A veces', 'Frecuentemente', 'Siempre']\nopciones_SMOKE   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_CH2O   = [\"Selecciona una opción\", 'Menos de 1L', 'Entre 1L y 2L', 'Más de 2L']\nopciones_SCC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAF   = [\"Selecciona una opción\", 'No tengo', '1 o 2 días', '3 o 4 días', '4 o 5 días']",
-        "detail": "src.app.app",
-        "documentation": {}
-    },
-    {
-        "label": "opciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO",
-        "kind": 5,
-        "importPath": "src.app.app",
-        "description": "src.app.app",
-        "peekOfCode": "opciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAVC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FCVC   = [\"Selecciona una opción\", 'Nunca', 'A veces', 'Siempre']\nopciones_NCP   = [\"Selecciona una opción\", 'Una', 'Dos', 'Tres', 'Más de tres']\nopciones_CAEC   = [\"Selecciona una opción\", 'No', 'A veces', 'Frecuentemente', 'Siempre']\nopciones_SMOKE   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_CH2O   = [\"Selecciona una opción\", 'Menos de 1L', 'Entre 1L y 2L', 'Más de 2L']\nopciones_SCC   = [\"Selecciona una opción\", 'No', 'Sí']\nopciones_FAF   = [\"Selecciona una opción\", 'No tengo', '1 o 2 días', '3 o 4 días', '4 o 5 días']\nopciones_TUE   = [\"Selecciona una opción\", '0-2 horas', '3-5 horas', 'Más de 5 horas']",
+        "peekOfCode": "mitad_preguntas = len(preguntas) // 2\n# Mostrar los selectbox y campos de entrada en dos columnas\nfor i, pregunta in enumerate(preguntas):\n    # Determinar en qué columna mostrar la pregunta\n    if i < mitad_preguntas:\n        columna = col1\n    else:\n        columna = col2\n    # Si la variable es 'Age', utilizar un intslider\n    if variables[i] in ['Age', 'Height', 'Weight']:",
         "detail": "src.app.app",
         "documentation": {}
     },

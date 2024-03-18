@@ -1,26 +1,33 @@
 import pandas as pd
 import numpy as np
+from sklearn import pipeline
 import streamlit as st
 import plotly.express as px
-import joblib
-import time
 from PIL import Image
-import os
+import os as so
+import sys
+import joblib
+appdir=so.path.dirname(so.path.abspath(__file__))
+so.chdir(appdir)
+sys.path.append(appdir+'/utils')
+from app.utils.funcs import XEncoder
+from funcs import *
+from values import *
 
-cdir=os.getcwd()
+
 
 imagen1=Image.open('./img/nutricion-tratar-obesidad.webp')
 imagen2 = Image.open('./img/Obesity.webp')
 st.set_page_config(page_title="Conoce tu riesgo de obesidad :question:", layout="wide")
-st.header(":blue[Conoce Tu Obesidad: ] :red[ Estás en Riesgo?]")
+st.header(":blue[Tus hábitos: ]:pizza: :hamburger: :hotdog: :cake: :arrow_right::arrow_right::arrow_right: :red[:heartbeat: ¿No estarás en riesgo de obesidad?]  :heartbeat:  :skull:")
 
 tab_inicio, tab_conjunto_datos, tab_graficos, tab_modelo = st.tabs(["Inicio", "Sobre el Conjunto de Datos", "Gráficos", "Predicción del Nivel de Obesidad"])
 
 # TAB INICIO
 inf, video = tab_inicio.columns(2, gap="large")
 inf.markdown("El objetivo principal de este proyecto es desarrollar un modelo predictivo que pueda anticipar la probabilidad de que un individuo se vuelva obeso basándose en un análisis de datos exhaustivo. \
-             La obesidad está asociada con una serie de resultados adversos, incluido un mayor riesgo de enfermedades cardiovasculares, diabetes tipo 2, problemas respiratorios y articulares. \
-             Además, puede afectar la salud mental, lo que lleva a un aumento de las tasas de depresión y ansiedad. Por eso, abordar y prevenir la obesidad es vital para la salud y el bienestar en general.")
+            La obesidad está asociada con una serie de resultados adversos, incluido un mayor riesgo de enfermedades cardiovasculares, diabetes tipo 2, problemas respiratorios y articulares. \
+            Además, puede afectar la salud mental, lo que lleva a un aumento de las tasas de depresión y ansiedad. Por eso, abordar y prevenir la obesidad es vital para la salud y el bienestar en general.")
 inf.markdown("Usando el conjunto de datos, que abarca variables cruciales como antecedentes familiares de sobrepeso, hábitos alimenticios (incluido el consumo frecuente de alimentos altos en calorías,\
     frecuencia de consumo de verduras y consumo de alimentos entre comidas), factores de estilo de vida (hábitos de fumar, consumo diario de agua, monitoreo del consumo de calorías, \
         frecuencia de actividad física, tiempo usando dispositivos tecnológicos y consumo de alcohol), y tipo de transporte utilizado, el objetivo es descubrir patrones y correlaciones \
@@ -36,9 +43,11 @@ video.video(video_bytes)
 tab_conjunto_datos.subheader("Sobre el Conjunto de Datos")
 column_inf, column_conjunto_datos  = tab_conjunto_datos.columns(2, gap="large")
 
-column_inf.image(imagen2, width=100, use_column_width=True, clamp=False, channels='RGB', output_format='auto')
+column_conjunto_datos.image(imagen2, width=100, use_column_width=True, clamp=False, channels='RGB', output_format='auto')
 
-column_conjunto_datos.markdown(
+column_inf.subheader("Conjunto de Datos")
+column_conjunto_datos.subheader("Preguntas de la encuesta utilizada para la recopilación inicial de información")
+column_inf.markdown(
     """
     - El conjunto de datos utilizado para el análisis se obtuvo de [Kaagle](https://www.kaggle.com/competitions/playground-series-s4e2).
     - Incluye datos para estimar los niveles de obesidad en personas de 14 a 61 años con diversos hábitos alimenticios y condiciones físicas en México, Perú y Colombia.
@@ -55,51 +64,29 @@ column_conjunto_datos.markdown(
     - La estructura y la cantidad de datos se pueden utilizar para diferentes tareas en minería de datos como: clasificación, predicción, segmentación y asociación.
     - Los datos se pueden utilizar para construir herramientas de software para la estimación de los niveles de obesidad. Los datos pueden validar el impacto de varios factores que propician la aparición de problemas de obesidad.
     """)
-
-column_conjunto_datos.subheader("Preguntas de la encuesta utilizada para la recopilación inicial de información")
-def obtener_datos2():
-    df = pd.read_pickle("./data/df.pkl")
-    return df
-
-df2 = obtener_datos2()
+# Carga de datasets
+df=pd.read_pickle("./data/df.pkl")
+#column_inf.write(df)
+#column_inf.write(revdicts)
+dff=redondea_vars(df)
+dff=codifica_columnas(dff,revdicts)
+dff=traduce_columnas(dff,diccionario_columnas)
+column_inf.dataframe(dff)
 column_conjunto_datos.dataframe(df2)
-
-column_inf.subheader("Conjunto de Datos")
-def obtener_datos():
-    df = pd.read_pickle("./data/df.pkl")
-    return df
-
-df = obtener_datos()
-column_inf.dataframe(df)
-
-df["Nivel de Obesidad"] = df["NObeyesdad"]
-df["Frecuencia de Actividad Física"] = df["FAF"]
-df["Fumar"] = df["SMOKE"]
-df["Consumo de Alimentos Altos en Calorías"] = df["FAVC"]
-df["Consumo de Verduras"] = df["FCVC"]
-df["Número de Comidas Principales"] = df["NCP"]
-df["Comer Entre Comidas"] = df["CAEC"]
-df["Consumo Diario de Agua"] = df["CH2O"]
-df["Monitoreo de Calorías"] = df["SCC"]
-df["Uso de Dispositivos Tecnológicos"] = df["TUE"]
-df["Consumo de Alcohol"] = df["CALC"]
-df["Preferencia_de_Transporte"] = df["MTRANS"]
-df["Antecedentes Familiares de Sobrepeso"] = df["family_history_with_overweight"]
-df["IMC"] = df["Weight"]/(df["Height"]*df["Height"])
 
 # TAB GRÁFICOS
 ## Gráfico 1
 tab_graficos.subheader("Distribuciones de Variables Numéricas por Género")
-columnas_numericas = ["Edad", "Altura", "Peso", "IMC"]
+columnas_numericas = [ 'Edad', 'Altura', 'Peso', "Indice de Masa Corporal"]
 columnas_numericas_seleccionadas = tab_graficos.multiselect(label="Selecciona columnas numéricas", options=columnas_numericas[0:], default=columnas_numericas[0:])
 for col in columnas_numericas_seleccionadas:
-    fig1 = px.histogram(df, x=col, marginal="box", color="Género")
+    fig1 = px.histogram(dff, x=col, marginal="box", color="Género")
     fig1.update_layout(template='plotly_dark', title_x=0.5, yaxis_title='Cuenta', xaxis_title=f"{col}", title=f"Distribución de {col}")
     tab_graficos.plotly_chart(fig1, use_container_width=True)
 
 ## Gráfico 2
 tab_graficos.subheader("Correlación entre Altura y Peso")
-fig2 = px.scatter(data_frame=df,y="Altura",x="Peso",size="IMC",color="Género",trendline="ols")
+fig2 = px.scatter(data_frame=dff,y="Altura",x="Peso",size="Indice de Masa Corporal",color="Género",trendline="ols")
 fig2.update_layout(template='plotly_dark')
 tab_graficos.plotly_chart(fig2, use_container_width=True)
 
@@ -114,116 +101,120 @@ def grafico_cruzado(data, columna_objetivo, columna_categorica, categorias):
 
     )
     tab_graficos.plotly_chart(fig3, use_container_width=True)
-columnas_categoricas = ['Género', 'Frecuencia de Actividad Física', 'Consumo de Alimentos Altos en Calorías', 'Consumo de Verduras', 'Número de Comidas Principales', 'Comer Entre Comidas','Fumar', 'Consumo Diario de Agua', 'Monitoreo de Calorías', 'Consumo de Alcohol', 'Uso de Dispositivos Tecnológicos', 'Antecedentes Familiares de Sobrepeso', 'Preferencia_de_Transporte']
+
+columnas_categoricas = ['Género', 
+                        'Frecuencia de Actividad Física',
+                        'Consumo de Alimentos Altos en Calorías',
+                        'Consumo de Verduras',
+                        'Número de Comidas Principales',
+                        'Comer Entre Comidas',
+                        'Fumar',
+                        'Consumo Diario de Agua',
+                        'Monitoreo de Calorías',
+                        'Consumo de Alcohol',
+                        'Uso de Dispositivos Tecnológicos',
+                        'Antecedentes Familiares de Sobrepeso',
+                        'Preferencia de Transporte']
+
+
 columna_categorica_seleccionada = tab_graficos.multiselect(label="Selecciona una variable", options=columnas_categoricas, default=["Género"])
+
 categorias = ["Peso Insuficiente", "Peso Normal", "Nivel de Sobrepeso I", "Nivel de Sobrepeso II", "Obesidad Tipo I", "Obesidad Tipo II", "Obesidad Tipo III"]
+
 if columna_categorica_seleccionada:
-    tab_graficos.subheader(f"Gráfico Cruzado: Distribución de Niveles de Obesidad por {columna_categorica_seleccionada[0]}")
-grafico_cruzado(df, "Nivel de Obesidad", columna_categorica_seleccionada[0], categorias)
+    tab_graficos.subheader(f"Distribución de Niveles de Obesidad por {columna_categorica_seleccionada[0]}")
+grafico_cruzado(dff, "Nivel de Obesidad", columna_categorica_seleccionada[0], categorias)
 
 ## Gráfico 4
 tab_graficos.subheader("Frecuencia de Actividad Física por Nivel de Obesidad")
-fig4 = px.box(df, x="Nivel de Obesidad", y="Frecuencia de Actividad Física", points="all")
+fig4 = px.box(dff, x="Nivel de Obesidad", y="Frecuencia de Actividad Física", points="all")
 tab_graficos.plotly_chart(fig4, use_container_width=True)
 
 ## Gráfico 5
 tab_graficos.subheader("Gráfico de Dispersión de Edad e IMC")
-fig5 = px.scatter(df, x="Edad", y="IMC", color="Nivel de Obesidad")
+fig5 = px.scatter(dff, x="Edad", y="Indice de Masa Corporal", color="Nivel de Obesidad")
 tab_graficos.plotly_chart(fig5, use_container_width=True)
 
 ## Gráfico 6
-tab_graficos.subheader("Comparación de IMC Basada en Género y Preferencia_de_Transporte")
-transporte_seleccionado = tab_graficos.multiselect(label="Selecciona un tipo de transporte", options=df.Preferencia_de_Transporte.unique(), default=["Transporte Público"])
-df_filtrado = df[df.Preferencia_de_Transporte.isin(transporte_seleccionado)]
+tab_graficos.subheader("Comparación de IMC Basada en Género y Preferencia de Transporte")
+transporte_seleccionado = tab_graficos.multiselect(label="Selecciona un tipo de transporte", options=dff['Preferencia de Transporte'].unique() ,default=["Transporte Público"])
+df_filtrado = dff[dff['Preferencia de Transporte'].isin(transporte_seleccionado)]
 
 fig6 = px.bar(
     df_filtrado,
     x="Nivel de Obesidad",
-    y="IMC",
+    y="Indice de Masa Corporal",
     color="Género",
-    facet_col="Preferencia_de_Transporte",
-    labels={"IMC": "Índice de Masa Corporal"}
+    facet_col="Preferencia de Transporte",
 )
 tab_graficos.plotly_chart(fig6, use_container_width=True)
 
 # TAB MODELO
 
-df3 = pd.read_csv("ObesityDataSet.csv")
-df3.columns = [col.upper() for col in df3.columns]
-# cargando el modelo guardado
-modelo = joblib.load("rta_model_deploy3.joblib")
-codificador = joblib.load("onehot_encoder.joblib")
+tab_modelo.subheader("Modelo de Clasificación de Nivel de Obesidad")
+columnas = list(dict_var_modelo)
+#columnas_seleccionadas = tab_modelo.multiselect(label="Selecciona columnas", options=columnas[0:], default=columnas[0:])
 
-# creando la lista de opciones para el menú desplegable
-opciones_GENERO = ["Selecciona una opción", "Femenino", "Masculino"]
-opciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO = ["Selecciona una opción", 'No', 'Sí']
-opciones_FAVC   = ["Selecciona una opción", 'No', 'Sí']
-opciones_FCVC   = ["Selecciona una opción", 'Nunca', 'A veces', 'Siempre']
-opciones_NCP   = ["Selecciona una opción", 'Una', 'Dos', 'Tres', 'Más de tres']
-opciones_CAEC   = ["Selecciona una opción", 'No', 'A veces', 'Frecuentemente', 'Siempre']
-opciones_SMOKE   = ["Selecciona una opción", 'No', 'Sí']
-opciones_CH2O   = ["Selecciona una opción", 'Menos de 1L', 'Entre 1L y 2L', 'Más de 2L']
-opciones_SCC   = ["Selecciona una opción", 'No', 'Sí']
-opciones_FAF   = ["Selecciona una opción", 'No tengo', '1 o 2 días', '3 o 4 días', '4 o 5 días']
-opciones_TUE   = ["Selecciona una opción", '0-2 horas', '3-5 horas', 'Más de 5 horas']
-opciones_CALC  = ["Selecciona una opción", 'No bebo', 'A veces', 'Frecuentemente', 'Siempre']
-opciones_MTRANS  = ["Selecciona una opción", 'Automóvil', 'Motocicleta', 'Bicicleta', 'Transporte Público', 'Caminar']
+# Página de inicio de presentación
+tab_modelo.markdown("## Bienvenido a Conoce Tu Obesidad")
+tab_modelo.markdown("Esta aplicación te ayudará a determinar tu riesgo de obesidad.")
+tab_modelo.markdown("Por favor, ingresa la siguiente información:")
 
-def principal():
-    tab_modelo.subheader("Por favor, ingresa la siguiente información:")
-    GENERO = tab_modelo.selectbox('¿Cuál es tu género?', options=opciones_GENERO)
-    EDAD = tab_modelo.text_input('Ingresa tu edad', placeholder='Por ejemplo, 25')
+# Crear un diccionario para almacenar las respuestas
+respuestas = {}
 
-    ANTECEDENTES_FAMILIARES_CON_SOBREPESO = tab_modelo.selectbox('¿Tiene un familiar que ha sufrido o sufre de sobrepeso?',
-                                                         options=opciones_ANTECEDENTES_FAMILIARES_CON_SOBREPESO)
-    FAVC = tab_modelo.selectbox('¿Consumes alimentos altos en calorías con frecuencia?', options=opciones_FAVC)
-    FCVC = tab_modelo.selectbox('¿Sueles comer verduras en tus comidas?', options=opciones_FCVC)
-    NCP = tab_modelo.selectbox('¿Cuántas comidas principales tienes al día?', options=opciones_NCP)
-    CAEC = tab_modelo.selectbox('¿Comes algo entre comidas?', options=opciones_CAEC)
-    SMOKE = tab_modelo.selectbox('¿Fumas?', options=opciones_SMOKE)
-    CH2O = tab_modelo.selectbox('¿Cuánta agua bebes diariamente?', options=opciones_CH2O)
-    SCC = tab_modelo.selectbox('¿Monitoreas las calorías que consumes diariamente?', options=opciones_SCC)
-    FAF = tab_modelo.selectbox('¿Con qué frecuencia haces actividad física?', options=opciones_FAF)
-    TUE = tab_modelo.selectbox(
-        '¿Cuánto tiempo usas dispositivos tecnológicos como móvil, videojuegos, televisión, ordenador y otros?',
-        options=opciones_TUE)
-    CALC = tab_modelo.selectbox('¿Con qué frecuencia bebes alcohol?', options=opciones_CALC)
-    MTRANS = tab_modelo.selectbox('¿Qué transporte usas habitualmente?', options=opciones_MTRANS)
-    st.cache(allow_output_mutation=True, hash_funcs={np.ndarray: lambda x: hash(x.tobytes())})
-    if tab_modelo.button('Resultado de Predicción del Nivel de Obesidad'):
-        array_entrada = np.array([GENERO, ANTECEDENTES_FAMILIARES_CON_SOBREPESO, FAVC, CALC, SMOKE, SCC, CAEC, MTRANS, FCVC, NCP, CH2O, FAF, TUE],
-            ndmin=2)
-        matriz_codificada = codificador.transform(array_entrada)
-        array_denso = matriz_codificada.toarray()
-        array_codificado = list(array_denso.ravel())
+# Dividir la página en dos columnas
+col1, col2 = tab_modelo.columns(2)
 
-        array_numérico = [EDAD]
-        arreglo_prediccion = np.array(array_numérico + array_codificado, dtype=np.float64).reshape(1, -1)
-        prediccion = modelo.predict(arreglo_prediccion)
+# Calcular la mitad del número total de preguntas
+mitad_preguntas = len(preguntas) // 2
 
-        with st.spinner('Por favor espera...'):
-            time.sleep(1)
-
-        if prediction == 0:
-            texto = 'Peso Insuficiente'
-        elif prediction == 1:
-            texto = 'Peso Normal'
-        elif prediction == 2:
-            texto = 'Obesidad I'
-        elif prediction == 3:
-            texto = 'Obesidad II'
-        elif prediction == 4:
-            texto = 'Obesidad Tipo III'
-        elif prediction == 5:
-            texto = 'Nivel de Sobrepeso I'
-        elif prediction == 6:
-            texto = 'Nivel de Sobrepeso II'
+# Mostrar los selectbox y campos de entrada en dos columnas
+for i, pregunta in enumerate(preguntas):
+    # Determinar en qué columna mostrar la pregunta
+    if i < mitad_preguntas:
+        columna = col1
+    else:
+        columna = col2
+    
+    # Si la variable es 'Age', utilizar un intslider
+    if variables[i] in ['Age', 'Height', 'Weight']:
+        widget_key = f"{variables[i]}_{i}"
+        if variables[i] in ['Height', 'Weight']:
+            fformat = '%.2f'
         else:
-            texto = 'Valor de predicción inválido'
-        tab_modelo.markdown(f'<p style="text-align:center; font-size:26px; font-weight:bold;">{texto}</p>',
-                           unsafe_allow_html=True)
+            fformat = '%.0f'
+        # Utilizar un campo de entrada numérica en lugar de un selectbox
+        respuesta_numerica = columna.number_input(pregunta, format=fformat, key=widget_key)
+        # Almacenar la respuesta numérica en el diccionario de respuestas
+        respuestas[variables[i]] = respuesta_numerica
+    else:
+        # Agregar un sufijo único (por ejemplo, el índice) a la clave del widget
+        widget_key = f"{variables[i]}_{i}"
+        # Utilizar un selectbox para las otras opciones de respuesta
+        respuesta_select = columna.selectbox(pregunta, options=opciones_respuesta[i], key=widget_key)
+        # Almacenar la respuesta del selectbox en el diccionario de respuestas
+        respuestas[variables[i]] = respuesta_select
 
-    st.write("**Desarrollado Por: Angel Rodrigo Naharro**", unsafe_allow_html=True)
+# Botón para almacenar las respuestas en un DataFrame
+if tab_modelo.button('Descubre tu Nivel de Obesidad'):
+    # Almacenar las respuestas en un DataFrame
+    df_respuestas = pd.DataFrame(respuestas, index=[0])
+    tab_modelo.write('## Respuestas marcadas:')
+    df_respuestas_pantalla=traduce_columnas(df_respuestas,diccionario_columnas)
+    tab_modelo.dataframe(df_respuestas_pantalla)
+    # Codificar las respuestas en formato numérico
+    
+    X_respuestas = codifica_columnas(df_respuestas,dicts)
+    #Cargarpkl del pipeline
+    pipeline = joblib.load('./model/encoder_pipeline.pkl')
+    X=XEncoder(pipeline,X_respuestas)
+    tab_modelo.write(X_respuestas.describe())
+    tab_modelo.write(X)
+    '''# Realizar la predicción
+    y_pred = modelo.predict(X_respuestas)
+    # Mostrar la predicción
+    tab_modelo.write('## Predicción:')
+    tab_modelo.write(y_pred[0])'''
 
-if __name__ == '__main__':
-    principal()
+
