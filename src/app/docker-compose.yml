@@ -1,0 +1,9 @@
+services:
+  pro:
+    container_name: obesity
+    image: obesity
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+      dockerfile: Dockerfile
