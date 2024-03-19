@@ -5,17 +5,10 @@ from values import *
 
 
 
-def Feature_Engineering(df):
-        try:
-            df.set_index('id', inplace=True)
-            df['IMC'] = df['Weight'] / (df['Height'] ** 2)
-            df['HA'] = df['FCVC'] * df['NCP']
-            df['UT'] = df['TUE'] / df['Age']
-        except:
-            pass
-        return df
+
 
 def XEncoder(Pipeline,X):
+    
     categorical_columns = X.columns[X.dtypes=="object"].tolist()
     numeric_columns_to_transform = X.columns[X.dtypes!="object"].tolist()    
     X_trans = Pipeline.transform(X)
@@ -39,8 +32,9 @@ def XEncoder(Pipeline,X):
     return pd.DataFrame(X_trans, columns=transformed_columns)
 
 def traduce_columnas(df, diccionario):
-    df.columns = [diccionario.get(col, col) for col in df.columns]
-    return df
+    dff=df.copy(True)
+    dff.columns = [diccionario.get(col, col) for col in dff.columns]
+    return dff
 
 def codifica_columnas(df, diccionario):
     dff=df.copy(True)
@@ -49,6 +43,15 @@ def codifica_columnas(df, diccionario):
             dff[col] = dff[col].map(diccionario[col])
     Feature_Engineering(dff)
     return dff
+
+def Feature_Engineering(df):
+        try:
+            df['IMC'] = df['Weight'] / (df['Height'] ** 2)
+            df['HA'] = df['FCVC'] * df['NCP']
+            df['UT'] = df['TUE'] / df['Age']
+        except:
+            pass
+        return df
 
 def redondea_vars(df):
     dff=df.copy(deep=True)
