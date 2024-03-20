@@ -9,6 +9,72 @@
         "documentation": {}
     },
     {
+        "label": "dill",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dill",
+        "description": "dill",
+        "detail": "dill",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "confloat",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "conint",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "constr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "util.obesity",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "util.obesity",
+        "description": "util.obesity",
+        "detail": "util.obesity",
+        "documentation": {}
+    },
+    {
         "label": "numpy",
         "kind": 6,
         "isExtraImport": true,
@@ -99,15 +165,6 @@
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
-        "documentation": {}
-    },
-    {
-        "label": "dill",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "dill",
-        "description": "dill",
-        "detail": "dill",
         "documentation": {}
     },
     {
@@ -473,6 +530,42 @@
         "description": "catboost",
         "isExtraImport": true,
         "detail": "catboost",
+        "documentation": {}
+    },
+    {
+        "label": "PersonObesity",
+        "kind": 6,
+        "importPath": "src.api.util.obesity",
+        "description": "src.api.util.obesity",
+        "peekOfCode": "class PersonObesity(BaseModel):\n    age: int = 18\n    gender: str = Field(..., description=\"Género de la persona\", pattern=\"^(female|male)$\")\n    weight: confloat(gt=0) \n    height: confloat(gt=0)\n    waist_circum_preferred: confloat(gt=0) \n    hip_circum: confloat(gt=0) \ndef make_obesity_predictions(person: PersonObesity):\n    person = person.dict()\n    df = pd.DataFrame([person])",
+        "detail": "src.api.util.obesity",
+        "documentation": {}
+    },
+    {
+        "label": "make_obesity_predictions",
+        "kind": 2,
+        "importPath": "src.api.util.obesity",
+        "description": "src.api.util.obesity",
+        "peekOfCode": "def make_obesity_predictions(person: PersonObesity):\n    person = person.dict()\n    df = pd.DataFrame([person])\n    df_transformed = custom_calculus(df)\n    with open('./model/encoder_pipeline.pkl','rb') as f:\n        piplEncoder = dill.load(f)\n    with open('./model/XGBClassifier.pkl', 'rb') as f:\n        XGBoostClassifier = dill.load(f)\n    X_respuestas = codifica_columnas(df_respuestas,dicts)\n    lstscols=['FCVC','NCP','TUE']",
+        "detail": "src.api.util.obesity",
+        "documentation": {}
+    },
+    {
+        "label": "read_root",
+        "kind": 2,
+        "importPath": "src.api.fastapi",
+        "description": "src.api.fastapi",
+        "peekOfCode": "def read_root():\n    print('hola')\n    return {'message': 'API Predicción Obesidad'}\n# Return obesity prediction for a person\n@app.post('/obesity_prediction')\nasync def obesity_prediction(person: ob.PersonObesity):\n    result = ob.make_obesity_prediction(person)\n    return result",
+        "detail": "src.api.fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "src.api.fastapi",
+        "description": "src.api.fastapi",
+        "peekOfCode": "app = FastAPI() \n@app.get(\"/\")\ndef read_root():\n    print('hola')\n    return {'message': 'API Predicción Obesidad'}\n# Return obesity prediction for a person\n@app.post('/obesity_prediction')\nasync def obesity_prediction(person: ob.PersonObesity):\n    result = ob.make_obesity_prediction(person)\n    return result",
+        "detail": "src.api.fastapi",
         "documentation": {}
     },
     {
